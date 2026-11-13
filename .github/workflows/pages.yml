@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Ensure dashboard exists (fallback: copy from original repo)
+      - name: "Ensure dashboard exists (fallback: copy from original repo)"
         run: |
           if [ ! -f dashboard/index.html ]; then
             mkdir -p dashboard
