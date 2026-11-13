@@ -1,74 +1,10 @@
 {
- "updated": "2026-11-13T17:12:33Z",
- "regimes": {
-  "chop": [
-   "wick_vol-APTUSDT-15m",
-   "spike_revert-SUIUSDT-15m"
-  ],
-  "range": [
-   "vol_burst_revert-ARBUSDT-15m",
-   "bb_maker-NEARUSDT-1m",
-   "bollinger_reversion-NEARUSDT-5m",
-   "streak_bb-LTCUSDT-5m",
-   "ema_snap-NEARUSDT-5m"
-  ],
-  "spike": [
-   "streak_bb-ADAUSDT-5m"
-  ]
- },
- "regime_detail": {
-  "APTUSDT-15m": {
-   "regime": "chop",
-   "vol": 1.52,
-   "trend_score": 0.085,
-   "spike_score": 0.033
-  },
-  "ARBUSDT-15m": {
-   "regime": "range",
-   "vol": 1.33,
-   "trend_score": -0.411,
-   "spike_score": 0.033
-  },
-  "SUIUSDT-15m": {
-   "regime": "chop",
-   "vol": 1.74,
-   "trend_score": -0.128,
-   "spike_score": 0.033
-  },
-  "NEARUSDT-1m": {
-   "regime": "range",
-   "vol": 0.66,
-   "trend_score": -0.723,
-   "spike_score": 0.0
-  },
-  "NEARUSDT-5m": {
-   "regime": "range",
-   "vol": 1.28,
-   "trend_score": -0.485,
-   "spike_score": 0.033
-  },
-  "LTCUSDT-5m": {
-   "regime": "range",
-   "vol": 1.16,
-   "trend_score": -0.185,
-   "spike_score": 0.067
-  },
-  "ADAUSDT-5m": {
-   "regime": "spike",
-   "vol": 1.49,
-   "trend_score": -0.505,
-   "spike_score": 0.1
-  }
- },
- "fit": {
-  "wick_vol-APTUSDT-15m": 0.9,
-  "vol_burst_revert-ARBUSDT-15m": 1.25,
-  "spike_revert-SUIUSDT-15m": 0.9,
-  "bb_maker-NEARUSDT-1m": 1.25,
-  "bollinger_reversion-NEARUSDT-5m": 1.25,
-  "streak_bb-LTCUSDT-5m": 1.25,
-  "ema_snap-NEARUSDT-5m": 1.25,
-  "streak_bb-ADAUSDT-5m": 0.8
- },
- "learned": {}
+ "updated": "2026-11-13T23:12:32Z",
+ "regimes": {},
+ "regime_detail": {},
+ "fit": {},
+ "learned": {
+  "meanrev:range": 0.518,
+  "meanrev:calm": 1.048
+ }
 }

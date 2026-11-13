@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 2.18, "base_pf": 1.033, "neighbor_median_sharpe": 2.24, "n_neighbors": 4, "sharpe_half1": -0.36, "sharpe_half2": 4.22, "mc_p5_total": 0.4865, "folds": 47, "params": {"h": 120, "vz": 6.0}, "kind": "gold", "symbol": "ARBUSDT", "tf": "5m", "strategy": "vol_burst_revert", "fee_mode": "maker"}
