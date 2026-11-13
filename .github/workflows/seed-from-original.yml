@@ -1,0 +1,39 @@
+name: Seed from original
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/seed-from-original.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Copy history from original repo
+        run: |
+          git clone --depth 1 https://github.com/palcikia-crypto/scalp-lab-termux.git /tmp/orig
+          mkdir -p results/backtest results/scan reports
+          cp -r /tmp/orig/scalp-lab/results/backtest/* results/backtest/ 2>/dev/null || true
+          cp -r /tmp/orig/scalp-lab/results/scan/* results/scan/ 2>/dev/null || true
+          cp /tmp/orig/scalp-lab/results/queue*.json results/ 2>/dev/null || true
+          cp /tmp/orig/scalp-lab/results/history.json results/ 2>/dev/null || true
+          cp /tmp/orig/scalp-lab/reports/* reports/ 2>/dev/null || true
+          cp /tmp/orig/scalp-lab/results/paper.json results/ 2>/dev/null || true
+          echo "backtest files: $(ls results/backtest | wc -l)"
+          echo "scan files: $(ls results/scan | wc -l)"
+
+      - name: Commit seed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && echo "nothing to seed" || git commit -m "seed: history copied from original"
+          git push

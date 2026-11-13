@@ -1,0 +1,42 @@
+name: Pages
+
+on:
+  schedule:
+    - cron: '40 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'dashboard/**'
+      - '.github/workflows/pages.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure dashboard exists (fallback: copy from original repo)
+        run: |
+          if [ ! -f dashboard/index.html ]; then
+            mkdir -p dashboard
+            curl -sL https://raw.githubusercontent.com/palcikia-crypto/scalp-lab-termux/master/dashboard/index.html -o dashboard/index.html
+            echo "downloaded from original, size: $(wc -c < dashboard/index.html)"
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboard
+
+      - uses: actions/deploy-pages@v4
