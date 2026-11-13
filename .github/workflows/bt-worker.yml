@@ -30,7 +30,11 @@ jobs:
         working-directory: scalp-lab
         run: python reporter.py || true
 
-      - name: Paper trading (adaptive)
+      - name: Brain (market regime)
+        working-directory: scalp-lab
+        run: python brain.py || true
+
+      - name: Paper trading (adaptive + brain)
         working-directory: scalp-lab
         run: timeout 180 python paper.py || true
 

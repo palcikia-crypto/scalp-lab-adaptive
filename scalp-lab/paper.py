@@ -1,11 +1,13 @@
 """Paper trading ADAPTIVE: реальные сигналы топ-стратегий на живых данных
-Binance + адаптивное управление размером позиций.
+Binance + адаптивное управление размером позиций + мозг рынка (brain.py).
 
-Каждый запуск (воркер каждые 4 часа):
+Каждый запуск (воркер каждые 30 минут):
 - берет топ-стратегии из результатов бэктестов (прошедшие фильтры);
 - адаптивный аллокатор (allocator.py) назначает каждой стратегии вес
   по её реальным сделкам: минусовые серии -> меньше размер или shadow
   (сигналы пишутся, капитал не тратится), стабильный плюс -> вес до 1.5;
+- мозг рынка (brain.py) определяет режим (trend/range/spike/chop) по живым
+  свечам и даёт каждой стратегии множитель под текущий режим;
 - на свежих данных генерирует сигнал последнего закрытого бара;
 - открывает/закрывает виртуальные позиции, капитал $1000, сложный процент,
   вычитает funding по открытым позициям;
@@ -26,6 +28,10 @@ try:
     from bt import live
 except Exception:
     live = None
+try:
+    import brain
+except Exception:
+    brain = None
 
 STATE_PATH = "results/paper.json"
 CAPITAL_START = 1000.0
@@ -158,7 +164,7 @@ def close_pos(st, key, px, ts, reason):
     fund = pos.get("fund", 0.0)
     w = pos.get("weight", 1.0)
     pnl = d * (px / pos["entry"] - 1.0) - COST[pos["fee_mode"]] - fund
-    # адаптивный размер: PnL масштабируется весом аллокатора на момент входа
+    # адаптивный размер: PnL масштабируется весом аллокатора и мозгом на момент входа
     pnl_w = pnl * w
     if not pos.get("shadow"):
         st["equity"] = st["equity"] * (1.0 + pnl_w)
@@ -191,6 +197,14 @@ def main():
     # === адаптивный аллокатор: веса по реальным сделкам ===
     alloc = allocator.weights(st.get("closed", []), tops)
     st["alloc"] = alloc
+    # === мозг рынка: режим и множители под него ===
+    fit = {}
+    if brain is not None:
+        try:
+            fit = brain.regime_fit(tops, get_klines, paper_state=st)
+        except Exception as e:
+            print("brain failed:", str(e)[:80], flush=True)
+    st["brain_fit"] = fit
     top_keys = set(t["key"] for t in tops)
     # закрыть позиции стратегий, выпавших из топа
     for key in list(st["positions"].keys()):
@@ -215,7 +229,8 @@ def main():
             break
         a = alloc.get(t["key"], {})
         shadow = a.get("mode") == "shadow"
-        w = float(a.get("weight", 1.0))
+        # вес = аллокатор x множитель мозга за режим рынка
+        w = float(a.get("weight", 1.0)) * float(fit.get(t["key"], 1.0))
         if shadow:
             print("paper: shadow mode for", t["key"], "-", a.get("reason", ""), flush=True)
         try:
@@ -238,7 +253,8 @@ def main():
         if len(dts) < 2:
             continue
         t["signal"] = float(vals[-1])
-        t["weight"] = w
+        t["weight"] = round(w, 3)
+        t["fit"] = float(fit.get(t["key"], 1.0))
         t["mode"] = a.get("mode", "live")
         nz = np.nonzero(vals)[0]
         t["sig_last"] = str(dts[nz[-1]]) if len(nz) else ""
