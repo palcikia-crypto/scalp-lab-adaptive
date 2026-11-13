@@ -1,0 +1,13 @@
+{
+ "family_regime": {},
+ "snapshots": [
+  {
+   "ts": "2026-11-13T09:26:38Z",
+   "regimes": {
+    "range": 3,
+    "trend": 5
+   },
+   "equity": 1000.0
+  }
+ ]
+}

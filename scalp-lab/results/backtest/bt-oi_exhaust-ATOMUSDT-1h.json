@@ -1,0 +1,1 @@
+{"error": "not enough bars", "kind": "backtest", "symbol": "ATOMUSDT", "tf": "1h", "strategy": "oi_exhaust", "days": 730, "n_bars": 17520, "fee_mode": "maker"}

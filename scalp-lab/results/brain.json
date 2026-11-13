@@ -1,0 +1,66 @@
+{
+ "updated": "2026-11-13T09:26:38Z",
+ "regimes": {
+  "range": [
+   "vol_burst_revert-ARBUSDT-15m",
+   "streak_bb-LTCUSDT-5m",
+   "vol_burst_revert-ARBUSDT-5m"
+  ],
+  "trend": [
+   "bb_maker-NEARUSDT-1m",
+   "bollinger_reversion-NEARUSDT-5m",
+   "ema_snap-NEARUSDT-5m",
+   "streak_bb-ADAUSDT-5m",
+   "bb_regime-NEARUSDT-1m"
+  ]
+ },
+ "regime_detail": {
+  "ARBUSDT-15m": {
+   "regime": "range",
+   "vol": 0.89,
+   "trend_score": -0.492,
+   "spike_score": 0.0
+  },
+  "NEARUSDT-1m": {
+   "regime": "trend",
+   "vol": 0.78,
+   "trend_score": 0.373,
+   "spike_score": 0.0
+  },
+  "NEARUSDT-5m": {
+   "regime": "trend",
+   "vol": 1.26,
+   "trend_score": 0.533,
+   "spike_score": 0.0
+  },
+  "LTCUSDT-5m": {
+   "regime": "range",
+   "vol": 1.47,
+   "trend_score": -0.236,
+   "spike_score": 0.0
+  },
+  "ADAUSDT-5m": {
+   "regime": "trend",
+   "vol": 0.95,
+   "trend_score": 0.259,
+   "spike_score": 0.0
+  },
+  "ARBUSDT-5m": {
+   "regime": "range",
+   "vol": 0.94,
+   "trend_score": -0.259,
+   "spike_score": 0.0
+  }
+ },
+ "fit": {
+  "vol_burst_revert-ARBUSDT-15m": 1.25,
+  "bb_maker-NEARUSDT-1m": 0.6,
+  "bollinger_reversion-NEARUSDT-5m": 0.6,
+  "streak_bb-LTCUSDT-5m": 1.25,
+  "ema_snap-NEARUSDT-5m": 0.6,
+  "streak_bb-ADAUSDT-5m": 0.6,
+  "bb_regime-NEARUSDT-1m": 0.6,
+  "vol_burst_revert-ARBUSDT-5m": 1.25
+ },
+ "learned": {}
+}

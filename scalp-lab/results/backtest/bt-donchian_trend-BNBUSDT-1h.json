@@ -1,0 +1,1 @@
+{"error": "not enough bars", "kind": "backtest", "symbol": "BNBUSDT", "tf": "1h", "strategy": "donchian_trend", "days": 730, "n_bars": 17520, "fee_mode": "taker"}

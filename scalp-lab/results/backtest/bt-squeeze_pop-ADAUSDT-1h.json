@@ -1,0 +1,1 @@
+{"error": "not enough bars", "kind": "backtest", "symbol": "ADAUSDT", "tf": "1h", "strategy": "squeeze_pop", "days": 730, "n_bars": 17520, "fee_mode": "taker"}

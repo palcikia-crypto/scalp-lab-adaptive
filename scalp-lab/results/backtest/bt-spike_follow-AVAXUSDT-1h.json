@@ -1,0 +1,1 @@
+{"error": "not enough bars", "kind": "backtest", "symbol": "AVAXUSDT", "tf": "1h", "strategy": "spike_follow", "days": 730, "n_bars": 17520, "fee_mode": "taker"}

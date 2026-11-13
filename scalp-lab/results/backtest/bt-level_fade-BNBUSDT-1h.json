@@ -1,0 +1,1 @@
+{"error": "not enough bars", "kind": "backtest", "symbol": "BNBUSDT", "tf": "1h", "strategy": "level_fade", "days": 730, "n_bars": 17520, "fee_mode": "maker"}
