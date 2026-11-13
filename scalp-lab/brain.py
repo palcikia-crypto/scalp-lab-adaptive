@@ -1,14 +1,15 @@
-"""BRAIN: статистический мозг рынка (детерминированный, без API LLM).
+"""BRAIN: статистический мозг рынка (детерминированный, без API LLM). v2
 
 Что делает:
 - по живым свечам определяет режим рынка для каждого (symbol, tf):
-  trend / range / spike / chop + уровень волатильности;
-- по семейству стратегии считает, насколько текущий режим ей подходит,
-  и выдаёт множитель веса [0.4 .. 1.3];
-- самообучение: пишет историю режимов (results/brain_hist.json) и
-  подкручивает семейные множители по реальному PnL paper-сделок:
-  если семейство стабильно зарабатывает в режиме - множитель растёт,
-  стабильно теряет - падает (медленно, с ограничениями).
+  trend / range / spike / chop / calm + уровень волатильности;
+- каждой стратегии задаёт семейство ЯВНО (по сути, не по имени):
+  meanrev (возврат к среднему) или trend (импульс/пробой);
+  неизвестным - эвристический fallback по имени;
+- по семейству и режиму выдаёт множитель веса [0.4 .. 1.3];
+- самообучение: история режимов (results/brain_hist.json), семейные
+  множители подкручиваются по реальному PnL paper-сделок. Порог входа
+  3 сделки, уверенность набирается плавно (полная - к 12 сделкам).
 
 Результат: results/brain.json (для панели и отчёта) + dict fit для paper.py.
 """
@@ -23,39 +24,68 @@ import pandas as pd
 STATE_HIST = "results/brain_hist.json"
 STATE_BRAIN = "results/brain.json"
 
-# семейства по имени стратегии
-MEAN_REV = ("bb", "wick", "revert", "regime", "maker", "vwap", "range")
-TREND = ("streak", "burst", "wave", "momentum", "break", "trend", "momo")
+# === ЯВНЫЕ семейства: meanrev = возврат к среднему, trend = импульс/пробой ===
+FAMILY = {
+    # возвратные: торговля против выноса, к среднему
+    "bollinger_reversion": "meanrev", "vwap_reversion": "meanrev",
+    "streak_reversion": "meanrev", "wick_reversion": "meanrev",
+    "bb_maker": "meanrev", "streak_vol": "meanrev", "bb_vol": "meanrev",
+    "wick_vol": "meanrev", "spike_revert": "meanrev", "crash_revert": "meanrev",
+    "spike_bb": "meanrev", "vol_burst_revert": "meanrev", "bb_regime": "meanrev",
+    "wick_regime": "meanrev", "bb_fast": "meanrev", "ema_snap": "meanrev",
+    "flow_fade": "meanrev", "qr_revert": "meanrev", "level_fade": "meanrev",
+    "streak_bb": "meanrev", "funding_revert": "meanrev", "oi_exhaust": "meanrev",
+    "ls_contrarian": "meanrev",
+    # импульсные: торговля в сторону выноса, на пробоях
+    "ema_cross": "trend", "donchian": "trend", "donchian_trend": "trend",
+    "volume_surge": "trend", "vol_drift": "trend", "spike_follow": "trend",
+    "squeeze_pop": "trend", "vol_pop": "trend",
+}
+
+# эвристический fallback для новых/неизвестных имён
+MEAN_REV_HINTS = ("bb", "wick", "revert", "regime", "maker", "vwap", "range", "fade")
+TREND_HINTS = ("streak", "burst", "wave", "momentum", "break", "trend", "momo", "cross", "surge", "pop")
 
 
 def family(name):
-    n = name.lower()
-    if any(s in n for s in TREND):
-        return "trend"
-    if any(s in n for s in MEAN_REV):
+    n = (name or "").lower()
+    if n in FAMILY:
+        return FAMILY[n]
+    if any(s in n for s in MEAN_REV_HINTS):
         return "meanrev"
+    if any(s in n for s in TREND_HINTS):
+        return "trend"
     return "other"
 
 
 def classify(df):
-    """Режим по свечам: трендовость, волатильность, шипы."""
+    """Режим по свечам: трендовость, волатильность, шипы.
+
+    Быстрая реакция: трендовость считается на коротком окне (40 баров)
+    и смешивается с длинным (120) как 0.6/0.4 - смена режима ловится
+    за 1-2 бара, но шум не дёргает веса. Шипы - окно 30 баров.
+    """
     c = pd.to_numeric(df["close"], errors="coerce").dropna()
     if len(c) < 60:
         return {"regime": "unknown", "vol": 0.5, "trend_score": 0.0, "spike_score": 0.0}
     r = np.log(c).diff().dropna().values
-    # трендовость: автокорреляция доходностей (положительная - тренд, отрицательная - возврат)
-    if len(r) > 10:
-        a = r[:-1] - r[:-1].mean()
-        b = r[1:] - r[1:].mean()
+
+    def autocorr(arr):
+        if len(arr) < 10:
+            return 0.0
+        a = arr[:-1] - arr[:-1].mean()
+        b = arr[1:] - arr[1:].mean()
         denom = (np.sqrt((a * a).sum()) * np.sqrt((b * b).sum()))
-        ac = float((a * b).sum() / denom) if denom > 0 else 0.0
-    else:
-        ac = 0.0
-    # волатильность: стд за последние 20 баров против всей истории (перцентиль)
-    vol = float(np.std(r[-20:]) / (np.std(r) + 1e-12))
-    # шипы: доля баров с |r| > 3 стд
+        return float((a * b).sum() / denom) if denom > 0 else 0.0
+
+    ac_short = autocorr(r[-40:])
+    ac_long = autocorr(r[-120:]) if len(r) >= 120 else ac_short
+    ac = 0.6 * ac_short + 0.4 * ac_long
+    # волатильность: стд за последние 15 баров против всей истории
+    vol = float(np.std(r[-15:]) / (np.std(r) + 1e-12))
+    # шипы: доля баров с |r| > 3 стд за последние 30 баров
     sd = np.std(r) + 1e-12
-    spike = float(np.mean(np.abs(r[-60:]) > 3.0 * sd))
+    spike = float(np.mean(np.abs(r[-30:]) > 3.0 * sd))
     trend_score = round(max(-1.0, min(1.0, ac * 4.0)), 3)
     if spike > 0.08:
         regime = "spike"
@@ -81,17 +111,21 @@ def load_hist():
 
 
 def learned_mult(hist, fam, regime):
-    """Множитель из собственного опыта: PnL семейства в этом режиме."""
+    """Множитель из собственного опыта: PnL семейства в этом режиме.
+
+    Порог входа 3 сделки. Уверенность растёт плавно: при 3 сделках опыт
+    влияет на 25%, при 12+ - полностью (масштаб min(1.0, n/12)).
+    """
     rec = hist.get("family_regime", {}).get(fam + ":" + regime)
     if not rec:
         return 1.0
     n = rec.get("n", 0)
     pnl = rec.get("pnl_sum", 0.0)
-    if n < 5:
+    if n < 3:
         return 1.0
-    # средний pnl на сделку в %, мягко отображаем в [0.7, 1.2]
     avg = pnl / n
-    m = 1.0 + max(-0.3, min(0.2, avg * 8.0))
+    conf = min(1.0, n / 12.0)
+    m = 1.0 + max(-0.3, min(0.2, avg * 8.0)) * conf
     return round(m, 3)
 
 
