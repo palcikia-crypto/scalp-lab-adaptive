@@ -1,0 +1,1 @@
+{"error": "not enough bars", "kind": "backtest", "symbol": "PEPEUSDT", "tf": "1h", "strategy": "vol_drift", "days": 730, "n_bars": 17496, "fee_mode": "taker"}

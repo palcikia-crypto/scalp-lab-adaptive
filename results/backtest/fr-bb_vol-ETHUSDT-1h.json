@@ -1,0 +1,1 @@
+{"error": "not enough bars", "kind": "backtest", "symbol": "ETHUSDT", "tf": "1h", "strategy": "bb_vol", "days": 730, "n_bars": 17496, "fee_mode": "maker"}

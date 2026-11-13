@@ -1,0 +1,1 @@
+{"error": "not enough bars", "kind": "backtest", "symbol": "BTCUSDT", "tf": "1h", "strategy": "wick_vol", "days": 730, "n_bars": 17496, "fee_mode": "maker"}
