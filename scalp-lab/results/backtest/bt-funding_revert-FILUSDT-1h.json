@@ -1,0 +1,1 @@
+{"error": "not enough bars", "kind": "backtest", "symbol": "FILUSDT", "tf": "1h", "strategy": "funding_revert", "days": 730, "n_bars": 17520, "fee_mode": "maker"}

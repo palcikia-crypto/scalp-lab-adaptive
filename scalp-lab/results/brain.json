@@ -1,66 +1,74 @@
 {
- "updated": "2026-11-13T09:26:38Z",
+ "updated": "2026-11-13T17:12:33Z",
  "regimes": {
+  "chop": [
+   "wick_vol-APTUSDT-15m",
+   "spike_revert-SUIUSDT-15m"
+  ],
   "range": [
    "vol_burst_revert-ARBUSDT-15m",
-   "streak_bb-LTCUSDT-5m",
-   "vol_burst_revert-ARBUSDT-5m"
-  ],
-  "trend": [
    "bb_maker-NEARUSDT-1m",
    "bollinger_reversion-NEARUSDT-5m",
-   "ema_snap-NEARUSDT-5m",
-   "streak_bb-ADAUSDT-5m",
-   "bb_regime-NEARUSDT-1m"
+   "streak_bb-LTCUSDT-5m",
+   "ema_snap-NEARUSDT-5m"
+  ],
+  "spike": [
+   "streak_bb-ADAUSDT-5m"
   ]
  },
  "regime_detail": {
+  "APTUSDT-15m": {
+   "regime": "chop",
+   "vol": 1.52,
+   "trend_score": 0.085,
+   "spike_score": 0.033
+  },
   "ARBUSDT-15m": {
    "regime": "range",
-   "vol": 0.89,
-   "trend_score": -0.492,
-   "spike_score": 0.0
+   "vol": 1.33,
+   "trend_score": -0.411,
+   "spike_score": 0.033
+  },
+  "SUIUSDT-15m": {
+   "regime": "chop",
+   "vol": 1.74,
+   "trend_score": -0.128,
+   "spike_score": 0.033
   },
   "NEARUSDT-1m": {
-   "regime": "trend",
-   "vol": 0.78,
-   "trend_score": 0.373,
+   "regime": "range",
+   "vol": 0.66,
+   "trend_score": -0.723,
    "spike_score": 0.0
   },
   "NEARUSDT-5m": {
-   "regime": "trend",
-   "vol": 1.26,
-   "trend_score": 0.533,
-   "spike_score": 0.0
+   "regime": "range",
+   "vol": 1.28,
+   "trend_score": -0.485,
+   "spike_score": 0.033
   },
   "LTCUSDT-5m": {
    "regime": "range",
-   "vol": 1.47,
-   "trend_score": -0.236,
-   "spike_score": 0.0
+   "vol": 1.16,
+   "trend_score": -0.185,
+   "spike_score": 0.067
   },
   "ADAUSDT-5m": {
-   "regime": "trend",
-   "vol": 0.95,
-   "trend_score": 0.259,
-   "spike_score": 0.0
-  },
-  "ARBUSDT-5m": {
-   "regime": "range",
-   "vol": 0.94,
-   "trend_score": -0.259,
-   "spike_score": 0.0
+   "regime": "spike",
+   "vol": 1.49,
+   "trend_score": -0.505,
+   "spike_score": 0.1
   }
  },
  "fit": {
+  "wick_vol-APTUSDT-15m": 0.9,
   "vol_burst_revert-ARBUSDT-15m": 1.25,
-  "bb_maker-NEARUSDT-1m": 0.6,
-  "bollinger_reversion-NEARUSDT-5m": 0.6,
+  "spike_revert-SUIUSDT-15m": 0.9,
+  "bb_maker-NEARUSDT-1m": 1.25,
+  "bollinger_reversion-NEARUSDT-5m": 1.25,
   "streak_bb-LTCUSDT-5m": 1.25,
-  "ema_snap-NEARUSDT-5m": 0.6,
-  "streak_bb-ADAUSDT-5m": 0.6,
-  "bb_regime-NEARUSDT-1m": 0.6,
-  "vol_burst_revert-ARBUSDT-5m": 1.25
+  "ema_snap-NEARUSDT-5m": 1.25,
+  "streak_bb-ADAUSDT-5m": 0.8
  },
  "learned": {}
 }
