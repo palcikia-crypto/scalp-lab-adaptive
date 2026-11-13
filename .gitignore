@@ -1,0 +1,4 @@
+scalp-lab/.cache/
+__pycache__/
+*.pyc
+*.pyo
