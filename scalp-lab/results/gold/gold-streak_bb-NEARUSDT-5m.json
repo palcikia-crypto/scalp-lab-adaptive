@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 1.28, "base_pf": 1.012, "neighbor_median_sharpe": 1.27, "n_neighbors": 6, "sharpe_half1": 1.3, "sharpe_half2": 1.3, "mc_p5_total": -0.1122, "folds": 47, "params": {"h": 30, "k": 1.5, "n_streak": 3}, "kind": "gold", "symbol": "NEARUSDT", "tf": "5m", "strategy": "streak_bb", "fee_mode": "maker"}

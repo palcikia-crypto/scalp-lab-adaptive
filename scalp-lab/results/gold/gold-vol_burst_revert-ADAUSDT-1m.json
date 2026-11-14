@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.37, "base_pf": 0.998, "neighbor_median_sharpe": -0.6, "n_neighbors": 4, "sharpe_half1": 0.94, "sharpe_half2": -1.78, "mc_p5_total": -0.8244, "folds": 32, "params": {"h": 120, "vz": 4.0}, "kind": "gold", "symbol": "ADAUSDT", "tf": "1m", "strategy": "vol_burst_revert", "fee_mode": "maker"}
