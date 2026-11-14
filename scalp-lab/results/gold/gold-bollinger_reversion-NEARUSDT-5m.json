@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 2.51, "base_pf": 1.03, "neighbor_median_sharpe": 1.8, "n_neighbors": 4, "sharpe_half1": 2.67, "sharpe_half2": 2.46, "mc_p5_total": 1.0663, "folds": 47, "params": {"k": 2.0, "n": 50}, "kind": "gold", "symbol": "NEARUSDT", "tf": "5m", "strategy": "bollinger_reversion", "fee_mode": "maker"}

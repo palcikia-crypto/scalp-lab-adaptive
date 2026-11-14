@@ -1,0 +1,1 @@
+{"gold": true, "base_sharpe": 1.28, "base_pf": 1.065, "neighbor_median_sharpe": 0.94, "n_neighbors": 6, "sharpe_half1": 0.86, "sharpe_half2": 1.8, "mc_p5_total": 0.0322, "folds": 22, "params": {"h": 15, "n_streak": 4, "vz": 2.0}, "kind": "gold", "symbol": "SOLUSDT", "tf": "15m", "strategy": "streak_vol", "fee_mode": "maker"}

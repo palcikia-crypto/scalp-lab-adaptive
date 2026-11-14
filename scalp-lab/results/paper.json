@@ -346,9 +346,14 @@
    "reason": "rotated out"
   }
  ],
- "updated": "2026-11-14T02:55:54Z",
- "runs": 4,
+ "updated": "2026-11-14T10:06:12Z",
+ "runs": 5,
  "alloc": {
+  "wick_vol-OPUSDT-15m": {
+   "weight": 1.0,
+   "mode": "live",
+   "reason": "новая, сделок ещё нет"
+  },
   "spike_bb-BNBUSDT-5m": {
    "weight": 1.0,
    "mode": "live",
@@ -356,12 +361,35 @@
   }
  },
  "brain_fit": {
-  "spike_bb-BNBUSDT-5m": 0.9
+  "wick_vol-OPUSDT-15m": 1.1,
+  "spike_bb-BNBUSDT-5m": 1.3
  },
  "seen": {
-  "spike_bb-BNBUSDT-5m": "2026-11-14 02:50:00"
+  "spike_bb-BNBUSDT-5m": "2026-11-14 10:00:00",
+  "wick_vol-OPUSDT-15m": "2026-11-14 09:45:00"
  },
  "tops": [
+  {
+   "key": "wick_vol-OPUSDT-15m",
+   "strategy": "wick_vol",
+   "symbol": "OPUSDT",
+   "tf": "15m",
+   "params": {
+    "h": 15,
+    "vz": 2.0,
+    "w": 0.5
+   },
+   "fee_mode": "maker",
+   "gold": false,
+   "oos_sharpe": 1.26,
+   "score": 1.26,
+   "signal": 0.0,
+   "weight": 1.1,
+   "fit": 1.1,
+   "mode": "live",
+   "sig_last": "2026-11-13 09:45:00",
+   "sig_pct": 5.99
+  },
   {
    "key": "spike_bb-BNBUSDT-5m",
    "strategy": "spike_bb",
@@ -378,8 +406,8 @@
    "oos_sharpe": 1.03,
    "score": 0.88,
    "signal": 0.0,
-   "weight": 0.9,
-   "fit": 0.9,
+   "weight": 1.3,
+   "fit": 1.3,
    "mode": "live",
    "sig_last": "2026-11-09 02:55:00",
    "sig_pct": 3.03
@@ -399,10 +427,10 @@
   "total": 1680,
   "low_trades": 221,
   "low_folds": 0,
-  "low_pf": 1354,
-  "low_t": 104,
+  "low_pf": 1366,
+  "low_t": 91,
   "no_params": 0,
-  "admitted": 1
+  "admitted": 2
  },
  "candidates": [
   {
@@ -476,16 +504,6 @@
    "reason": "low_trades"
   },
   {
-   "strategy": "vol_burst_revert",
-   "symbol": "ADAUSDT",
-   "tf": "1m",
-   "sharpe": 1.57,
-   "t": 1.04,
-   "pf": 1.01,
-   "stability": 0.47,
-   "reason": "low_pf"
-  },
-  {
    "strategy": "crash_revert",
    "symbol": "ARBUSDT",
    "tf": "1m",
@@ -496,26 +514,6 @@
    "reason": "low_trades"
   },
   {
-   "strategy": "streak_bb",
-   "symbol": "NEARUSDT",
-   "tf": "5m",
-   "sharpe": 1.54,
-   "t": 1.46,
-   "pf": 1.015,
-   "stability": 0.28,
-   "reason": "low_t"
-  },
-  {
-   "strategy": "qr_revert",
-   "symbol": "DOTUSDT",
-   "tf": "1m",
-   "sharpe": 1.54,
-   "t": 1.02,
-   "pf": 1.008,
-   "stability": 0.66,
-   "reason": "low_pf"
-  },
-  {
    "strategy": "spike_bb",
    "symbol": "NEARUSDT",
    "tf": "1m",
@@ -523,6 +521,36 @@
    "t": 1.0,
    "pf": 1.085,
    "stability": 0.31,
+   "reason": "low_trades"
+  },
+  {
+   "strategy": "crash_revert",
+   "symbol": "ARBUSDT",
+   "tf": "5m",
+   "sharpe": 1.48,
+   "t": 1.4,
+   "pf": 1.13,
+   "stability": 0.19,
+   "reason": "low_trades"
+  },
+  {
+   "strategy": "crash_revert",
+   "symbol": "APTUSDT",
+   "tf": "5m",
+   "sharpe": 1.47,
+   "t": 1.4,
+   "pf": 1.11,
+   "stability": 0.23,
+   "reason": "low_trades"
+  },
+  {
+   "strategy": "crash_revert",
+   "symbol": "BTCUSDT",
+   "tf": "1m",
+   "sharpe": 1.46,
+   "t": 0.97,
+   "pf": 1.95,
+   "stability": 1.0,
    "reason": "low_trades"
   }
  ]
