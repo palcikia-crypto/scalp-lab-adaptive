@@ -1,8 +1,21 @@
 {
- "updated": "2026-11-13T23:12:32Z",
- "regimes": {},
- "regime_detail": {},
- "fit": {},
+ "updated": "2026-11-14T02:55:51Z",
+ "regimes": {
+  "chop": [
+   "spike_bb-BNBUSDT-5m"
+  ]
+ },
+ "regime_detail": {
+  "BNBUSDT-5m": {
+   "regime": "chop",
+   "vol": 2.09,
+   "trend_score": 0.093,
+   "spike_score": 0.067
+  }
+ },
+ "fit": {
+  "spike_bb-BNBUSDT-5m": 0.9
+ },
  "learned": {
   "meanrev:range": 0.518,
   "meanrev:calm": 1.048
