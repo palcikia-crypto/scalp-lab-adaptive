@@ -1,28 +1,30 @@
 {
- "updated": "2026-11-14T16:34:29Z",
+ "updated": "2026-11-14T21:06:51Z",
  "regimes": {
   "spike": [
-   "bb_maker-NEARUSDT-1m",
+   "vol_pop-UNIUSDT-15m"
+  ],
+  "range": [
    "spike_bb-BNBUSDT-5m"
   ]
  },
  "regime_detail": {
-  "NEARUSDT-1m": {
+  "UNIUSDT-15m": {
    "regime": "spike",
-   "vol": 1.96,
-   "trend_score": 0.191,
-   "spike_score": 0.133
+   "vol": 1.51,
+   "trend_score": 0.85,
+   "spike_score": 0.1
   },
   "BNBUSDT-5m": {
-   "regime": "spike",
-   "vol": 1.99,
-   "trend_score": 0.143,
-   "spike_score": 0.167
+   "regime": "range",
+   "vol": 2.29,
+   "trend_score": -0.427,
+   "spike_score": 0.033
   }
  },
  "fit": {
-  "bb_maker-NEARUSDT-1m": 0.8,
-  "spike_bb-BNBUSDT-5m": 0.8
+  "vol_pop-UNIUSDT-15m": 1.0,
+  "spike_bb-BNBUSDT-5m": 1.3
  },
  "learned": {
   "meanrev:range": 0.518,
