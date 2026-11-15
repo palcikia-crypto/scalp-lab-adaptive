@@ -1,0 +1,60 @@
+name: Safe AI Coder (freellmpool)
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install freellmpool and Aider
+        run: pip install freellmpool aider-chat
+
+      - name: Start freellmpool proxy
+        env:
+          POOL_ENV_B64: ${{ secrets.POOL_ENV_B64 }}
+        run: |
+          echo "$POOL_ENV_B64" | base64 -d > .pool.env
+          set -a && source .pool.env && set +a
+          rm -f .pool.env
+          nohup freellmpool > /tmp/pool.log 2>&1 &
+          sleep 4
+          cat /tmp/pool.log
+
+      - name: Run AI Coder in isolated branch
+        env:
+          OPENAI_API_KEY: anything
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUM: ${{ github.event.issue.number }}
+          TASK_TITLE: ${{ github.event.issue.title }}
+          TASK_BODY: ${{ github.event.issue.body }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: |
+          export OPENAI_BASE_URL="http://127.0.0.1:$(echo 8080)/v1"
+          git config user.name "AI Coder"
+          git config user.email "bot@users.noreply.github.com"
+          BRANCH="ai-issue-${ISSUE_NUM}"
+          git checkout -b "$BRANCH" || git checkout "$BRANCH"
+          PROMPT="${COMMENT_BODY:-$TASK_TITLE: $TASK_BODY}"
+          aider --model openai/auto --yes --auto-commits --message "$PROMPT"
+          git push -u origin "$BRANCH"
+          gh pr create --fill --base main --head "$BRANCH" || true
