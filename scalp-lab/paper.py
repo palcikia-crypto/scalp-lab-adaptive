@@ -1,5 +1,6 @@
 """Paper trading ADAPTIVE: реальные сигналы топ-стратегий на живых данных
-Binance + адаптивное управление размером позиций + мозг рынка (brain.py).
+Binance + адаптивное управление размером позиций + мозг рынка (brain.py)
++ страж реальности (reality_check.py).
 
 Каждый запуск (воркер каждые 30 минут):
 - берет топ-стратегии из результатов бэктестов (прошедшие фильтры);
@@ -8,6 +9,7 @@ Binance + адаптивное управление размером позиц�
   (сигналы пишутся, капитал не тратится), стабильный плюс -> вес до 1.5;
 - мозг рынка (brain.py) определяет режим (trend/range/spike/chop) по живым
   свечам и даёт каждой стратегии множитель под текущий режим;
+- страж реальности (reality.json) даёт глобальный множитель по просадке;
 - на свежих данных генерирует сигнал последнего закрытого бара;
 - открывает/закрывает виртуальные позиции, капитал $1000, сложный процент,
   вычитает funding по открытым позициям;
@@ -205,6 +207,16 @@ def main():
         except Exception as e:
             print("brain failed:", str(e)[:80], flush=True)
     st["brain_fit"] = fit
+    # === страж реальности: глобальный множитель по просадке/дрейфу ===
+    reality_mult = 1.0
+    try:
+        if os.path.exists("results/reality.json"):
+            rj = json.load(open("results/reality.json"))
+            reality_mult = float(rj.get("global_mult", 1.0))
+            st["reality"] = {"mult": reality_mult, "dd_pct": rj.get("drawdown_pct"),
+                             "alerts": rj.get("alerts", [])}
+    except Exception as e:
+        print("reality load failed:", str(e)[:80], flush=True)
     top_keys = set(t["key"] for t in tops)
     # закрыть позиции стратегий, выпавших из топа
     for key in list(st["positions"].keys()):
@@ -229,8 +241,8 @@ def main():
             break
         a = alloc.get(t["key"], {})
         shadow = a.get("mode") == "shadow"
-        # вес = аллокатор x множитель мозга за режим рынка
-        w = float(a.get("weight", 1.0)) * float(fit.get(t["key"], 1.0))
+        # вес = аллокатор x мозг x страж реальности
+        w = float(a.get("weight", 1.0)) * float(fit.get(t["key"], 1.0)) * reality_mult
         if shadow:
             print("paper: shadow mode for", t["key"], "-", a.get("reason", ""), flush=True)
         try:

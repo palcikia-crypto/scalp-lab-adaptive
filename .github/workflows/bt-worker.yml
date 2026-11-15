@@ -34,7 +34,11 @@ jobs:
         working-directory: scalp-lab
         run: python brain.py || true
 
-      - name: Paper trading (adaptive + brain)
+      - name: Reality check
+        working-directory: scalp-lab
+        run: python reality_check.py || true
+
+      - name: Paper trading (adaptive + brain + reality)
         working-directory: scalp-lab
         run: timeout 180 python paper.py || true
 
