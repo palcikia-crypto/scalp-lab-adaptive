@@ -2,6 +2,7 @@ import argparse
 import glob
 import json
 import os
+import signal
 import time
 
 import config
@@ -9,6 +10,15 @@ import waves
 from runner import run_task
 
 MAX_ATTEMPTS = 3
+TASK_TIMEOUT_MIN = 8  # тяжёлая задача не должна блокировать всю очередь
+
+
+class TaskTimeout(Exception):
+    pass
+
+
+def _on_alarm(signum, frame):
+    raise TaskTimeout("task timeout")
 
 
 def queue_files():
@@ -58,6 +68,54 @@ def load_queues():
                 t["status"] = "pending"
         queues.append((p, q))
     return queues
+
+
+def process_pending(queues, start, deadline):
+    """Обрабатывает pending-задачи до дедлайна. Возвращает число выполненных."""
+    done = 0
+    while time.time() < deadline:
+        task = None
+        for path, q in queues:
+            for t in q:
+                if t.get("status") == "pending":
+                    task = (path, q, t)
+                    break
+            if task:
+                break
+        if not task:
+            break
+        path, q, t = task
+        t["status"] = "running"
+        with open(path, "w") as f:
+            json.dump(q, f, ensure_ascii=False)
+        try:
+            signal.alarm(int(TASK_TIMEOUT_MIN * 60))
+            try:
+                res = run_task(t)
+            finally:
+                signal.alarm(0)
+            out = os.path.join("results", t["kind"], t["id"] + ".json")
+            os.makedirs(os.path.dirname(out), exist_ok=True)
+            with open(out, "w") as f:
+                json.dump(res, f)
+            t["status"] = "done"
+            t["result"] = out
+            done += 1
+            print("done", t["id"], flush=True)
+        except Exception as e:
+            att = int(t.get("attempts", 0)) + 1
+            t["attempts"] = att
+            t["error"] = str(e)[:300]
+            if att < MAX_ATTEMPTS:
+                t["status"] = "pending"  # auto-retry
+            else:
+                t["status"] = "error"
+            print("error(%d/%d)" % (att, MAX_ATTEMPTS), t["id"], str(e)[:120], flush=True)
+        with open(path, "w") as f:
+            json.dump(q, f, ensure_ascii=False)
+        all_tasks = [x for _, qq in queues for x in qq]
+        save_progress(all_tasks, start, "running")
+    return done
 
 
 def evolve(queues):
@@ -244,59 +302,26 @@ def main():
     args = ap.parse_args()
     start = time.time()
     os.makedirs("reports", exist_ok=True)
-    queues = load_queues()
-    done = 0
-    while time.time() - start < args.budget * 60 - 300:
-        task = None
-        for path, q in queues:
-            for t in q:
-                if t.get("status") == "pending":
-                    task = (path, q, t)
-                    break
-            if task:
-                break
-        if not task:
+    total_done = 0
+    # до трёх циклов за прогон: очередь -> волны -> снова очередь
+    for cycle in range(3):
+        deadline = start + args.budget * 60 - 300
+        if time.time() >= deadline:
             break
-        path, q, t = task
-        t["status"] = "running"
-        with open(path, "w") as f:
-            json.dump(q, f, ensure_ascii=False)
-        try:
-            res = run_task(t)
-            out = os.path.join("results", t["kind"], t["id"] + ".json")
-            os.makedirs(os.path.dirname(out), exist_ok=True)
-            with open(out, "w") as f:
-                json.dump(res, f)
-            t["status"] = "done"
-            t["result"] = out
-            done += 1
-            print("done", t["id"], flush=True)
-        except Exception as e:
-            att = int(t.get("attempts", 0)) + 1
-            t["attempts"] = att
-            t["error"] = str(e)[:300]
-            if att < MAX_ATTEMPTS:
-                t["status"] = "pending"  # auto-retry
-            else:
-                t["status"] = "error"
-            print("error(%d/%d)" % (att, MAX_ATTEMPTS), t["id"], str(e)[:120], flush=True)
-        with open(path, "w") as f:
-            json.dump(q, f, ensure_ascii=False)
+        queues = load_queues()
+        total_done += process_pending(queues, start, deadline)
         all_tasks = [x for _, qq in queues for x in qq]
-        save_progress(all_tasks, start, "running")
-    all_tasks = [x for _, qq in queues for x in qq]
-    pend = sum(1 for t in all_tasks if t.get("status") == "pending")
-    if pend == 0:
+        pend = sum(1 for t in all_tasks if t.get("status") == "pending")
+        if pend > 0 or time.time() >= deadline:
+            break
+        # очередь пуста: запускаем исследовательские волны
         evolve(queues)
         frontier(queues)
         rotate_leaders(queues)
         # ADAPTIVE: золотое подтверждение лидеров + реабилитация кандидатов
         waves.gold_wave(queues)
         waves.rescue(queues)
-    queues = load_queues()
-    all_tasks = [x for _, qq in queues for x in qq]
-    save_progress(all_tasks, start, "final")
-    print("processed", done)
+    print("processed", total_done, flush=True)
 
 
 if __name__ == "__main__":
