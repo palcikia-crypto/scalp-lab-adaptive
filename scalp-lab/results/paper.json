@@ -382,13 +382,17 @@
    "reason": "flat signal"
   }
  ],
- "updated": "2026-11-15T07:28:01Z",
- "runs": 9,
+ "updated": "2026-11-15T14:56:07Z",
+ "runs": 10,
  "alloc": {
   "vol_pop-UNIUSDT-15m": {
    "weight": 1.0,
    "mode": "live",
-   "reason": "новая, сделок ещё нет"
+   "reason": "стабильный плюс (wr 100%, +0.1%) — размер повышен",
+   "recent_pnl": 0.07,
+   "recent_wr": 100.0,
+   "loss_streak": 0,
+   "n_recent": 1
   },
   "spike_bb-BNBUSDT-5m": {
    "weight": 1.0,
@@ -401,8 +405,8 @@
   "spike_bb-BNBUSDT-5m": 0.6
  },
  "seen": {
-  "spike_bb-BNBUSDT-5m": "2026-11-15 07:20:00",
-  "vol_pop-UNIUSDT-15m": "2026-11-15 07:00:00"
+  "spike_bb-BNBUSDT-5m": "2026-11-15 14:50:00",
+  "vol_pop-UNIUSDT-15m": "2026-11-15 14:30:00"
  },
  "tops": [
   {

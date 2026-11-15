@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T07:27:58Z",
+ "updated": "2026-11-15T14:56:02Z",
  "regimes": {
   "trend": [
    "vol_pop-UNIUSDT-15m",
@@ -9,14 +9,14 @@
  "regime_detail": {
   "UNIUSDT-15m": {
    "regime": "trend",
-   "vol": 0.74,
-   "trend_score": 1.0,
-   "spike_score": 0.067
+   "vol": 0.77,
+   "trend_score": 0.438,
+   "spike_score": 0.033
   },
   "BNBUSDT-5m": {
    "regime": "trend",
-   "vol": 0.98,
-   "trend_score": 0.423,
+   "vol": 1.26,
+   "trend_score": 0.72,
    "spike_score": 0.0
   }
  },
@@ -27,6 +27,7 @@
  "learned": {
   "meanrev:range": 0.518,
   "meanrev:calm": 1.048,
-  "meanrev:spike": -0.031
+  "meanrev:spike": -0.031,
+  "trend:trend": 0.069
  }
 }

@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.23, "base_pf": 1.008, "neighbor_median_sharpe": 0.12, "n_neighbors": 4, "sharpe_half1": -0.16, "sharpe_half2": 0.62, "mc_p5_total": -0.4781, "folds": 22, "params": {"h": 60, "vz": 6.0}, "kind": "gold", "symbol": "OPUSDT", "tf": "15m", "strategy": "vol_burst_revert", "fee_mode": "maker"}
