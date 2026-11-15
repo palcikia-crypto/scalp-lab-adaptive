@@ -51,13 +51,10 @@ jobs:
           COMMENT_BODY: ${{ github.event.comment.body }}
         run: |
           git config user.name "AI Coder"
-          git config user.email "bot@://github.com"
-          
+          git config user.email "bot@users.noreply.github.com"
           BRANCH="ai-issue-${ISSUE_NUM}"
           git checkout -b "$BRANCH" || git checkout "$BRANCH"
-          
           PROMPT="${COMMENT_BODY:-$TASK_TITLE: $TASK_BODY}"
           aider --model openai/auto --yes --auto-commits --message "$PROMPT"
-          
           git push -u origin "$BRANCH"
           gh pr create --fill --base main --head "$BRANCH" || true
