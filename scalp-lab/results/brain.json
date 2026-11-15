@@ -1,33 +1,26 @@
 {
- "updated": "2026-11-15T14:56:02Z",
+ "updated": "2026-11-15T20:06:51Z",
  "regimes": {
-  "trend": [
-   "vol_pop-UNIUSDT-15m",
-   "spike_bb-BNBUSDT-5m"
+  "range": [
+   "vol_pop-UNIUSDT-15m"
   ]
  },
  "regime_detail": {
   "UNIUSDT-15m": {
-   "regime": "trend",
-   "vol": 0.77,
-   "trend_score": 0.438,
-   "spike_score": 0.033
-  },
-  "BNBUSDT-5m": {
-   "regime": "trend",
-   "vol": 1.26,
-   "trend_score": 0.72,
+   "regime": "range",
+   "vol": 0.67,
+   "trend_score": -0.204,
    "spike_score": 0.0
   }
  },
  "fit": {
-  "vol_pop-UNIUSDT-15m": 1.3,
-  "spike_bb-BNBUSDT-5m": 0.6
+  "vol_pop-UNIUSDT-15m": 0.5
  },
  "learned": {
   "meanrev:range": 0.518,
   "meanrev:calm": 1.048,
   "meanrev:spike": -0.031,
-  "trend:trend": 0.069
+  "trend:trend": 0.069,
+  "trend:range": 0.069
  }
 }
