@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 1.26, "base_pf": 1.022, "neighbor_median_sharpe": 0.93, "n_neighbors": 4, "sharpe_half1": 1.66, "sharpe_half2": 0.89, "mc_p5_total": -0.0456, "folds": 47, "params": {"k": 2.0, "n": 50}, "kind": "gold", "symbol": "ATOMUSDT", "tf": "5m", "strategy": "ema_snap", "fee_mode": "maker"}
