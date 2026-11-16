@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.7, "base_pf": 1.047, "neighbor_median_sharpe": 0.86, "n_neighbors": 8, "sharpe_half1": 0.67, "sharpe_half2": 0.74, "mc_p5_total": -0.0383, "folds": 47, "params": {"h": 60, "k": 2.5, "pct": 0.01, "vz": 2.0}, "kind": "gold", "symbol": "BNBUSDT", "tf": "5m", "strategy": "spike_bb", "fee_mode": "maker"}

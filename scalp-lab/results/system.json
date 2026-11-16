@@ -1,0 +1,127 @@
+{
+ "updated": "2026-11-16T07:02:27Z",
+ "stage": "исследование + золото",
+ "queue": {
+  "total": 2895,
+  "done": 2535,
+  "pending": 0,
+  "errors": 360,
+  "progress_pct": 87.6
+ },
+ "gold": {
+  "checked": 66,
+  "passed": 7,
+  "passed_list": [
+   {
+    "key": "vwap_reversion-LTCUSDT-15m",
+    "sharpe": 1.97
+   },
+   {
+    "key": "spike_revert-SUIUSDT-15m",
+    "sharpe": 2.62
+   },
+   {
+    "key": "streak_vol-SUIUSDT-15m",
+    "sharpe": 1.9
+   },
+   {
+    "key": "wick_vol-APTUSDT-15m",
+    "sharpe": 1.9
+   },
+   {
+    "key": "streak_vol-LTCUSDT-15m",
+    "sharpe": 1.47
+   },
+   {
+    "key": "ema_snap-APTUSDT-15m",
+    "sharpe": 1.77
+   },
+   {
+    "key": "streak_vol-SOLUSDT-15m",
+    "sharpe": 1.28
+   }
+  ]
+ },
+ "brain": {
+  "regimes": {
+   "trend": 1
+  },
+  "learned": {
+   "meanrev:range": 0.518,
+   "meanrev:calm": 1.048,
+   "meanrev:spike": -0.031,
+   "trend:trend": 0.069,
+   "trend:range": 0.069
+  },
+  "confidence_pct": {
+   "meanrev:range": 62,
+   "meanrev:calm": 24,
+   "meanrev:spike": 67,
+   "trend:trend": 24,
+   "trend:range": 16
+  }
+ },
+ "reality": {
+  "mult": 1.0,
+  "drawdown_pct": 3.88,
+  "alerts": []
+ },
+ "paper": {
+  "equity": 961.18,
+  "pnl_pct": -3.88,
+  "winrate": 57.1,
+  "n_trades": 21,
+  "open": 0,
+  "portfolio": [
+   {
+    "key": "vol_pop-UNIUSDT-15m",
+    "weight": 0.5,
+    "fit": 0.5,
+    "gold": false,
+    "signal": 0.0
+   }
+  ]
+ },
+ "recent_errors": [
+  {
+   "id": "fr-oi_exhaust-DOTUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-UNIUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-ATOMUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-NEARUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-ARBUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-OPUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-SUIUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-PEPEUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-FILUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-APTUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  }
+ ]
+}
