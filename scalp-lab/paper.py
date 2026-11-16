@@ -1,6 +1,6 @@
 """Paper trading ADAPTIVE: реальные сигналы топ-стратегий на живых данных
 Binance + адаптивное управление размером позиций + мозг рынка (brain.py)
-+ страж реальности (reality_check.py).
++ страж реальности (reality_check.py) + щиты безопасности.
 
 Каждый запуск (воркер каждые 30 минут):
 - берет топ-стратегии из результатов бэктестов (прошедшие фильтры);
@@ -10,6 +10,8 @@ Binance + адаптивное управление размером позиц�
 - мозг рынка (brain.py) определяет режим (trend/range/spike/chop) по живым
   свечам и даёт каждой стратегии множитель под текущий режим;
 - страж реальности (reality.json) даёт глобальный множитель по просадке;
+- щит 1: аварийный стоп-лосс - утопающая позиция закрывается принудительно;
+- щит 2: лимит стаи - перевес в одну сторону режет вес новых входов;
 - на свежих данных генерирует сигнал последнего закрытого бара;
 - открывает/закрывает виртуальные позиции, капитал $1000, сложный процент,
   вычитает funding по открытым позициям;
@@ -46,6 +48,13 @@ LOOKBACK_DAYS = {"1m": 2, "5m": 7, "15m": 12, "1h": 40}
 PAPER_BUDGET_S = 120
 COST = {"taker": 2 * (config.FEE + config.SLIP),
         "maker": 2 * (config.FEE_MAKER + config.SLIP_MAKER)}
+# === щиты безопасности (уроки обвала 2026-11-14) ===
+# щит 1: аварийный стоп-лосс по таймфрейму (доля движения цены)
+STOP_LOSS = {"1m": 0.025, "5m": 0.025, "15m": 0.04, "1h": 0.06}
+# после стопа пауза перед повторным входом той же стратегией (минуты)
+COOLDOWN_MIN = {"1m": 60, "5m": 120, "15m": 180, "1h": 240}
+# щит 2: не больше N открытых позиций в одну сторону; перевес - вес x0.3
+MAX_SAME_SIDE = 2
 
 
 def load_state():
@@ -285,7 +294,31 @@ def main():
             if pos is not None and fpb is not None:
                 # funding за бар удержания: лонг платит при положительном
                 pos["fund"] = pos.get("fund", 0.0) + pos["signal"] * fpb[i]
+            if pos is not None:
+                # щит 1: аварийный стоп-лосс - не ждём сигнал, режем убыток
+                loss = pos["signal"] * (px / pos["entry"] - 1.0)
+                sl = STOP_LOSS.get(t["tf"], 0.04)
+                if loss < -sl:
+                    close_pos(st, t["key"], px, ts, "stop loss")
+                    try:
+                        base_t = time.mktime(time.strptime(ts, "%Y-%m-%d %H:%M:%S"))
+                    except Exception:
+                        base_t = time.time()
+                    cd_until = time.strftime("%Y-%m-%d %H:%M:%S",
+                        time.gmtime(base_t + COOLDOWN_MIN.get(t["tf"], 120) * 60))
+                    st.setdefault("cooldown", {})[t["key"]] = cd_until
+                    print("paper: STOP LOSS", t["key"], "%.2f%%" % (loss * 100), flush=True)
+                    continue
             if s != 0.0:
+                cd = st.get("cooldown", {})
+                if pos is None and cd.get(t["key"], "") > ts:
+                    seen[t["key"]] = ts
+                    continue
+                if pos is None:
+                    # щит 2: лимит стаи - перевес в одну сторону режет вес
+                    same_side = sum(1 for pp in st["positions"].values() if pp["signal"] == s)
+                    if same_side >= MAX_SAME_SIDE:
+                        w = w * 0.3
                 if pos is None or pos["signal"] != s:
                     if pos is not None:
                         close_pos(st, t["key"], px, ts, "signal flip")
