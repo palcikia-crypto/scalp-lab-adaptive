@@ -24,27 +24,27 @@ jobs:
 
       - name: Run worker (queue + waves)
         working-directory: scalp-lab
-        run: python worker.py --budget 32
+        run: timeout 480 python worker.py --budget 32 > results/worker_log.txt 2> results/worker_err.txt || echo "worker exit nonzero" > results/worker_flag.txt
 
       - name: Run reporter
         working-directory: scalp-lab
-        run: python reporter.py || true
+        run: python reporter.py > results/reporter_log.txt 2> results/reporter_err.txt || echo "reporter exit nonzero" > results/reporter_flag.txt
 
       - name: Brain (market regime)
         working-directory: scalp-lab
-        run: python brain.py || true
+        run: python brain.py > results/brain_log.txt 2> results/brain_err.txt || echo "brain exit nonzero" > results/brain_flag.txt
 
       - name: Reality check
         working-directory: scalp-lab
-        run: python reality_check.py || true
+        run: python reality_check.py > results/reality_log.txt 2> results/reality_err.txt || echo "reality exit nonzero" > results/reality_flag.txt
 
       - name: System status + log
         working-directory: scalp-lab
-        run: python status.py || true
+        run: python status.py > results/status_log.txt 2> results/status_err.txt || echo "status exit nonzero" > results/status_flag.txt
 
       - name: Paper trading (adaptive + brain + reality)
         working-directory: scalp-lab
-        run: timeout 180 python paper.py || true
+        run: timeout 180 python paper.py > results/paper_log.txt 2> results/paper_err.txt || echo "paper exit nonzero" > results/paper_flag.txt
 
       - name: Commit results
         run: |
@@ -52,4 +52,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git diff --cached --quiet && echo "no changes" || git commit -m "bt: auto results $(date -u +'%m-%d %H:%M')"
-          git push
+          git push || (git fetch origin && git rebase origin/main && git push)
