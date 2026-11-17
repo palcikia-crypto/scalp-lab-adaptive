@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.69, "base_pf": 1.015, "neighbor_median_sharpe": 0.92, "n_neighbors": 4, "sharpe_half1": 0.13, "sharpe_half2": 1.19, "mc_p5_total": -0.7287, "folds": 22, "params": {"k": 2.0, "n": 200}, "kind": "gold", "symbol": "AVAXUSDT", "tf": "15m", "strategy": "bb_maker", "fee_mode": "maker"}

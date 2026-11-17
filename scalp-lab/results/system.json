@@ -1,28 +1,24 @@
 {
- "updated": "2026-11-16T16:59:51Z",
+ "updated": "2026-11-17T00:40:24Z",
  "stage": "исследование + золото",
  "queue": {
-  "total": 2921,
-  "done": 2561,
+  "total": 2939,
+  "done": 2579,
   "pending": 0,
   "errors": 360,
-  "progress_pct": 87.7
+  "progress_pct": 87.8
  },
  "gold": {
-  "checked": 84,
-  "passed": 8,
+  "checked": 102,
+  "passed": 10,
   "passed_list": [
-   {
-    "key": "streak_vol-LTCUSDT-15m",
-    "sharpe": 1.47
-   },
-   {
-    "key": "ema_snap-APTUSDT-15m",
-    "sharpe": 1.77
-   },
    {
     "key": "vwap_reversion-LTCUSDT-15m",
     "sharpe": 1.97
+   },
+   {
+    "key": "spike_revert-SUIUSDT-15m",
+    "sharpe": 2.62
    },
    {
     "key": "streak_vol-SUIUSDT-15m",
@@ -33,6 +29,18 @@
     "sharpe": 1.9
    },
    {
+    "key": "streak_vol-LTCUSDT-15m",
+    "sharpe": 1.47
+   },
+   {
+    "key": "crash_revert-DOGEUSDT-5m",
+    "sharpe": 1.81
+   },
+   {
+    "key": "ema_snap-APTUSDT-15m",
+    "sharpe": 1.77
+   },
+   {
     "key": "bb_vol-APTUSDT-15m",
     "sharpe": 2.21
    },
@@ -41,29 +49,30 @@
     "sharpe": 1.28
    },
    {
-    "key": "spike_revert-SUIUSDT-15m",
-    "sharpe": 2.62
+    "key": "streak_vol-ARBUSDT-15m",
+    "sharpe": 2.12
    }
   ]
  },
  "brain": {
   "regimes": {
-   "range": 1,
-   "trend": 1
+   "calm": 2
   },
   "learned": {
    "meanrev:range": 0.518,
-   "meanrev:calm": 1.048,
+   "meanrev:calm": -0.234,
    "meanrev:spike": -0.031,
    "trend:trend": 0.069,
-   "trend:range": 0.069
+   "trend:range": 0.069,
+   "meanrev:trend": -0.507
   },
   "confidence_pct": {
    "meanrev:range": 62,
-   "meanrev:calm": 24,
+   "meanrev:calm": 81,
    "meanrev:spike": 67,
    "trend:trend": 31,
-   "trend:range": 24
+   "trend:range": 24,
+   "meanrev:trend": 67
   }
  },
  "reality": {
@@ -79,16 +88,16 @@
   "open": 0,
   "portfolio": [
    {
-    "key": "vol_pop-UNIUSDT-15m",
-    "weight": 1.3,
-    "fit": 1.3,
+    "key": "bb_maker-NEARUSDT-1m",
+    "weight": 0.3,
+    "fit": 0.6,
     "gold": false,
     "signal": 0.0
    },
    {
-    "key": "spike_bb-BNBUSDT-5m",
-    "weight": 1.1,
-    "fit": 1.1,
+    "key": "bollinger_reversion-NEARUSDT-5m",
+    "weight": 0.612,
+    "fit": 0.6,
     "gold": false,
     "signal": 0.0
    }

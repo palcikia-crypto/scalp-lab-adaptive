@@ -20,23 +20,3 @@
   cur_start = end.to_period("M").start_time.tz_localize("UTC")
 /home/runner/work/scalp-lab-adaptive/scalp-lab-adaptive/scalp-lab/bt/data.py:54: UserWarning: Converting to Period representation will drop timezone information.
   cur_start = end.to_period("M").start_time.tz_localize("UTC")
-/home/runner/work/scalp-lab-adaptive/scalp-lab-adaptive/scalp-lab/bt/data.py:54: UserWarning: Converting to Period representation will drop timezone information.
-  cur_start = end.to_period("M").start_time.tz_localize("UTC")
-/home/runner/work/scalp-lab-adaptive/scalp-lab-adaptive/scalp-lab/bt/data.py:54: UserWarning: Converting to Period representation will drop timezone information.
-  cur_start = end.to_period("M").start_time.tz_localize("UTC")
-/home/runner/work/scalp-lab-adaptive/scalp-lab-adaptive/scalp-lab/bt/data.py:54: UserWarning: Converting to Period representation will drop timezone information.
-  cur_start = end.to_period("M").start_time.tz_localize("UTC")
-/home/runner/work/scalp-lab-adaptive/scalp-lab-adaptive/scalp-lab/bt/data.py:54: UserWarning: Converting to Period representation will drop timezone information.
-  cur_start = end.to_period("M").start_time.tz_localize("UTC")
-/home/runner/work/scalp-lab-adaptive/scalp-lab-adaptive/scalp-lab/bt/data.py:54: UserWarning: Converting to Period representation will drop timezone information.
-  cur_start = end.to_period("M").start_time.tz_localize("UTC")
-/home/runner/work/scalp-lab-adaptive/scalp-lab-adaptive/scalp-lab/bt/data.py:54: UserWarning: Converting to Period representation will drop timezone information.
-  cur_start = end.to_period("M").start_time.tz_localize("UTC")
-/home/runner/work/scalp-lab-adaptive/scalp-lab-adaptive/scalp-lab/bt/data.py:54: UserWarning: Converting to Period representation will drop timezone information.
-  cur_start = end.to_period("M").start_time.tz_localize("UTC")
-/home/runner/work/scalp-lab-adaptive/scalp-lab-adaptive/scalp-lab/bt/data.py:54: UserWarning: Converting to Period representation will drop timezone information.
-  cur_start = end.to_period("M").start_time.tz_localize("UTC")
-/home/runner/work/scalp-lab-adaptive/scalp-lab-adaptive/scalp-lab/bt/data.py:54: UserWarning: Converting to Period representation will drop timezone information.
-  cur_start = end.to_period("M").start_time.tz_localize("UTC")
-/home/runner/work/scalp-lab-adaptive/scalp-lab-adaptive/scalp-lab/bt/data.py:54: UserWarning: Converting to Period representation will drop timezone information.
-  cur_start = end.to_period("M").start_time.tz_localize("UTC")
