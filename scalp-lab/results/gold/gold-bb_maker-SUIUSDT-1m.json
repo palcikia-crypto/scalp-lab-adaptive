@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.11, "base_pf": 0.999, "neighbor_median_sharpe": -1.03, "n_neighbors": 4, "sharpe_half1": 1.25, "sharpe_half2": -1.29, "mc_p5_total": -0.5642, "folds": 32, "params": {"k": 2.5, "n": 100}, "kind": "gold", "symbol": "SUIUSDT", "tf": "1m", "strategy": "bb_maker", "fee_mode": "maker"}
