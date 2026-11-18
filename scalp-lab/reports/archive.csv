@@ -30,7 +30,6 @@ spike_follow,SOLUSDT,1m,1.329,1.087,0.88,76,32,0.31,180,,filtered
 spike_bb,DOGEUSDT,5m,1.283,1.086,1.22,106,47,0.36,365,,filtered
 spike_bb,ADAUSDT,15m,1.279,1.063,1.17,146,22,0.23,365,,filtered
 squeeze_pop,ADAUSDT,5m,1.276,1.076,1.21,95,47,0.36,365,,filtered
-wick_vol,OPUSDT,15m,1.256,1.048,2.31,1846,22,0.41,1460,,passed
 spike_revert,ATOMUSDT,1m,1.237,1.07,0.82,70,32,0.31,180,,filtered
 flow_fade,ATOMUSDT,1m,1.232,1.042,0.82,249,32,0.38,180,,filtered
 spike_bb,AVAXUSDT,5m,1.219,1.056,1.16,179,47,0.34,365,,filtered
@@ -250,7 +249,6 @@ spike_follow,DOTUSDT,5m,0.308,1.012,0.29,292,47,0.21,365,,filtered
 streak_vol,ADAUSDT,15m,0.308,1.008,0.28,352,22,0.27,365,,filtered
 bollinger_reversion,ADAUSDT,5m,0.303,1.005,0.29,1656,47,0.6,365,,filtered
 bb_regime,LINKUSDT,15m,0.299,1.007,0.27,387,22,0.27,365,,filtered
-bb_fast,LTCUSDT,15m,0.296,1.008,0.54,5061,22,0.36,1460,,filtered
 wick_vol,OPUSDT,5m,0.295,1.006,0.4,2982,47,0.21,730,,filtered
 bb_regime,ATOMUSDT,5m,0.293,1.004,0.28,1274,47,0.32,365,,filtered
 flow_fade,LINKUSDT,5m,0.293,1.005,0.28,2318,47,0.45,365,,filtered
@@ -270,6 +268,7 @@ spike_bb,LTCUSDT,5m,0.246,1.013,0.23,123,47,0.38,365,,filtered
 bb_maker,ARBUSDT,5m,0.246,1.003,0.23,1634,47,0.26,365,,filtered
 bb_fast,ADAUSDT,15m,0.239,1.006,0.22,1038,22,0.45,365,,filtered
 bb_regime,LTCUSDT,5m,0.237,1.004,0.45,4265,47,0.26,1460,,filtered
+bb_fast,LTCUSDT,15m,0.23,1.007,0.3,2241,22,0.41,730,,filtered
 bollinger_reversion,BNBUSDT,15m,0.225,1.007,0.21,513,22,0.59,365,,filtered
 spike_revert,XRPUSDT,15m,0.225,1.014,0.41,665,22,0.41,1460,,filtered
 vol_burst_revert,FILUSDT,5m,0.222,1.003,0.21,842,47,0.43,365,,filtered
@@ -300,6 +299,7 @@ crash_revert,ETHUSDT,1m,0.163,1.031,0.11,8,32,0.62,180,,filtered
 squeeze_pop,LTCUSDT,5m,0.159,1.009,0.15,104,47,0.38,365,,filtered
 flow_fade,LTCUSDT,15m,0.156,1.005,0.14,634,22,0.45,365,,filtered
 ema_snap,ARBUSDT,15m,0.153,1.006,0.14,574,22,0.55,365,,filtered
+wick_vol,OPUSDT,15m,0.152,1.006,0.2,985,22,0.23,730,,filtered
 qr_revert,NEARUSDT,5m,0.152,1.002,0.14,2386,47,0.34,365,,filtered
 bb_regime,PEPEUSDT,15m,0.152,1.004,0.14,345,22,0.27,365,,filtered
 bb_fast,FILUSDT,15m,0.145,1.004,0.13,1087,22,0.41,365,,filtered

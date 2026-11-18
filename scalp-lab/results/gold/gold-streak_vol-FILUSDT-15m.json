@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.75, "base_pf": 1.017, "neighbor_median_sharpe": 0.29, "n_neighbors": 6, "sharpe_half1": 0.65, "sharpe_half2": 0.84, "mc_p5_total": -0.6237, "folds": 22, "params": {"h": 60, "n_streak": 3, "vz": 2.0}, "kind": "gold", "symbol": "FILUSDT", "tf": "15m", "strategy": "streak_vol", "fee_mode": "maker"}
