@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.33, "base_pf": 0.991, "neighbor_median_sharpe": -0.09, "n_neighbors": 4, "sharpe_half1": -1.07, "sharpe_half2": 0.43, "mc_p5_total": -1.0433, "folds": 22, "params": {"k": 3.0, "n": 50}, "kind": "gold", "symbol": "FILUSDT", "tf": "15m", "strategy": "bollinger_reversion", "fee_mode": "maker"}
