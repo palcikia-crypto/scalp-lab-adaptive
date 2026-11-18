@@ -1,0 +1,1 @@
+{"gold": true, "base_sharpe": 3.84, "base_pf": 1.612, "neighbor_median_sharpe": 3.23, "n_neighbors": 6, "sharpe_half1": 5.62, "sharpe_half2": 1.83, "mc_p5_total": 0.0553, "folds": 22, "params": {"h": 60, "pct": 0.03, "vz": 3.0}, "kind": "gold", "symbol": "XRPUSDT", "tf": "15m", "strategy": "spike_revert", "fee_mode": "maker"}

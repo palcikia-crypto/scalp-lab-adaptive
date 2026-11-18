@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.44, "base_pf": 1.018, "neighbor_median_sharpe": 0.27, "n_neighbors": 4, "sharpe_half1": 1.66, "sharpe_half2": -0.79, "mc_p5_total": -0.1994, "folds": 22, "params": {"k": 3.0, "n": 20}, "kind": "gold", "symbol": "BNBUSDT", "tf": "15m", "strategy": "bollinger_reversion", "fee_mode": "maker"}

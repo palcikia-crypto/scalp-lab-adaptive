@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 1.03, "base_pf": 1.043, "neighbor_median_sharpe": 0.0, "n_neighbors": 4, "sharpe_half1": 1.51, "sharpe_half2": 0.58, "mc_p5_total": -0.2464, "folds": 22, "params": {"k": 2.5, "n": 10}, "kind": "gold", "symbol": "ADAUSDT", "tf": "15m", "strategy": "bb_fast", "fee_mode": "maker"}
