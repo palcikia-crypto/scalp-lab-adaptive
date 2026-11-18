@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.12, "base_pf": 1.003, "neighbor_median_sharpe": 0.31, "n_neighbors": 4, "sharpe_half1": 0.07, "sharpe_half2": 0.18, "mc_p5_total": -1.2852, "folds": 22, "params": {"n": 200, "q": 0.05}, "kind": "gold", "symbol": "FILUSDT", "tf": "15m", "strategy": "qr_revert", "fee_mode": "maker"}
