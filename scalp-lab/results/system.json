@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-19T15:10:17Z",
+ "updated": "2026-11-19T22:48:08Z",
  "stage": "исследование + золото",
  "queue": {
-  "total": 3083,
-  "done": 2723,
+  "total": 3101,
+  "done": 2741,
   "pending": 0,
   "errors": 360,
-  "progress_pct": 88.3
+  "progress_pct": 88.4
  },
  "gold": {
-  "checked": 246,
-  "passed": 14,
+  "checked": 264,
+  "passed": 17,
   "passed_list": [
    {
     "key": "vwap_reversion-LTCUSDT-15m",
@@ -31,6 +31,10 @@
    {
     "key": "wick_vol-APTUSDT-15m",
     "sharpe": 1.9
+   },
+   {
+    "key": "ema_snap-ATOMUSDT-15m",
+    "sharpe": 2.02
    },
    {
     "key": "streak_vol-XRPUSDT-15m",
@@ -57,6 +61,14 @@
     "sharpe": 1.77
    },
    {
+    "key": "bollinger_reversion-ATOMUSDT-15m",
+    "sharpe": 2.41
+   },
+   {
+    "key": "ema_snap-DOGEUSDT-15m",
+    "sharpe": 1.41
+   },
+   {
     "key": "bb_vol-APTUSDT-15m",
     "sharpe": 2.21
    },
@@ -72,15 +84,16 @@
  },
  "brain": {
   "regimes": {
-   "range": 2
+   "calm": 1,
+   "trend": 1
   },
   "learned": {
-   "meanrev:range": -0.094,
-   "meanrev:calm": -0.024,
+   "meanrev:range": -0.083,
+   "meanrev:calm": -0.089,
    "meanrev:spike": -0.166,
    "trend:trend": 0.069,
    "trend:range": 0.069,
-   "meanrev:trend": -0.283,
+   "meanrev:trend": -0.151,
    "meanrev:chop": -0.064
   },
   "confidence_pct": {
@@ -95,14 +108,14 @@
  },
  "reality": {
   "mult": 1.0,
-  "drawdown_pct": 5.65,
+  "drawdown_pct": 5.98,
   "alerts": []
  },
  "paper": {
-  "equity": 943.55,
-  "pnl_pct": -5.65,
-  "winrate": 61.1,
-  "n_trades": 54,
+  "equity": 940.23,
+  "pnl_pct": -5.98,
+  "winrate": 60.3,
+  "n_trades": 58,
   "open": 2,
   "portfolio": [
    {
@@ -110,14 +123,14 @@
     "weight": 0.438,
     "fit": 0.875,
     "gold": false,
-    "signal": -1.0
+    "signal": 1.0
    },
    {
     "key": "bollinger_reversion-NEARUSDT-5m",
-    "weight": 0.385,
-    "fit": 0.77,
+    "weight": 0.438,
+    "fit": 0.875,
     "gold": false,
-    "signal": -1.0
+    "signal": 1.0
    }
   ]
  },

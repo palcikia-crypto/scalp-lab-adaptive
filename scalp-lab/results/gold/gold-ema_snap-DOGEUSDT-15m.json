@@ -1,0 +1,1 @@
+{"gold": true, "base_sharpe": 1.41, "base_pf": 1.063, "neighbor_median_sharpe": 0.66, "n_neighbors": 4, "sharpe_half1": 2.62, "sharpe_half2": 0.06, "mc_p5_total": -0.0617, "folds": 22, "params": {"k": 2.5, "n": 20}, "kind": "gold", "symbol": "DOGEUSDT", "tf": "15m", "strategy": "ema_snap", "fee_mode": "maker"}

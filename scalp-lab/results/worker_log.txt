@@ -1,22 +1,22 @@
-done gold-ema_snap-ETHUSDT-15m
-done gold-spike_bb-ARBUSDT-15m
-done gold-vol_burst_revert-DOTUSDT-15m
-done gold-bb_maker-SOLUSDT-15m
-done gold-ema_snap-SUIUSDT-5m
-done gold-bb_vol-DOGEUSDT-5m
+done gold-streak_vol-ATOMUSDT-15m
+done gold-qr_revert-APTUSDT-1m
+done gold-spike_bb-ARBUSDT-5m
+done gold-ema_snap-DOGEUSDT-15m
+done gold-bb_vol-XRPUSDT-15m
+done gold-vwap_reversion-DOGEUSDT-15m
 gold: 6 leaders -> robustness check
-done gold-bb_maker-FILUSDT-1m
-done gold-level_fade-AVAXUSDT-15m
-done gold-bb_regime-DOGEUSDT-15m
-done gold-wick_vol-NEARUSDT-15m
-done gold-bb_fast-LTCUSDT-5m
-done gold-wick_vol-ADAUSDT-5m
+done gold-level_fade-OPUSDT-5m
+done gold-bb_regime-AVAXUSDT-5m
+done gold-qr_revert-LTCUSDT-15m
+done gold-qr_revert-DOGEUSDT-5m
+done gold-bb_fast-PEPEUSDT-5m
+done gold-bb_vol-LINKUSDT-15m
 gold: 6 leaders -> robustness check
-done gold-vol_burst_revert-ATOMUSDT-15m
-done gold-spike_revert-NEARUSDT-15m
-done gold-spike_revert-ARBUSDT-15m
-done gold-bb_fast-OPUSDT-15m
-done gold-vwap_reversion-DOTUSDT-15m
-done gold-vol_drift-UNIUSDT-1m
+done gold-ema_snap-LTCUSDT-5m
+done gold-ema_snap-ATOMUSDT-15m
+done gold-qr_revert-NEARUSDT-15m
+done gold-bb_vol-ADAUSDT-15m
+done gold-qr_revert-DOGEUSDT-15m
+done gold-bollinger_reversion-ATOMUSDT-15m
 gold: 6 leaders -> robustness check
 processed 18

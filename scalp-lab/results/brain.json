@@ -1,36 +1,38 @@
 {
- "updated": "2026-11-19T15:10:21Z",
+ "updated": "2026-11-19T22:48:13Z",
  "regimes": {
-  "range": [
-   "bb_maker-NEARUSDT-1m",
+  "calm": [
+   "bb_maker-NEARUSDT-1m"
+  ],
+  "trend": [
    "bollinger_reversion-NEARUSDT-5m"
   ]
  },
  "regime_detail": {
   "NEARUSDT-1m": {
-   "regime": "range",
-   "vol": 1.01,
-   "trend_score": -0.428,
+   "regime": "calm",
+   "vol": 0.65,
+   "trend_score": -0.095,
    "spike_score": 0.0
   },
   "NEARUSDT-5m": {
-   "regime": "range",
-   "vol": 0.78,
-   "trend_score": -0.683,
+   "regime": "trend",
+   "vol": 0.94,
+   "trend_score": 0.618,
    "spike_score": 0.0
   }
  },
  "fit": {
-  "bb_maker-NEARUSDT-1m": 0.875,
-  "bollinger_reversion-NEARUSDT-5m": 0.875
+  "bb_maker-NEARUSDT-1m": 0.77,
+  "bollinger_reversion-NEARUSDT-5m": 0.42
  },
  "learned": {
   "meanrev:range": -0.083,
-  "meanrev:calm": -0.024,
+  "meanrev:calm": -0.107,
   "meanrev:spike": -0.166,
   "trend:trend": 0.069,
   "trend:range": 0.069,
-  "meanrev:trend": -0.283,
+  "meanrev:trend": -0.106,
   "meanrev:chop": -0.064
  }
 }
