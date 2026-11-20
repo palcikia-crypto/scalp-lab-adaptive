@@ -1,36 +1,64 @@
 {
- "updated": "2026-11-20T12:30:00Z",
+ "updated": "2026-11-20T20:41:19Z",
  "stage": "исследование + золото",
  "queue": {
-  "total": 3137,
-  "done": 2777,
+  "total": 3155,
+  "done": 2795,
   "pending": 0,
   "errors": 360,
-  "progress_pct": 88.5
+  "progress_pct": 88.6
  },
  "gold": {
-  "checked": 300,
-  "passed": 17,
+  "checked": 318,
+  "passed": 18,
   "passed_list": [
+   {
+    "key": "vwap_reversion-LTCUSDT-15m",
+    "sharpe": 1.97
+   },
+   {
+    "key": "spike_revert-SUIUSDT-15m",
+    "sharpe": 2.62
+   },
+   {
+    "key": "streak_vol-SUIUSDT-15m",
+    "sharpe": 1.9
+   },
+   {
+    "key": "wick_vol-PEPEUSDT-15m",
+    "sharpe": 2.46
+   },
+   {
+    "key": "wick_vol-APTUSDT-15m",
+    "sharpe": 1.9
+   },
+   {
+    "key": "spike_revert-FILUSDT-15m",
+    "sharpe": 2.1
+   },
+   {
+    "key": "ema_snap-ATOMUSDT-15m",
+    "sharpe": 2.02
+   },
+   {
+    "key": "streak_vol-XRPUSDT-15m",
+    "sharpe": 1.38
+   },
+   {
+    "key": "ema_snap-LTCUSDT-15m",
+    "sharpe": 1.54
+   },
    {
     "key": "streak_vol-LTCUSDT-15m",
     "sharpe": 1.47
    },
    {
-    "key": "ema_snap-DOGEUSDT-15m",
-    "sharpe": 1.41
+    "key": "crash_revert-DOGEUSDT-5m",
+    "sharpe": 1.81
    },
    {
-    "key": "streak_vol-ARBUSDT-15m",
-    "sharpe": 2.12
-   },
-   {
-    "key": "streak_vol-SOLUSDT-15m",
-    "sharpe": 1.28
-   },
-   {
-    "key": "streak_vol-XRPUSDT-15m",
-    "sharpe": 1.38
+    "key": "spike_revert-XRPUSDT-15m",
+    "sharpe": 3.84
    },
    {
     "key": "ema_snap-APTUSDT-15m",
@@ -41,60 +69,37 @@
     "sharpe": 2.41
    },
    {
+    "key": "ema_snap-DOGEUSDT-15m",
+    "sharpe": 1.41
+   },
+   {
     "key": "bb_vol-APTUSDT-15m",
     "sharpe": 2.21
    },
    {
-    "key": "wick_vol-APTUSDT-15m",
-    "sharpe": 1.9
+    "key": "streak_vol-SOLUSDT-15m",
+    "sharpe": 1.28
    },
    {
-    "key": "crash_revert-DOGEUSDT-5m",
-    "sharpe": 1.81
-   },
-   {
-    "key": "vwap_reversion-LTCUSDT-15m",
-    "sharpe": 1.97
-   },
-   {
-    "key": "wick_vol-PEPEUSDT-15m",
-    "sharpe": 2.46
-   },
-   {
-    "key": "ema_snap-LTCUSDT-15m",
-    "sharpe": 1.54
-   },
-   {
-    "key": "streak_vol-SUIUSDT-15m",
-    "sharpe": 1.9
-   },
-   {
-    "key": "ema_snap-ATOMUSDT-15m",
-    "sharpe": 2.02
-   },
-   {
-    "key": "spike_revert-SUIUSDT-15m",
-    "sharpe": 2.62
-   },
-   {
-    "key": "spike_revert-XRPUSDT-15m",
-    "sharpe": 3.84
+    "key": "streak_vol-ARBUSDT-15m",
+    "sharpe": 2.12
    }
   ]
  },
  "brain": {
   "regimes": {
+   "chop": 1,
    "range": 2,
-   "calm": 1
+   "spike": 1
   },
   "learned": {
-   "meanrev:range": -0.279,
+   "meanrev:range": -0.26,
    "meanrev:calm": -0.107,
    "meanrev:spike": -0.149,
    "trend:trend": 0.069,
    "trend:range": 0.069,
    "meanrev:trend": -0.273,
-   "meanrev:chop": -0.064
+   "meanrev:chop": -0.248
   },
   "confidence_pct": {
    "meanrev:range": 100,
@@ -108,36 +113,43 @@
  },
  "reality": {
   "mult": 0.6,
-  "drawdown_pct": 10.79,
+  "drawdown_pct": 10.7,
   "alerts": [
-   "Просадка 10.8% от пика: глобальный размер x0.6"
+   "Просадка 10.7% от пика: глобальный размер x0.6"
   ]
  },
  "paper": {
-  "equity": 892.13,
-  "pnl_pct": -10.79,
-  "winrate": 56.7,
-  "n_trades": 67,
-  "open": 1,
+  "equity": 893.04,
+  "pnl_pct": -10.7,
+  "winrate": 57.1,
+  "n_trades": 70,
+  "open": 2,
   "portfolio": [
    {
     "key": "bb_maker-NEARUSDT-1m",
-    "weight": 0.126,
-    "fit": 0.42,
+    "weight": 0.263,
+    "fit": 0.875,
     "gold": false,
     "signal": 1.0
    },
    {
     "key": "bollinger_reversion-NEARUSDT-5m",
-    "weight": 0.168,
-    "fit": 0.56,
+    "weight": 0.263,
+    "fit": 0.875,
     "gold": false,
     "signal": 1.0
    },
    {
-    "key": "spike_bb-BNBUSDT-5m",
+    "key": "wick_vol-OPUSDT-15m",
     "weight": 0.525,
     "fit": 0.875,
+    "gold": false,
+    "signal": 0.0
+   },
+   {
+    "key": "spike_bb-BNBUSDT-5m",
+    "weight": 0.462,
+    "fit": 0.77,
     "gold": false,
     "signal": 0.0
    }

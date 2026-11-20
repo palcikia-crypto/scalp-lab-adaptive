@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.04, "base_pf": 0.999, "neighbor_median_sharpe": 0.26, "n_neighbors": 4, "sharpe_half1": 0.6, "sharpe_half2": -0.79, "mc_p5_total": -0.4083, "folds": 22, "params": {"h": 30, "k": 2.5}, "kind": "gold", "symbol": "XRPUSDT", "tf": "15m", "strategy": "flow_fade", "fee_mode": "maker"}
