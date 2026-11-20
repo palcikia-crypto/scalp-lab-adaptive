@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.04, "base_pf": 1.001, "neighbor_median_sharpe": -0.06, "n_neighbors": 6, "sharpe_half1": -0.61, "sharpe_half2": 0.72, "mc_p5_total": -0.8987, "folds": 22, "params": {"h": 30, "n": 60, "w": 0.001}, "kind": "gold", "symbol": "LINKUSDT", "tf": "15m", "strategy": "level_fade", "fee_mode": "maker"}

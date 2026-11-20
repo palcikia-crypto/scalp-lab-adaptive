@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.49, "base_pf": 0.99, "neighbor_median_sharpe": -0.53, "n_neighbors": 6, "sharpe_half1": 0.01, "sharpe_half2": -1.01, "mc_p5_total": -0.4764, "folds": 47, "params": {"h": 60, "n_streak": 4, "vz": 3.0}, "kind": "gold", "symbol": "BNBUSDT", "tf": "5m", "strategy": "streak_vol", "fee_mode": "maker"}
