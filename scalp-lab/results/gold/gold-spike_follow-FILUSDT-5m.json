@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.59, "base_pf": 0.914, "neighbor_median_sharpe": -0.45, "n_neighbors": 6, "sharpe_half1": 1.58, "sharpe_half2": -2.58, "mc_p5_total": -0.4938, "folds": 47, "params": {"h": 15, "pct": 0.03, "vz": 2.0}, "kind": "gold", "symbol": "FILUSDT", "tf": "5m", "strategy": "spike_follow", "fee_mode": "taker"}

@@ -2,7 +2,6 @@ strategy,symbol,tf,oos_sharpe,oos_pf,oos_t,trades,folds,param_stability,days,wav
 bb_maker,NEARUSDT,1m,2.338,1.014,1.55,3630,32,0.31,180,,passed
 crash_revert,PEPEUSDT,15m,2.261,1.12,2.08,142,22,0.23,365,,filtered
 spike_revert,FILUSDT,1m,2.191,1.135,1.45,98,32,0.31,180,,filtered
-spike_bb,BNBUSDT,5m,1.88,1.181,1.78,52,47,0.32,365,,filtered
 spike_revert,SUIUSDT,1m,1.879,1.14,1.24,95,32,0.31,180,,filtered
 crash_revert,SUIUSDT,1m,1.848,1.437,1.22,14,32,0.44,180,,filtered
 bb_regime,NEARUSDT,1m,1.673,1.01,1.11,2763,32,0.25,180,,passed
@@ -53,6 +52,7 @@ spike_revert,BTCUSDT,1m,1.072,1.174,0.71,13,32,0.5,180,,filtered
 bb_fast,BNBUSDT,15m,1.062,1.033,0.98,796,22,0.68,365,,filtered
 streak_vol,LTCUSDT,15m,1.05,1.039,0.96,376,22,0.32,365,,filtered
 vol_burst_revert,UNIUSDT,1m,1.04,1.007,0.69,1923,32,0.31,180,,filtered
+spike_bb,BNBUSDT,5m,1.035,1.098,1.96,335,47,0.3,1460,,passed
 spike_bb,DOGEUSDT,1m,1.032,1.098,0.68,56,32,0.47,180,,filtered
 vol_pop,AVAXUSDT,15m,1.03,1.042,0.95,383,22,0.41,365,,filtered
 bollinger_reversion,SUIUSDT,15m,1.023,1.029,0.94,608,22,0.41,365,,filtered
