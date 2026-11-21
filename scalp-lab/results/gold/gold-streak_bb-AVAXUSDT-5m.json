@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.5, "base_pf": 1.005, "neighbor_median_sharpe": -0.64, "n_neighbors": 6, "sharpe_half1": -0.26, "sharpe_half2": 1.1, "mc_p5_total": -0.9155, "folds": 47, "params": {"h": 60, "k": 2.0, "n_streak": 3}, "kind": "gold", "symbol": "AVAXUSDT", "tf": "5m", "strategy": "streak_bb", "fee_mode": "maker"}

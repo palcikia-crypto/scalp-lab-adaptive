@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.14, "base_pf": 0.997, "neighbor_median_sharpe": -0.4, "n_neighbors": 4, "sharpe_half1": -0.69, "sharpe_half2": 0.4, "mc_p5_total": -0.5874, "folds": 47, "params": {"h": 60, "vz": 6.0}, "kind": "gold", "symbol": "LINKUSDT", "tf": "5m", "strategy": "vol_burst_revert", "fee_mode": "maker"}

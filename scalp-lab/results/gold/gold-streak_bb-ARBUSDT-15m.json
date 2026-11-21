@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.47, "base_pf": 0.992, "neighbor_median_sharpe": -0.43, "n_neighbors": 6, "sharpe_half1": -1.42, "sharpe_half2": 0.32, "mc_p5_total": -1.5297, "folds": 22, "params": {"h": 60, "k": 1.5, "n_streak": 3}, "kind": "gold", "symbol": "ARBUSDT", "tf": "15m", "strategy": "streak_bb", "fee_mode": "maker"}
