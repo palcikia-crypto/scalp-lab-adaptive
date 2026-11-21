@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.31, "base_pf": 0.984, "neighbor_median_sharpe": -0.46, "n_neighbors": 4, "sharpe_half1": 0.3, "sharpe_half2": -0.97, "mc_p5_total": -0.5976, "folds": 22, "params": {"h": 5, "z": 3.0}, "kind": "gold", "symbol": "DOTUSDT", "tf": "15m", "strategy": "volume_surge", "fee_mode": "taker"}

@@ -1,42 +1,42 @@
 {
- "updated": "2026-11-21T09:09:25Z",
+ "updated": "2026-11-21T16:56:29Z",
  "regimes": {
-  "trend": [
+  "range": [
    "bb_maker-NEARUSDT-1m",
    "bollinger_reversion-NEARUSDT-5m"
   ],
-  "chop": [
+  "calm": [
    "wick_vol-OPUSDT-15m"
   ]
  },
  "regime_detail": {
   "NEARUSDT-1m": {
-   "regime": "trend",
-   "vol": 1.11,
-   "trend_score": 0.479,
-   "spike_score": 0.033
+   "regime": "range",
+   "vol": 0.33,
+   "trend_score": -0.432,
+   "spike_score": 0.0
   },
   "NEARUSDT-5m": {
-   "regime": "trend",
-   "vol": 1.09,
-   "trend_score": 0.487,
-   "spike_score": 0.067
+   "regime": "range",
+   "vol": 0.8,
+   "trend_score": -1.0,
+   "spike_score": 0.0
   },
   "OPUSDT-15m": {
-   "regime": "chop",
-   "vol": 1.47,
-   "trend_score": 0.217,
-   "spike_score": 0.067
+   "regime": "calm",
+   "vol": 0.88,
+   "trend_score": 0.194,
+   "spike_score": 0.0
   }
  },
  "fit": {
-  "bb_maker-NEARUSDT-1m": 0.42,
-  "bollinger_reversion-NEARUSDT-5m": 0.42,
-  "wick_vol-OPUSDT-15m": 0.63
+  "bb_maker-NEARUSDT-1m": 0.875,
+  "bollinger_reversion-NEARUSDT-5m": 0.875,
+  "wick_vol-OPUSDT-15m": 0.77
  },
  "learned": {
-  "meanrev:range": -0.227,
-  "meanrev:calm": -0.107,
+  "meanrev:range": -0.176,
+  "meanrev:calm": -0.042,
   "meanrev:spike": -0.149,
   "trend:trend": 0.069,
   "trend:range": 0.069,

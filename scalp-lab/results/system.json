@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-21T09:09:20Z",
+ "updated": "2026-11-21T16:56:22Z",
  "stage": "исследование + золото",
  "queue": {
-  "total": 3191,
-  "done": 2831,
+  "total": 3209,
+  "done": 2849,
   "pending": 0,
   "errors": 360,
-  "progress_pct": 88.7
+  "progress_pct": 88.8
  },
  "gold": {
-  "checked": 354,
-  "passed": 18,
+  "checked": 372,
+  "passed": 19,
   "passed_list": [
    {
     "key": "streak_vol-LTCUSDT-15m",
@@ -77,6 +77,10 @@
     "sharpe": 2.02
    },
    {
+    "key": "flow_fade-LINKUSDT-15m",
+    "sharpe": 1.64
+   },
+   {
     "key": "spike_revert-SUIUSDT-15m",
     "sharpe": 2.62
    },
@@ -88,16 +92,16 @@
  },
  "brain": {
   "regimes": {
-   "trend": 3,
-   "chop": 1
+   "range": 2,
+   "calm": 1
   },
   "learned": {
-   "meanrev:range": -0.227,
-   "meanrev:calm": -0.107,
+   "meanrev:range": -0.178,
+   "meanrev:calm": -0.073,
    "meanrev:spike": -0.149,
    "trend:trend": 0.069,
    "trend:range": 0.069,
-   "meanrev:trend": -0.161,
+   "meanrev:trend": -0.157,
    "meanrev:chop": -0.273
   },
   "confidence_pct": {
@@ -112,17 +116,17 @@
  },
  "reality": {
   "mult": 0.6,
-  "drawdown_pct": 11.09,
+  "drawdown_pct": 11.91,
   "alerts": [
-   "Просадка 11.1% от пика: глобальный размер x0.6"
+   "Просадка 11.9% от пика: глобальный размер x0.6"
   ]
  },
  "paper": {
-  "equity": 889.1,
-  "pnl_pct": -11.09,
-  "winrate": 56.4,
-  "n_trades": 78,
-  "open": 1,
+  "equity": 880.88,
+  "pnl_pct": -11.91,
+  "winrate": 56.5,
+  "n_trades": 85,
+  "open": 0,
   "portfolio": [
    {
     "key": "bb_maker-NEARUSDT-1m",
@@ -133,22 +137,15 @@
    },
    {
     "key": "bollinger_reversion-NEARUSDT-5m",
-    "weight": 0.263,
-    "fit": 0.875,
-    "gold": false,
-    "signal": 1.0
-   },
-   {
-    "key": "wick_vol-OPUSDT-15m",
-    "weight": 0.525,
-    "fit": 0.875,
+    "weight": 0.126,
+    "fit": 0.42,
     "gold": false,
     "signal": 0.0
    },
    {
-    "key": "spike_bb-BNBUSDT-5m",
-    "weight": 0.525,
-    "fit": 0.875,
+    "key": "wick_vol-OPUSDT-15m",
+    "weight": 0.378,
+    "fit": 0.63,
     "gold": false,
     "signal": 0.0
    }
