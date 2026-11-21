@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.2, "base_pf": 0.996, "neighbor_median_sharpe": -0.84, "n_neighbors": 4, "sharpe_half1": 1.03, "sharpe_half2": -1.35, "mc_p5_total": -1.2693, "folds": 22, "params": {"k": 2.0, "n": 20}, "kind": "gold", "symbol": "AVAXUSDT", "tf": "15m", "strategy": "bollinger_reversion", "fee_mode": "maker"}

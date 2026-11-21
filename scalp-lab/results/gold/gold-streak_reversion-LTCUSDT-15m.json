@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.65, "base_pf": 0.989, "neighbor_median_sharpe": -1.41, "n_neighbors": 4, "sharpe_half1": -2.19, "sharpe_half2": 0.95, "mc_p5_total": -0.8674, "folds": 22, "params": {"h": 60, "n_streak": 3}, "kind": "gold", "symbol": "LTCUSDT", "tf": "15m", "strategy": "streak_reversion", "fee_mode": "maker"}

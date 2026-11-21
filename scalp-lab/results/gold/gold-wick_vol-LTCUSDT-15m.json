@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.22, "base_pf": 1.005, "neighbor_median_sharpe": 0.03, "n_neighbors": 6, "sharpe_half1": 0.44, "sharpe_half2": 0.01, "mc_p5_total": -0.473, "folds": 22, "params": {"h": 60, "vz": 2.0, "w": 0.4}, "kind": "gold", "symbol": "LTCUSDT", "tf": "15m", "strategy": "wick_vol", "fee_mode": "maker"}
