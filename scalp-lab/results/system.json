@@ -1,15 +1,15 @@
 {
- "updated": "2026-11-21T01:59:24Z",
+ "updated": "2026-11-21T09:09:20Z",
  "stage": "исследование + золото",
  "queue": {
-  "total": 3173,
-  "done": 2813,
+  "total": 3191,
+  "done": 2831,
   "pending": 0,
   "errors": 360,
   "progress_pct": 88.7
  },
  "gold": {
-  "checked": 336,
+  "checked": 354,
   "passed": 18,
   "passed_list": [
    {
@@ -88,16 +88,16 @@
  },
  "brain": {
   "regimes": {
-   "trend": 1,
-   "range": 1
+   "trend": 3,
+   "chop": 1
   },
   "learned": {
-   "meanrev:range": -0.232,
+   "meanrev:range": -0.227,
    "meanrev:calm": -0.107,
    "meanrev:spike": -0.149,
    "trend:trend": 0.069,
    "trend:range": 0.069,
-   "meanrev:trend": -0.245,
+   "meanrev:trend": -0.161,
    "meanrev:chop": -0.273
   },
   "confidence_pct": {
@@ -112,24 +112,24 @@
  },
  "reality": {
   "mult": 0.6,
-  "drawdown_pct": 11.69,
+  "drawdown_pct": 11.09,
   "alerts": [
-   "Просадка 11.7% от пика: глобальный размер x0.6"
+   "Просадка 11.1% от пика: глобальный размер x0.6"
   ]
  },
  "paper": {
-  "equity": 883.09,
-  "pnl_pct": -11.69,
-  "winrate": 55.3,
-  "n_trades": 76,
-  "open": 2,
+  "equity": 889.1,
+  "pnl_pct": -11.09,
+  "winrate": 56.4,
+  "n_trades": 78,
+  "open": 1,
   "portfolio": [
    {
     "key": "bb_maker-NEARUSDT-1m",
-    "weight": 0.189,
-    "fit": 0.63,
+    "weight": 0.126,
+    "fit": 0.42,
     "gold": false,
-    "signal": 1.0
+    "signal": 0.0
    },
    {
     "key": "bollinger_reversion-NEARUSDT-5m",
@@ -137,6 +137,20 @@
     "fit": 0.875,
     "gold": false,
     "signal": 1.0
+   },
+   {
+    "key": "wick_vol-OPUSDT-15m",
+    "weight": 0.525,
+    "fit": 0.875,
+    "gold": false,
+    "signal": 0.0
+   },
+   {
+    "key": "spike_bb-BNBUSDT-5m",
+    "weight": 0.525,
+    "fit": 0.875,
+    "gold": false,
+    "signal": 0.0
    }
   ]
  },

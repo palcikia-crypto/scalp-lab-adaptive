@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.66, "base_pf": 1.04, "neighbor_median_sharpe": 0.05, "n_neighbors": 4, "sharpe_half1": 0.98, "sharpe_half2": 0.29, "mc_p5_total": -0.4621, "folds": 22, "params": {"h": 10, "z": 4.0}, "kind": "gold", "symbol": "UNIUSDT", "tf": "15m", "strategy": "volume_surge", "fee_mode": "taker"}
