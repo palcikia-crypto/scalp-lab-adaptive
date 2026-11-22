@@ -66,6 +66,10 @@ def load_queues():
             # tasks stuck in running (cancelled run) get retried
             if t.get("status") == "running":
                 t["status"] = "pending"
+            elif t.get("status") == "error" and "broadcast" in (t.get("error") or ""):
+                # фиксы двоичного шейпа fpb восстановили задачу - перезапускаем с нуля
+                t["status"] = "pending"
+                t["attempts"] = 0
         queues.append((p, q))
     return queues
 
