@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.83, "base_pf": 0.985, "neighbor_median_sharpe": -0.86, "n_neighbors": 4, "sharpe_half1": -1.23, "sharpe_half2": -0.32, "mc_p5_total": -1.1762, "folds": 22, "params": {"h": 30, "n_streak": 4}, "kind": "gold", "symbol": "ETHUSDT", "tf": "15m", "strategy": "streak_reversion", "fee_mode": "maker"}

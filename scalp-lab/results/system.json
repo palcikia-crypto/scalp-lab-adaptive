@@ -1,15 +1,15 @@
 {
- "updated": "2026-11-21T22:02:28Z",
+ "updated": "2026-11-22T02:01:45Z",
  "stage": "исследование + золото",
  "queue": {
-  "total": 3227,
-  "done": 2867,
+  "total": 3245,
+  "done": 2885,
   "pending": 0,
   "errors": 360,
-  "progress_pct": 88.8
+  "progress_pct": 88.9
  },
  "gold": {
-  "checked": 390,
+  "checked": 408,
   "passed": 19,
   "passed_list": [
    {
@@ -92,11 +92,12 @@
  },
  "brain": {
   "regimes": {
-   "calm": 3
+   "range": 2,
+   "calm": 1
   },
   "learned": {
    "meanrev:range": -0.176,
-   "meanrev:calm": -0.14,
+   "meanrev:calm": -0.11,
    "meanrev:spike": -0.149,
    "trend:trend": 0.069,
    "trend:range": 0.069,
@@ -125,25 +126,25 @@
   "pnl_pct": -12.53,
   "winrate": 56.2,
   "n_trades": 89,
-  "open": 0,
+  "open": 2,
   "portfolio": [
    {
     "key": "bb_maker-NEARUSDT-1m",
-    "weight": 0.263,
-    "fit": 0.875,
+    "weight": 0.115,
+    "fit": 0.77,
     "gold": false,
-    "signal": 0.0
+    "signal": -1.0
    },
    {
     "key": "bollinger_reversion-NEARUSDT-5m",
-    "weight": 0.263,
-    "fit": 0.875,
+    "weight": 0.115,
+    "fit": 0.77,
     "gold": false,
-    "signal": 0.0
+    "signal": -1.0
    },
    {
     "key": "wick_vol-OPUSDT-15m",
-    "weight": 0.476,
+    "weight": 0.238,
     "fit": 0.77,
     "gold": false,
     "signal": 0.0
