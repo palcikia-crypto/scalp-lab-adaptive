@@ -134,7 +134,6 @@ streak_vol,ARBUSDT,15m,0.692,1.024,0.64,376,22,0.23,365,,filtered
 vwap_reversion,NEARUSDT,1m,0.679,1.005,0.45,5383,32,0.41,180,,filtered
 bb_maker,AVAXUSDT,15m,0.674,1.015,0.62,521,22,0.32,365,,filtered
 bb_fast,BTCUSDT,15m,0.673,1.02,0.62,914,22,0.68,365,,filtered
-vol_pop,UNIUSDT,15m,0.67,1.029,0.62,347,22,0.59,365,,filtered
 streak_reversion,NEARUSDT,5m,0.661,1.006,0.63,4586,47,0.36,365,,filtered
 qr_revert,AVAXUSDT,15m,0.658,1.014,0.6,574,22,0.5,365,,filtered
 crash_revert,LINKUSDT,15m,0.657,1.054,0.6,58,22,0.18,365,,filtered
@@ -158,7 +157,6 @@ bb_regime,SUIUSDT,1m,0.586,1.004,0.39,2450,32,0.31,180,,filtered
 spike_bb,LINKUSDT,5m,0.585,1.033,0.56,103,47,0.43,365,,filtered
 qr_revert,SUIUSDT,5m,0.582,1.007,0.55,2232,47,0.38,365,,filtered
 vol_burst_revert,XRPUSDT,5m,0.58,1.009,0.55,998,47,0.26,365,,filtered
-streak_vol,SOLUSDT,15m,0.578,1.019,0.75,769,22,0.23,730,,filtered
 crash_revert,ETHUSDT,5m,0.578,1.053,0.55,50,47,0.26,365,,filtered
 bb_fast,OPUSDT,1m,0.575,1.004,0.38,6143,32,0.47,180,,filtered
 spike_bb,ATOMUSDT,1m,0.573,1.079,0.76,143,32,0.31,720,,filtered
@@ -402,6 +400,7 @@ bb_regime,ADAUSDT,5m,-0.111,0.999,-0.11,1005,47,0.26,365,,filtered
 wick_regime,UNIUSDT,15m,-0.123,0.998,-0.11,4520,22,0.32,365,,filtered
 spike_bb,UNIUSDT,5m,-0.124,0.994,-0.12,209,47,0.26,365,,filtered
 level_fade,LINKUSDT,15m,-0.125,0.998,-0.11,971,22,0.5,365,,filtered
+streak_vol,SOLUSDT,15m,-0.126,0.996,-0.23,1657,22,0.27,1460,,filtered
 bb_fast,AVAXUSDT,15m,-0.13,0.997,-0.12,1227,22,0.36,365,,filtered
 ema_snap,BNBUSDT,15m,-0.132,0.995,-0.12,587,22,0.36,365,,filtered
 streak_vol,SUIUSDT,15m,-0.135,0.996,-0.17,672,22,0.27,730,,filtered
@@ -453,6 +452,7 @@ bb_vol,BTCUSDT,15m,-0.261,0.992,-0.24,399,22,0.32,365,,filtered
 vol_burst_revert,OPUSDT,5m,-0.267,0.996,-0.25,910,47,0.38,365,,filtered
 bb_vol,UNIUSDT,5m,-0.269,0.995,-0.26,1325,47,0.13,365,,filtered
 squeeze_pop,SOLUSDT,15m,-0.27,0.979,-0.25,67,22,0.36,365,,filtered
+vol_pop,UNIUSDT,15m,-0.273,0.987,-0.5,1512,22,0.32,1460,,filtered
 vol_burst_revert,LINKUSDT,5m,-0.274,0.996,-0.26,915,47,0.32,365,,filtered
 level_fade,ATOMUSDT,5m,-0.275,0.997,-0.26,3031,47,0.32,365,,filtered
 spike_bb,ADAUSDT,1m,-0.277,0.979,-0.18,70,32,0.31,180,,filtered
