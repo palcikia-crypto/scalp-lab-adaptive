@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-22T02:01:45Z",
+ "updated": "2026-11-22T09:32:48Z",
  "stage": "исследование + золото",
  "queue": {
-  "total": 3245,
-  "done": 2885,
+  "total": 3263,
+  "done": 2903,
   "pending": 0,
   "errors": 360,
-  "progress_pct": 88.9
+  "progress_pct": 89.0
  },
  "gold": {
-  "checked": 408,
-  "passed": 19,
+  "checked": 426,
+  "passed": 20,
   "passed_list": [
    {
     "key": "streak_vol-LTCUSDT-15m",
@@ -43,6 +43,10 @@
    {
     "key": "bb_vol-APTUSDT-15m",
     "sharpe": 2.21
+   },
+   {
+    "key": "streak_vol-ETHUSDT-15m",
+    "sharpe": 1.45
    },
    {
     "key": "wick_vol-APTUSDT-15m",
@@ -92,16 +96,16 @@
  },
  "brain": {
   "regimes": {
-   "range": 2,
-   "calm": 1
+   "trend": 1,
+   "range": 3
   },
   "learned": {
-   "meanrev:range": -0.176,
-   "meanrev:calm": -0.11,
+   "meanrev:range": -0.169,
+   "meanrev:calm": -0.076,
    "meanrev:spike": -0.149,
    "trend:trend": 0.069,
    "trend:range": 0.069,
-   "meanrev:trend": -0.157,
+   "meanrev:trend": -0.128,
    "meanrev:chop": -0.273
   },
   "confidence_pct": {
@@ -116,29 +120,29 @@
  },
  "reality": {
   "mult": 0.3,
-  "drawdown_pct": 12.53,
+  "drawdown_pct": 12.4,
   "alerts": [
-   "ПРОСАДКА 12.5% от пика: глобальный размер x0.3"
+   "ПРОСАДКА 12.4% от пика: глобальный размер x0.3"
   ]
  },
  "paper": {
-  "equity": 874.67,
-  "pnl_pct": -12.53,
-  "winrate": 56.2,
-  "n_trades": 89,
+  "equity": 876.03,
+  "pnl_pct": -12.4,
+  "winrate": 57.1,
+  "n_trades": 91,
   "open": 2,
   "portfolio": [
    {
     "key": "bb_maker-NEARUSDT-1m",
-    "weight": 0.115,
-    "fit": 0.77,
+    "weight": 0.131,
+    "fit": 0.875,
     "gold": false,
     "signal": -1.0
    },
    {
     "key": "bollinger_reversion-NEARUSDT-5m",
-    "weight": 0.115,
-    "fit": 0.77,
+    "weight": 0.131,
+    "fit": 0.875,
     "gold": false,
     "signal": -1.0
    },
@@ -146,6 +150,13 @@
     "key": "wick_vol-OPUSDT-15m",
     "weight": 0.238,
     "fit": 0.77,
+    "gold": false,
+    "signal": 0.0
+   },
+   {
+    "key": "spike_bb-BNBUSDT-5m",
+    "weight": 0.263,
+    "fit": 0.875,
     "gold": false,
     "signal": 0.0
    }

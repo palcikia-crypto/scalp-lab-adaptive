@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.9, "base_pf": 0.994, "neighbor_median_sharpe": -1.23, "n_neighbors": 8, "sharpe_half1": 1.57, "sharpe_half2": -2.79, "mc_p5_total": -0.6722, "folds": 32, "params": {"h": 60, "k": 2.0, "n": 100, "vz": 2.0}, "kind": "gold", "symbol": "LTCUSDT", "tf": "1m", "strategy": "bb_vol", "fee_mode": "maker"}

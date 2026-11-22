@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -1.05, "base_pf": 0.978, "neighbor_median_sharpe": -0.98, "n_neighbors": 4, "sharpe_half1": -2.05, "sharpe_half2": 0.02, "mc_p5_total": -0.8563, "folds": 47, "params": {"k": 2.0, "n": 20}, "kind": "gold", "symbol": "SOLUSDT", "tf": "5m", "strategy": "ema_snap", "fee_mode": "maker"}

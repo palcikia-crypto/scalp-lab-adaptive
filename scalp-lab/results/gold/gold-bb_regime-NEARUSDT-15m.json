@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.67, "base_pf": 1.014, "neighbor_median_sharpe": 0.32, "n_neighbors": 6, "sharpe_half1": -1.32, "sharpe_half2": 2.63, "mc_p5_total": -0.8242, "folds": 22, "params": {"k": 2.0, "n": 200, "vz_max": 1.5}, "kind": "gold", "symbol": "NEARUSDT", "tf": "15m", "strategy": "bb_regime", "fee_mode": "maker"}
