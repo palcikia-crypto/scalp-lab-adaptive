@@ -1,1 +1,102 @@
-import numpy as np\nimport pandas as pd\nfrom collections import Counter\n\nfrom bt.stats import metrics\n\n\ndef _funding_per_bar(df, tf_min):\n    """Funding-платёж на бар: ставка за интервал (обычно 8 часов)\n    масштабируется в долю бара. Лонг платит при положительном funding,\n    шорт получает (и наоборот при отрицательном)."""\n    if "funding" not in df.columns:\n        return None\n    fr = pd.to_numeric(df["funding"], errors="coerce").fillna(0.0).values\n    return fr * (tf_min / 480.0)\n\n\ndef position_returns(df, pos, fee, slip, fpb=None, maker=None):\n    """net-доходность позиции.\n\n    maker = (fee_maker, slip_maker): консервативная модель исполнения.\n    Лимитный ордер (вход или выход) засчитывается по maker-комиссии только\n    если на баре исполнения цена реально коснулась уровня (close предыдущего\n    бара): лонг - low <= ref, шорт - high >= ref. Если касания не было,\n    переход считается исполненным тейкером (fee + slip). Это убирает\n    завышение maker-результатов из-за неисполнившихся лимитников."""\n    ret = df["close"].pct_change().fillna(0.0)\n    p = pos.shift(1).fillna(0.0)\n    gross = p * ret\n    d = p.diff().fillna(0.0)\n    cost_rate = np.full(len(df), fee + slip)\n    if maker is not None:\n        fee_m, slip_m = maker\n        close = df["close"].values.astype(float)\n        low = df["low"].values.astype(float) if "low" in df.columns else close\n        high = df["high"].values.astype(float) if "high" in df.columns else close\n        ref = np.roll(close, 1)\n        ref[0] = close[0]\n        dv = d.values\n        touched = np.where(dv > 0, low <= ref,\n                  np.where(dv < 0, high >= ref, True))\n        cost_rate = np.where(touched, fee_m + slip_m, fee + slip)\n    costs = d.abs().values * cost_rate\n    if fpb is not None:\n        costs = costs + p.values * fpb\n    net = gross.values - costs\n    n_trades = int((d.abs() > 1e-12).sum())\n    return net, n_trades\n\n\ndef walk_forward(df, sigs, train_bars, test_bars, fee, slip, tf_min,\n                 fee2=None, slip2=None):\n    bars_per_year = 365.0 * 24 * 60 / tf_min\n    keys = list(sigs.keys())\n    if not keys:\n        return {"error": "no valid params"}\n    fpb = _funding_per_bar(df, tf_min)\n    oos_parts = []\n    oos2_parts = []\n    chosen = []\n    is_sharpes = []\n    total_trades = 0\n    t0 = train_bars\n    while t0 + test_bars <= len(df):\n        best_key, best_is = None, -1e9\n        for k in keys:\n            a, b = t0 - train_bars, t0\n            fpb_w = fpb[a:b] if fpb is not None else None\n            net, _ = position_returns(df.iloc[a:b], sigs[k].iloc[a:b], fee, slip, fpb=fpb_w)\n            m = metrics(net, bars_per_year)\n            if m["sharpe"] > best_is:\n                best_is, best_key = m["sharpe"], k\n        a, b = t0, t0 + test_bars\n        fpb_w = fpb[a:b] if fpb is not None else None\n        net, trades = position_returns(df.iloc[a:b], sigs[best_key].iloc[a:b], fee, slip, fpb=fpb_w)\n        oos_parts.append(net)\n        if fee2 is not None:\n            net2, _ = position_returns(df.iloc[a:b], sigs[best_key].iloc[a:b],\n                                       fee, slip, fpb=fpb_w, maker=(fee2, slip2))\n            oos2_parts.append(net2)\n        chosen.append(best_key)\n        is_sharpes.append(best_is)\n        total_trades += trades\n        t0 += test_bars\n    if not oos_parts:\n        return {"error": "not enough bars"}\n    oos_ret = np.concatenate(oos_parts)\n    mo = metrics(oos_ret, bars_per_year)\n    top = Counter(chosen).most_common(1)[0]\n    res = {\n        "oos": mo,\n        "trades": int(total_trades),\n        "is_sharpe_avg": float(np.mean(is_sharpes)),\n        "folds": int(len(chosen)),\n        "param_stability": float(top[1] / len(chosen)),\n        "top_param": top[0],\n        "funding_cost": bool(fpb is not None and np.any(fpb != 0.0)),\n    }\n    if oos2_parts:\n        mo2 = metrics(np.concatenate(oos2_parts), bars_per_year)\n        res["oos_maker"] = mo2\n    return res\n
+import numpy as np
+import pandas as pd
+from collections import Counter
+
+from bt.stats import metrics
+
+
+def _funding_per_bar(df, tf_min):
+    """Funding-платёж на бар: ставка за интервал (обычно 8 часов)
+    масштабируется в долю бара. Лонг платит при положительном funding,
+    шорт получает (и наоборот при отрицательном)."""
+    if "funding" not in df.columns:
+        return None
+    fr = pd.to_numeric(df["funding"], errors="coerce").fillna(0.0).values
+    return fr * (tf_min / 480.0)
+
+
+def position_returns(df, pos, fee, slip, fpb=None, maker=None):
+    """net-доходность позиции.
+
+    maker = (fee_maker, slip_maker): консервативная модель исполнения.
+    Лимитный ордер (вход или выход) засчитывается по maker-комиссии только
+    если на баре исполнения цена реально коснулась уровня (close предыдущего
+    бара): лонг - low <= ref, шорт - high >= ref. Если касания не было,
+    переход считается исполненным тейкером (fee + slip). Это убирает
+    завышение maker-результатов из-за неисполнившихся лимитников."""
+    ret = df["close"].pct_change().fillna(0.0)
+    p = pos.shift(1).fillna(0.0)
+    gross = p * ret
+    d = p.diff().fillna(0.0)
+    cost_rate = np.full(len(df), fee + slip)
+    if maker is not None:
+        fee_m, slip_m = maker
+        close = df["close"].values.astype(float)
+        low = df["low"].values.astype(float) if "low" in df.columns else close
+        high = df["high"].values.astype(float) if "high" in df.columns else close
+        ref = np.roll(close, 1)
+        ref[0] = close[0]
+        dv = d.values
+        touched = np.where(dv > 0, low <= ref,
+                  np.where(dv < 0, high >= ref, True))
+        cost_rate = np.where(touched, fee_m + slip_m, fee + slip)
+    costs = d.abs().values * cost_rate
+    if fpb is not None:
+        costs = costs + p.values * fpb
+    net = gross.values - costs
+    n_trades = int((d.abs() > 1e-12).sum())
+    return net, n_trades
+
+
+def walk_forward(df, sigs, train_bars, test_bars, fee, slip, tf_min,
+                 fee2=None, slip2=None):
+    bars_per_year = 365.0 * 24 * 60 / tf_min
+    keys = list(sigs.keys())
+    if not keys:
+        return {"error": "no valid params"}
+    fpb = _funding_per_bar(df, tf_min)
+    oos_parts = []
+    oos2_parts = []
+    chosen = []
+    is_sharpes = []
+    total_trades = 0
+    t0 = train_bars
+    while t0 + test_bars <= len(df):
+        best_key, best_is = None, -1e9
+        for k in keys:
+            a, b = t0 - train_bars, t0
+            fpb_w = fpb[a:b] if fpb is not None else None
+            net, _ = position_returns(df.iloc[a:b], sigs[k].iloc[a:b], fee, slip, fpb=fpb_w)
+            m = metrics(net, bars_per_year)
+            if m["sharpe"] > best_is:
+                best_is, best_key = m["sharpe"], k
+        a, b = t0, t0 + test_bars
+        fpb_w = fpb[a:b] if fpb is not None else None
+        net, trades = position_returns(df.iloc[a:b], sigs[best_key].iloc[a:b], fee, slip, fpb=fpb_w)
+        oos_parts.append(net)
+        if fee2 is not None:
+            net2, _ = position_returns(df.iloc[a:b], sigs[best_key].iloc[a:b],
+                                       fee, slip, fpb=fpb_w, maker=(fee2, slip2))
+            oos2_parts.append(net2)
+        chosen.append(best_key)
+        is_sharpes.append(best_is)
+        total_trades += trades
+        t0 += test_bars
+    if not oos_parts:
+        return {"error": "not enough bars"}
+    oos_ret = np.concatenate(oos_parts)
+    mo = metrics(oos_ret, bars_per_year)
+    top = Counter(chosen).most_common(1)[0]
+    res = {
+        "oos": mo,
+        "trades": int(total_trades),
+        "is_sharpe_avg": float(np.mean(is_sharpes)),
+        "folds": int(len(chosen)),
+        "param_stability": float(top[1] / len(chosen)),
+        "top_param": top[0],
+        "funding_cost": bool(fpb is not None and np.any(fpb != 0.0)),
+    }
+    if oos2_parts:
+        mo2 = metrics(np.concatenate(oos2_parts), bars_per_year)
+        res["oos_maker"] = mo2
+    return res

@@ -1,1 +1,60 @@
-name: BT Worker\n\non:\n  schedule:\n    - cron: '*/30 * * * *'\n  workflow_dispatch:\n\npermissions:\n  contents: write\n\nconcurrency:\n  group: bt-worker\n  cancel-in-progress: false\n\njobs:\n  worker:\n    runs-on: ubuntu-latest\n    timeout-minutes: 55\n    steps:\n      - uses: actions/checkout@v4\n\n      - uses: actions/setup-python@v5\n        with:\n          python-version: '3.11'\n\n      - name: Install deps\n        run: pip install pandas numpy requests\n\n      - name: Run worker (queue + waves)\n        working-directory: scalp-lab\n        run: timeout 480 python worker.py --budget 32 > results/worker_log.txt 2> results/worker_err.txt || echo "worker exit nonzero" > results/worker_flag.txt\n\n      - name: Run reporter\n        working-directory: scalp-lab\n        run: python reporter.py > results/reporter_log.txt 2> results/reporter_err.txt || echo "reporter exit nonzero" > results/reporter_flag.txt\n\n      - name: Brain (market regime)\n        working-directory: scalp-lab\n        run: python brain.py > results/brain_log.txt 2> results/brain_err.txt || echo "brain exit nonzero" > results/brain_flag.txt\n\n      - name: Reality check\n        working-directory: scalp-lab\n        run: python reality_check.py > results/reality_log.txt 2> results/reality_err.txt || echo "reality exit nonzero" > results/reality_flag.txt\n\n      - name: System status + log\n        working-directory: scalp-lab\n        run: python status.py > results/status_log.txt 2> results/status_err.txt || echo "status exit nonzero" > results/status_flag.txt\n\n      - name: Paper trading (adaptive + brain + reality)\n        working-directory: scalp-lab\n        run: timeout 180 python paper.py > results/paper_log.txt 2> results/paper_err.txt || echo "paper exit nonzero" > results/paper_flag.txt\n\n      - name: Commit results\n        run: |\n          git config user.name "github-actions[bot]"\n          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"\n          git add -A\n          git diff --cached --quiet && echo "no changes" || git commit -m "bt: auto results $(date -u +'%m-%d %H:%M')"\n          git push || (git fetch origin && git rebase origin/main && git push)\n
+name: BT Worker
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bt-worker
+  cancel-in-progress: false
+
+jobs:
+  worker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install pandas numpy requests
+
+      - name: Run worker (queue + waves)
+        working-directory: scalp-lab
+        run: timeout 480 python worker.py --budget 32 > results/worker_log.txt 2> results/worker_err.txt || echo "worker exit nonzero" > results/worker_flag.txt
+
+      - name: Run reporter
+        working-directory: scalp-lab
+        run: python reporter.py > results/reporter_log.txt 2> results/reporter_err.txt || echo "reporter exit nonzero" > results/reporter_flag.txt
+
+      - name: Brain (market regime)
+        working-directory: scalp-lab
+        run: python brain.py > results/brain_log.txt 2> results/brain_err.txt || echo "brain exit nonzero" > results/brain_flag.txt
+
+      - name: Reality check
+        working-directory: scalp-lab
+        run: python reality_check.py > results/reality_log.txt 2> results/reality_err.txt || echo "reality exit nonzero" > results/reality_flag.txt
+
+      - name: System status + log
+        working-directory: scalp-lab
+        run: python status.py > results/status_log.txt 2> results/status_err.txt || echo "status exit nonzero" > results/status_flag.txt
+
+      - name: Paper trading (adaptive + brain + reality)
+        working-directory: scalp-lab
+        run: timeout 180 python paper.py > results/paper_log.txt 2> results/paper_err.txt || echo "paper exit nonzero" > results/paper_flag.txt
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.git
+hub.com"
+          git add -A
+          git diff --cached --quiet && echo "no changes" || git commit -m "bt: auto results $(date -u +'%m-%d %H:%M')"
+          git push || (git fetch origin && git rebase origin/main && git push)

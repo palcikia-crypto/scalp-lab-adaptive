@@ -1,1 +1,42 @@
-name: Pages\n\non:\n  schedule:\n    - cron: '40 * * * *'\n  workflow_dispatch:\n  push:\n    branches: [main]\n    paths:\n      - 'dashboard/**'\n      - '.github/workflows/pages.yml'\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: pages\n  cancel-in-progress: true\n\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: "Copy live data into dashboard (paper, brain, system, reality)"\n        run: |\n          mkdir -p dashboard/results\n          for f in paper.json brain.json system.json reality.json progress.json; do\n            if [ -f scalp-lab/results/$f ]; then cp scalp-lab/results/$f dashboard/results/$f; fi\n          done\n          ls -la dashboard/results || true\n\n      - uses: actions/configure-pages@v5\n\n      - uses: actions/upload-pages-artifact@v3\n        with:\n          path: dashboard\n\n      - uses: actions/deploy-pages@v4\n
+name: Pages
+
+on:
+  schedule:
+    - cron: '40 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'dashboard/**'
+      - '.github/workflows/pages.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: "Copy live data into dashboard (paper, brain, system, reality)"
+        run: |
+          mkdir -p dashboard/results
+          for f in paper.json brain.json system.json reality.json progress.json; do
+            if [ -f scalp-lab/results/$f ]; then cp scalp-lab/results/$f dashboard/results/$f; fi
+          done
+          ls -la dashboard/results || true
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboard
+
+      - uses: actions/deploy-pages@v4
