@@ -1,1 +1,2 @@
+paper: shadow mode for vol_burst_revert-ARBUSDT-5m - 3 убытков подряд / сумма -7.6% — пауза, сигналы пишутся без риска
 paper: equity 1289.31, trades 83, open 0, shadow 0

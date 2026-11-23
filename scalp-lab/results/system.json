@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-23T00:38:25Z",
+ "updated": "2026-11-23T07:30:15Z",
  "stage": "разгон очереди",
  "queue": {
-  "total": 3269,
-  "done": 3021,
-  "pending": 248,
+  "total": 4497,
+  "done": 4481,
+  "pending": 16,
   "errors": 0,
-  "progress_pct": 92.4
+  "progress_pct": 99.6
  },
  "gold": {
   "checked": 426,
@@ -95,10 +95,13 @@
   ]
  },
  "brain": {
-  "regimes": {},
+  "regimes": {
+   "calm": 2,
+   "range": 1
+  },
   "learned": {
-   "meanrev:range": -0.072,
-   "meanrev:calm": -0.076,
+   "meanrev:range": 0.437,
+   "meanrev:calm": 0.436,
    "meanrev:spike": -0.149,
    "trend:trend": 0.069,
    "trend:range": 0.069,
@@ -121,53 +124,34 @@
   "alerts": []
  },
  "paper": {
-  "equity": null,
-  "pnl_pct": null,
-  "winrate": null,
-  "n_trades": null,
-  "open": null,
-  "portfolio": []
+  "equity": 1289.31,
+  "pnl_pct": 28.93,
+  "winrate": 66.3,
+  "n_trades": 83,
+  "open": 0,
+  "portfolio": [
+   {
+    "key": "bb_maker-NEARUSDT-1m",
+    "weight": 1.225,
+    "fit": 0.875,
+    "gold": false,
+    "signal": 0.0
+   },
+   {
+    "key": "bollinger_reversion-NEARUSDT-5m",
+    "weight": 0.875,
+    "fit": 0.875,
+    "gold": false,
+    "signal": 0.0
+   },
+   {
+    "key": "wick_vol-OPUSDT-15m",
+    "weight": 0.875,
+    "fit": 0.875,
+    "gold": false,
+    "signal": 0.0
+   }
+  ]
  },
- "recent_errors": [
-  {
-   "id": "fr-oi_exhaust-DOTUSDT-1m",
-   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
-  },
-  {
-   "id": "fr-oi_exhaust-UNIUSDT-1m",
-   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
-  },
-  {
-   "id": "fr-oi_exhaust-ATOMUSDT-1m",
-   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
-  },
-  {
-   "id": "fr-oi_exhaust-NEARUSDT-1m",
-   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
-  },
-  {
-   "id": "fr-oi_exhaust-ARBUSDT-1m",
-   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
-  },
-  {
-   "id": "fr-oi_exhaust-OPUSDT-1m",
-   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
-  },
-  {
-   "id": "fr-oi_exhaust-SUIUSDT-1m",
-   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
-  },
-  {
-   "id": "fr-oi_exhaust-PEPEUSDT-1m",
-   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
-  },
-  {
-   "id": "fr-oi_exhaust-FILUSDT-1m",
-   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
-  },
-  {
-   "id": "fr-oi_exhaust-APTUSDT-1m",
-   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
-  }
- ]
+ "recent_errors": []
 }

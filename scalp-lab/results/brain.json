@@ -1,44 +1,80 @@
 {
- "updated": "2026-11-23T00:38:33Z",
+ "updated": "2026-11-23T07:30:30Z",
  "regimes": {
+  "trend": [
+   "wick_vol-APTUSDT-15m",
+   "spike_revert-SUIUSDT-15m"
+  ],
+  "calm": [
+   "vol_burst_revert-ARBUSDT-15m",
+   "vol_burst_revert-ARBUSDT-5m"
+  ],
   "range": [
-   "bb_maker-NEARUSDT-1m",
-   "bollinger_reversion-NEARUSDT-5m",
-   "wick_vol-OPUSDT-15m"
+   "bb_maker-NEARUSDT-5m",
+   "wick_vol-FILUSDT-5m",
+   "spike_bb-BNBUSDT-5m"
   ]
  },
  "regime_detail": {
-  "NEARUSDT-1m": {
-   "regime": "range",
-   "vol": 0.58,
-   "trend_score": -1.0,
+  "APTUSDT-15m": {
+   "regime": "trend",
+   "vol": 0.59,
+   "trend_score": 0.559,
+   "spike_score": 0.0
+  },
+  "ARBUSDT-15m": {
+   "regime": "calm",
+   "vol": 0.69,
+   "trend_score": 0.228,
    "spike_score": 0.0
   },
   "NEARUSDT-5m": {
    "regime": "range",
-   "vol": 0.44,
-   "trend_score": -0.207,
-   "spike_score": 0.033
+   "vol": 0.5,
+   "trend_score": -0.438,
+   "spike_score": 0.0
   },
-  "OPUSDT-15m": {
+  "SUIUSDT-15m": {
+   "regime": "trend",
+   "vol": 0.64,
+   "trend_score": 0.577,
+   "spike_score": 0.0
+  },
+  "ARBUSDT-5m": {
+   "regime": "calm",
+   "vol": 0.85,
+   "trend_score": 0.01,
+   "spike_score": 0.0
+  },
+  "FILUSDT-5m": {
    "regime": "range",
-   "vol": 0.51,
-   "trend_score": -0.717,
+   "vol": 0.55,
+   "trend_score": -0.274,
+   "spike_score": 0.0
+  },
+  "BNBUSDT-5m": {
+   "regime": "range",
+   "vol": 0.57,
+   "trend_score": -0.164,
    "spike_score": 0.0
   }
  },
  "fit": {
-  "bb_maker-NEARUSDT-1m": 0.875,
-  "bollinger_reversion-NEARUSDT-5m": 0.875,
-  "wick_vol-OPUSDT-15m": 0.875
+  "wick_vol-APTUSDT-15m": 0.42,
+  "vol_burst_revert-ARBUSDT-15m": 1.3,
+  "bb_maker-NEARUSDT-5m": 1.3,
+  "spike_revert-SUIUSDT-15m": 0.42,
+  "vol_burst_revert-ARBUSDT-5m": 1.3,
+  "wick_vol-FILUSDT-5m": 1.3,
+  "spike_bb-BNBUSDT-5m": 1.3
  },
  "learned": {
   "meanrev:range": 0.437,
-  "meanrev:calm": -0.076,
+  "meanrev:calm": -0.255,
   "meanrev:spike": -0.149,
   "trend:trend": 0.069,
   "trend:range": 0.069,
-  "meanrev:trend": -0.122,
+  "meanrev:trend": 0.253,
   "meanrev:chop": -0.273
  }
 }
