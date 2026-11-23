@@ -55,6 +55,14 @@ jobs:
         working-directory: scalp-lab
         run: timeout 180 python paper.py > results/paper_log.txt 2> results/paper_err.txt || echo "paper exit nonzero" > results/paper_flag.txt
 
+      - name: Live verification on real Binance data
+        working-directory: scalp-lab
+        run: timeout 240 python live_check.py > results/livecheck_log.txt 2> results/livecheck_err.txt || echo "live_check exit nonzero" > results/livecheck_flag.txt
+
+      - name: Strategy archive (save every developed strategy)
+        working-directory: scalp-lab
+        run: python strategy_archive.py > results/archive_log.txt 2> results/archive_err.txt || echo "archive exit nonzero" > results/archive_flag.txt
+
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
