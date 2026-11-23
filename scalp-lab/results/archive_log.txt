@@ -1,0 +1,1 @@
+archive: 6394 стратегий в архиве (4222 бэктест-результатов), волны: {'base': 2306, 'fee-aware': 300, 'deep': 144, 'frontier': 2480, 'rotation': 30, 'research': 123, 'rescue': 17, 'deriv': 120, 'gold': 66, 'regime': 80, 'hourly': 120, 'fast': 128, 'combo': 180, 'pump-dump': 120, 'pump-dump-2': 180}

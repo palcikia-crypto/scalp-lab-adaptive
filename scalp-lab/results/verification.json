@@ -1,0 +1,28 @@
+{
+ "updated": "2026-11-23T08:41:12Z",
+ "api_ok": false,
+ "api_latency_ms": null,
+ "worst_spread_bps": null,
+ "worst_slip_bps": null,
+ "summary": {
+  "pass": 0,
+  "warn": 0,
+  "fail": 1
+ },
+ "rows": [
+  {
+   "key": "api",
+   "strategy": "api",
+   "symbol": "-",
+   "tf": "-",
+   "mode": "system",
+   "verdict": "fail",
+   "note": "Binance API недоступен: 451 Client Error:  for url: https://api.binance.com/api/v3/time",
+   "latency_ms": null,
+   "candle_age_min": null,
+   "spread_bps": null,
+   "slip_bps": null,
+   "drift_bps": null
+  }
+ ]
+}
