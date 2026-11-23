@@ -1,0 +1,1 @@
+{"error": "not enough bars", "kind": "backtest", "symbol": "ATOMUSDT", "tf": "1h", "strategy": "spike_revert", "days": 730, "n_bars": 17496, "fee_mode": "maker"}

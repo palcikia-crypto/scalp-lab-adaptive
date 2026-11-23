@@ -1,0 +1,1 @@
+{"error": "not enough bars", "kind": "backtest", "symbol": "APTUSDT", "tf": "1h", "strategy": "streak_vol", "days": 730, "n_bars": 17496, "fee_mode": "maker"}
