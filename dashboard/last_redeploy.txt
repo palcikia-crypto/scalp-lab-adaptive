@@ -1,1 +1,1 @@
-redeploy 2026-11-23 00:21 UTC: push fresh paper/brain/system data to panel after bt-worker restore\n
+redeploy 2026-11-23 08:00 UTC: publish bt: auto results 11-23 07:30 (runs 172, 7 strategies, equity 1289.31) to panel
