@@ -1416,17 +1416,17 @@
   }
  ],
  "seen": {
-  "vol_burst_revert-ARBUSDT-15m": "2026-11-23 08:00:00",
-  "bb_maker-NEARUSDT-5m": "2026-11-23 08:15:00",
-  "spike_revert-SUIUSDT-15m": "2026-11-23 08:00:00",
-  "vol_burst_revert-ARBUSDT-5m": "2026-11-23 08:15:00",
-  "wick_vol-FILUSDT-5m": "2026-11-23 08:15:00",
-  "wick_vol-OPUSDT-15m": "2026-11-23 08:00:00",
-  "bollinger_reversion-NEARUSDT-5m": "2026-11-23 08:15:00",
-  "wick_vol-APTUSDT-15m": "2026-11-23 08:00:00"
+  "vol_burst_revert-ARBUSDT-15m": "2026-11-23 08:15:00",
+  "bb_maker-NEARUSDT-5m": "2026-11-23 08:25:00",
+  "spike_revert-SUIUSDT-15m": "2026-11-23 08:15:00",
+  "vol_burst_revert-ARBUSDT-5m": "2026-11-23 08:25:00",
+  "wick_vol-FILUSDT-5m": "2026-11-23 08:25:00",
+  "wick_vol-OPUSDT-15m": "2026-11-23 08:15:00",
+  "bollinger_reversion-NEARUSDT-5m": "2026-11-23 08:25:00",
+  "spike_bb-BNBUSDT-5m": "2026-11-23 08:25:00"
  },
- "updated": "2026-11-23T08:24:39Z",
- "runs": 174,
+ "updated": "2026-11-23T08:34:54Z",
+ "runs": 175,
  "alloc": {
   "vol_burst_revert-ARBUSDT-15m": {
    "weight": 0.5,
@@ -1460,15 +1460,6 @@
    "loss_streak": 3,
    "n_recent": 3
   },
-  "wick_vol-APTUSDT-15m": {
-   "weight": 0.5,
-   "mode": "live",
-   "reason": "минусовая серия (-1.9%, 0 убытков подряд) — размер снижен",
-   "recent_pnl": -1.94,
-   "recent_wr": 60.0,
-   "loss_streak": 0,
-   "n_recent": 5
-  },
   "wick_vol-OPUSDT-15m": {
    "weight": 1.0,
    "mode": "live",
@@ -1483,6 +1474,11 @@
    "weight": 1.0,
    "mode": "live",
    "reason": "новая, сделок ещё нет"
+  },
+  "spike_bb-BNBUSDT-5m": {
+   "weight": 1.0,
+   "mode": "live",
+   "reason": "новая, сделок ещё нет"
   }
  },
  "brain_fit": {
@@ -1490,10 +1486,10 @@
   "bb_maker-NEARUSDT-5m": 1.3,
   "spike_revert-SUIUSDT-15m": 0.72,
   "vol_burst_revert-ARBUSDT-5m": 0.77,
-  "wick_vol-APTUSDT-15m": 0.72,
   "wick_vol-OPUSDT-15m": 0.77,
   "wick_vol-FILUSDT-5m": 1.3,
-  "bollinger_reversion-NEARUSDT-5m": 1.3
+  "bollinger_reversion-NEARUSDT-5m": 1.3,
+  "spike_bb-BNBUSDT-5m": 1.3
  },
  "reality": {
   "mult": 1.0,
@@ -1583,27 +1579,6 @@
    "sig_pct": 35.14
   },
   {
-   "key": "wick_vol-APTUSDT-15m",
-   "strategy": "wick_vol",
-   "symbol": "APTUSDT",
-   "tf": "15m",
-   "params": {
-    "h": 11,
-    "vz": 2.0,
-    "w": 0.5
-   },
-   "fee_mode": "maker",
-   "gold": false,
-   "oos_sharpe": 2.13,
-   "score": 2.13,
-   "signal": 0.0,
-   "weight": 0.36,
-   "fit": 0.72,
-   "mode": "live",
-   "sig_last": "2026-11-20 18:30:00",
-   "sig_pct": 6.17
-  },
-  {
    "key": "wick_vol-OPUSDT-15m",
    "strategy": "wick_vol",
    "symbol": "OPUSDT",
@@ -1663,7 +1638,29 @@
    "fit": 1.3,
    "mode": "live",
    "sig_last": "2026-11-23 06:10:00",
-   "sig_pct": 58.31
+   "sig_pct": 58.11
+  },
+  {
+   "key": "spike_bb-BNBUSDT-5m",
+   "strategy": "spike_bb",
+   "symbol": "BNBUSDT",
+   "tf": "5m",
+   "params": {
+    "h": 60,
+    "k": 2.5,
+    "pct": 0.01,
+    "vz": 2.0
+   },
+   "fee_mode": "maker",
+   "gold": false,
+   "oos_sharpe": 0.84,
+   "score": 0.51,
+   "signal": 0.0,
+   "weight": 1.3,
+   "fit": 1.3,
+   "mode": "live",
+   "sig_last": "2026-11-21 08:30:00",
+   "sig_pct": 6.05
   }
  ],
  "stats": {
@@ -1680,7 +1677,7 @@
   "total": 1819,
   "low_trades": 309,
   "low_folds": 0,
-  "low_pf": 1389,
+  "low_pf": 1390,
   "low_t": 112,
   "no_params": 0,
   "admitted": 8
@@ -1724,6 +1721,16 @@
    "t": 1.11,
    "pf": 1.01,
    "stability": 0.25,
+   "reason": "low_t"
+  },
+  {
+   "strategy": "wick_vol",
+   "symbol": "APTUSDT",
+   "tf": "15m",
+   "sharpe": 1.58,
+   "t": 1.45,
+   "pf": 1.054,
+   "stability": 1.0,
    "reason": "low_t"
   },
   {
@@ -1795,16 +1802,6 @@
    "pf": 1.109,
    "stability": 0.21,
    "reason": "low_trades"
-  },
-  {
-   "strategy": "bb_maker",
-   "symbol": "ATOMUSDT",
-   "tf": "1m",
-   "sharpe": 1.45,
-   "t": 0.94,
-   "pf": 1.008,
-   "stability": 0.32,
-   "reason": "low_pf"
   }
  ]
 }
