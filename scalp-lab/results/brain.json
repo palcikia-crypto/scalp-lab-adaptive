@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T00:20:21Z",
+ "updated": "2026-11-23T00:38:33Z",
  "regimes": {
   "range": [
    "bb_maker-NEARUSDT-1m",
@@ -10,20 +10,20 @@
  "regime_detail": {
   "NEARUSDT-1m": {
    "regime": "range",
-   "vol": 0.56,
-   "trend_score": -0.795,
+   "vol": 0.58,
+   "trend_score": -1.0,
    "spike_score": 0.0
   },
   "NEARUSDT-5m": {
    "regime": "range",
-   "vol": 0.43,
-   "trend_score": -0.2,
+   "vol": 0.44,
+   "trend_score": -0.207,
    "spike_score": 0.033
   },
   "OPUSDT-15m": {
    "regime": "range",
-   "vol": 0.56,
-   "trend_score": -1.0,
+   "vol": 0.51,
+   "trend_score": -0.717,
    "spike_score": 0.0
   }
  },
@@ -33,7 +33,7 @@
   "wick_vol-OPUSDT-15m": 0.875
  },
  "learned": {
-  "meanrev:range": -0.072,
+  "meanrev:range": 0.437,
   "meanrev:calm": -0.076,
   "meanrev:spike": -0.149,
   "trend:trend": 0.069,

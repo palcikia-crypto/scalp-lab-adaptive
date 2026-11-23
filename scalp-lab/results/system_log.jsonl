@@ -20,3 +20,4 @@
 {"ts": "2026-11-22T02:01:45Z", "stage": "исследование + золото", "pct": 88.9, "equity": 874.67, "pnl": -12.53, "gold_passed": 19, "gold_checked": 408, "reality_mult": 0.3, "errors_new": 360}
 {"ts": "2026-11-22T09:32:48Z", "stage": "исследование + золото", "pct": 89.0, "equity": 876.03, "pnl": -12.4, "gold_passed": 20, "gold_checked": 426, "reality_mult": 0.3, "errors_new": 360}
 {"ts": "2026-11-23T00:20:14Z", "stage": "разгон очереди", "pct": 90.5, "equity": 879.25, "pnl": -12.07, "gold_passed": 20, "gold_checked": 426, "reality_mult": 0.3, "errors_new": 0}
+{"ts": "2026-11-23T00:38:25Z", "stage": "разгон очереди", "pct": 92.4, "equity": null, "pnl": null, "gold_passed": 20, "gold_checked": 426, "reality_mult": 1.0, "errors_new": 0}

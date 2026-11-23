@@ -1,1 +1,1 @@
-status: stage=разгон очереди pct=90.5 gold=20/426
+status: stage=разгон очереди pct=92.4 gold=20/426

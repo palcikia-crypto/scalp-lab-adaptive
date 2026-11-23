@@ -1,1 +1,1 @@
-reality: mult 0.30, dd 12.07%, alerts 1
+reality: mult 1.00, dd 0.00%, alerts 0
