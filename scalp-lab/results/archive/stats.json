@@ -1,23 +1,23 @@
 {
- "total": 6394,
+ "total": 6412,
  "backtest_results": 4222,
- "admitted": 206,
+ "admitted": 187,
  "waves": {
-  "base": 2306,
-  "fee-aware": 300,
-  "deep": 144,
   "frontier": 2480,
+  "base": 2306,
   "rotation": 30,
+  "deep": 144,
   "research": 123,
+  "fee-aware": 300,
   "rescue": 17,
   "deriv": 120,
-  "gold": 66,
   "regime": 80,
   "hourly": 120,
   "fast": 128,
   "combo": 180,
   "pump-dump": 120,
-  "pump-dump-2": 180
+  "pump-dump-2": 180,
+  "gold": 84
  },
- "updated": "2026-11-23T08:41:12Z"
+ "updated": "2026-11-23T08:54:19Z"
 }
