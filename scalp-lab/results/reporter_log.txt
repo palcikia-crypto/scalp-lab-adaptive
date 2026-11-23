@@ -1,1 +1,1 @@
-backtest results: 1680 passed filters: 5 scan findings: 2800
+backtest results: 1737 passed filters: 6 scan findings: 2800
