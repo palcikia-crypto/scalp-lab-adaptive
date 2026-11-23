@@ -17,23 +17,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Copy history from original repo
+      - name: Copy history from natural repo into the worker pool
         run: |
           git clone --depth 1 https://github.com/palcikia-crypto/scalp-lab-termux.git /tmp/orig
-          mkdir -p results/backtest results/scan reports
-          cp -r /tmp/orig/scalp-lab/results/backtest/* results/backtest/ 2>/dev/null || true
-          cp -r /tmp/orig/scalp-lab/results/scan/* results/scan/ 2>/dev/null || true
-          cp /tmp/orig/scalp-lab/results/queue*.json results/ 2>/dev/null || true
-          cp /tmp/orig/scalp-lab/results/history.json results/ 2>/dev/null || true
+          mkdir -p scalp-lab/results/backtest scalp-lab/results/scan scalp-lab/results/gold reports
+          cp -r /tmp/orig/scalp-lab/results/backtest/* scalp-lab/results/backtest/ 2>/dev/null || true
+          cp -r /tmp/orig/scalp-lab/results/scan/* scalp-lab/results/scan/ 2>/dev/null || true
+          cp /tmp/orig/scalp-lab/results/queue*.json scalp-lab/results/ 2>/dev/null || true
+          cp /tmp/orig/scalp-lab/results/history.json scalp-lab/results/ 2>/dev/null || true
+          cp /tmp/orig/scalp-lab/scalp-lab/results/gold/* scalp-lab/results/gold/ 2>/dev/null || true
           cp /tmp/orig/scalp-lab/reports/* reports/ 2>/dev/null || true
-          cp /tmp/orig/scalp-lab/results/paper.json results/ 2>/dev/null || true
-          echo "backtest files: $(ls results/backtest | wc -l)"
-          echo "scan files: $(ls results/scan | wc -l)"
+          echo "backtest files: $(ls scalp-lab/results/backtest | wc -l)"
+          echo "scan files: $(ls scalp-lab/results/scan | wc -l)"
 
       - name: Commit seed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --cached --quiet && echo "nothing to seed" || git commit -m "seed: history copied from original"
-          git push
+          git diff --cached --quiet && echo "nothing to seed" || git commit -m "seed: history captured from original into worker pool"
+          git push || (git fetch origin && git rebase origin/main && git push)
