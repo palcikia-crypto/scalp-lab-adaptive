@@ -21,3 +21,4 @@ SLIP = 0.0002
 # maker: вход лимитным ордером (0.02%), почти без слиппеджа
 FEE_MAKER = 0.0002
 SLIP_MAKER = 0.00005
+# trigger: worker run after seed pool restore (2026-11-23)
