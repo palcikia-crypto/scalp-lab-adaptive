@@ -25,12 +25,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: "Copy live data into dashboard (paper, brain, system, reality)"
+      - name: "Copy live data into dashboard (paper, brain, system, reality, verification)"
         run: |
           mkdir -p dashboard/results
-          for f in paper.json brain.json system.json reality.json progress.json; do
+          for f in paper.json brain.json system.json reality.json progress.json verification.json; do
             if [ -f scalp-lab/results/$f ]; then cp scalp-lab/results/$f dashboard/results/$f; fi
           done
+          if [ -f scalp-lab/results/archive/stats.json ]; then
+            mkdir -p dashboard/results/archive
+            cp scalp-lab/results/archive/stats.json dashboard/results/archive/stats.json
+          fi
           ls -la dashboard/results || true
 
       - uses: actions/configure-pages@v5
