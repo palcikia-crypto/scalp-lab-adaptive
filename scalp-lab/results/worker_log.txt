@@ -1,23 +1,27 @@
-evolve: new deep wave with 20 tasks -> results/queue107.json
+done gold-spike_revert-SUIUSDT-15m
+done gold-wick_vol-APTUSDT-15m
+done gold-bb_regime-NEARUSDT-1m
+done gold-bb_fast-NEARUSDT-5m
+done gold-vol_burst_revert-ARBUSDT-15m
+done gold-bb_maker-NEARUSDT-1m
+done rsc-spike_bb-ATOMUSDT-1m
+done rsc-spike_bb-LINKUSDT-1m
+done rsc-spike_revert-XRPUSDT-15m
+done rsc-crash_revert-XRPUSDT-15m
+done rsc-crash_revert-ARBUSDT-1m
+done rsc-crash_revert-SOLUSDT-5m
+done rsc-spike_bb-FILUSDT-1m
+done rsc-spike_bb-BNBUSDT-5m
+done rsc-crash_revert-PEPEUSDT-15m
+done rsc-spike_revert-LTCUSDT-15m
+evolve: new deep wave with 2 tasks -> results/queue110.json
 gold: 6 leaders -> robustness check
-rescue: 10 candidates -> deep re-run
-done ev-bollinger_reversion-NEARUSDT-5m-v2
-done ev-bollinger_reversion-NEARUSDT-5m-v4
-done ev-bb_regime-ATOMUSDT-1m-v2
-done ev-bb_regime-ATOMUSDT-1m-v4
-done ev-funding_revert-BNBUSDT-1m-v2
-done ev-funding_revert-BNBUSDT-1m-v4
-done ev-vol_burst_revert-ADAUSDT-1m-v2
-done ev-vol_burst_revert-ADAUSDT-1m-v4
-done ev-streak_vol-LINKUSDT-15m-v2
-done ev-streak_vol-LINKUSDT-15m-v4
-done ev-bb_fast-LTCUSDT-15m-v2
-done ev-bb_fast-LTCUSDT-15m-v4
-done ev-vol_burst_revert-OPUSDT-15m-v2
-done ev-vol_burst_revert-OPUSDT-15m-v4
-done ev-spike_bb-BNBUSDT-5m-v2
-done ev-spike_bb-BNBUSDT-5m-v4
-done ev-crash_revert-PEPEUSDT-15m-v2
-done ev-crash_revert-PEPEUSDT-15m-v4
-done ev-crash_revert-DOGEUSDT-5m-v2
-done ev-crash_revert-DOGEUSDT-5m-v4
+rescue: 7 candidates -> deep re-run
+done ev-crash_revert-XRPUSDT-15m-v2
+done ev-crash_revert-XRPUSDT-15m-v4
+done gold-wick_vol-OPUSDT-15m
+done gold-wick_vol-AVAXUSDT-15m
+done gold-streak_bb-NEARUSDT-5m
+done gold-bb_maker-NEARUSDT-5m
+done gold-vol_burst_revert-ARBUSDT-5m
+done gold-streak_bb-SUIUSDT-5m

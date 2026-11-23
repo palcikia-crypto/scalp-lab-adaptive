@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-23T07:30:15Z",
+ "updated": "2026-11-23T08:05:41Z",
  "stage": "разгон очереди",
  "queue": {
-  "total": 4497,
-  "done": 4481,
-  "pending": 16,
+  "total": 4512,
+  "done": 4505,
+  "pending": 7,
   "errors": 0,
-  "progress_pct": 99.6
+  "progress_pct": 99.8
  },
  "gold": {
   "checked": 426,
-  "passed": 20,
+  "passed": 21,
   "passed_list": [
    {
     "key": "streak_vol-LTCUSDT-15m",
@@ -49,10 +49,6 @@
     "sharpe": 1.45
    },
    {
-    "key": "wick_vol-APTUSDT-15m",
-    "sharpe": 1.9
-   },
-   {
     "key": "crash_revert-DOGEUSDT-5m",
     "sharpe": 1.81
    },
@@ -63,6 +59,10 @@
    {
     "key": "wick_vol-PEPEUSDT-15m",
     "sharpe": 2.46
+   },
+   {
+    "key": "wick_vol-AVAXUSDT-15m",
+    "sharpe": 2.42
    },
    {
     "key": "spike_revert-FILUSDT-15m",
@@ -86,26 +86,31 @@
    },
    {
     "key": "spike_revert-SUIUSDT-15m",
-    "sharpe": 2.62
+    "sharpe": 2.63
    },
    {
     "key": "spike_revert-XRPUSDT-15m",
     "sharpe": 3.84
+   },
+   {
+    "key": "wick_vol-OPUSDT-15m",
+    "sharpe": 2.73
    }
   ]
  },
  "brain": {
   "regimes": {
-   "calm": 2,
-   "range": 1
+   "trend": 3,
+   "range": 3,
+   "calm": 1
   },
   "learned": {
    "meanrev:range": 0.437,
-   "meanrev:calm": 0.436,
+   "meanrev:calm": -0.572,
    "meanrev:spike": -0.149,
    "trend:trend": 0.069,
    "trend:range": 0.069,
-   "meanrev:trend": -0.122,
+   "meanrev:trend": 0.294,
    "meanrev:chop": -0.273
   },
   "confidence_pct": {
@@ -131,23 +136,51 @@
   "open": 0,
   "portfolio": [
    {
-    "key": "bb_maker-NEARUSDT-1m",
-    "weight": 1.225,
-    "fit": 0.875,
+    "key": "wick_vol-APTUSDT-15m",
+    "weight": 0.21,
+    "fit": 0.42,
+    "gold": true,
+    "signal": 0.0
+   },
+   {
+    "key": "vol_burst_revert-ARBUSDT-15m",
+    "weight": 0.65,
+    "fit": 1.3,
     "gold": false,
     "signal": 0.0
    },
    {
-    "key": "bollinger_reversion-NEARUSDT-5m",
-    "weight": 0.875,
-    "fit": 0.875,
+    "key": "bb_maker-NEARUSDT-5m",
+    "weight": 1.3,
+    "fit": 1.3,
     "gold": false,
     "signal": 0.0
    },
    {
-    "key": "wick_vol-OPUSDT-15m",
-    "weight": 0.875,
-    "fit": 0.875,
+    "key": "spike_revert-SUIUSDT-15m",
+    "weight": 0.63,
+    "fit": 0.42,
+    "gold": true,
+    "signal": 0.0
+   },
+   {
+    "key": "vol_burst_revert-ARBUSDT-5m",
+    "weight": 0.0,
+    "fit": 1.3,
+    "gold": false,
+    "signal": 0.0
+   },
+   {
+    "key": "wick_vol-FILUSDT-5m",
+    "weight": 1.3,
+    "fit": 1.3,
+    "gold": false,
+    "signal": 0.0
+   },
+   {
+    "key": "spike_bb-BNBUSDT-5m",
+    "weight": 1.3,
+    "fit": 1.3,
     "gold": false,
     "signal": 0.0
    }
