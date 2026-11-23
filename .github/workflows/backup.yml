@@ -1,0 +1,34 @@
+name: Backup
+
+on:
+  schedule:
+    - cron: '15 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-backup
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Daily snapshot branch (backup/auto-YYYYMMDD)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          DST="backup/auto-$(date -u +'%Y%m%d')"
+          git push origin "HEAD:refs/heads/$DST" --force
+
+      - name: Prune old snapshots (keep last 14 days)
+        run: |
+          git ls-remote --heads origin 'backup/auto-*' | awk '{print $2}' | sed 's|refs/heads/||' | sort | head -n -14 > old_branches.txt
+          while read -r b; do git push origin --delete "$b" || true; done < old_branches.txt
