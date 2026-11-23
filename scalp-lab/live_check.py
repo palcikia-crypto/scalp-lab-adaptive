@@ -1,20 +1,22 @@
 # -*- coding: utf-8 -*-
 # Живая верификация сделок на реальных данных Binance (REST).
 # Для каждой live/shadow стратегии бумажного портфеля и открытых позиций:
-#   1) доступность REST API и задержка каждого запроса (мс);
+#   1) доступность рыночного API и задержка каждого запроса (мс);
 #   2) свежесть последней ЗАКРЫТОЙ свечи по таймфрейму стратегии;
 #   3) спред bid/ask по реальному стакану (bps);
 #   4) проскальзывание рыночного ордера на NOTIONAL_USDT по стакану (bps);
 #   5) дрейф цены открытой бумажной позиции против реального рынка (bps).
 # Цель: до реальной торговли знать, что данные и исполнение идут без сюрпризов.
+# Основной источник - data-api.binance.vision (публичное зеркало рыночных
+# данных Binance, доступно из GitHub Actions); фолбэк - api.binance.com.
 # Результат: results/verification.json
 import json
 import time
 
 import requests
 
-BINANCE = "https://api.binance.com"
-DATA = "https://data-api.binance.vision"
+VISION = "https://data-api.binance.vision"
+DIRECT = "https://api.binance.com"
 NOTIONAL_USDT = 500.0
 MAX_ROWS = 12
 TF_MIN = {"1m": 1, "5m": 5, "15m": 15, "1h": 60}
@@ -25,16 +27,25 @@ WARN_CANDLE_AGE_MULT = 3.0
 BOOK_CACHE = {}
 
 
-def _get(url, params=None, timeout=8):
+def _get(base, url, params=None, timeout=8):
     t0 = time.time()
-    r = requests.get(url, params=params or {}, timeout=timeout)
+    r = requests.get(base + url, params=params or {}, timeout=timeout,
+                     headers={"User-Agent": "scalp-lab-livecheck/1.0"})
     dt = round((time.time() - t0) * 1000.0)
     r.raise_for_status()
     return r.json(), dt
 
 
+def get(url, params=None, timeout=8):
+    """Сначала зеркало, при ошибке - прямой API."""
+    try:
+        return _get(VISION, url, params, timeout)
+    except Exception:
+        return _get(DIRECT, url, params, timeout)
+
+
 def candle_age_min(symbol, tf):
-    k, lat = _get(DATA + "/api/v3/klines", {"symbol": symbol, "interval": tf, "limit": 3})
+    k, lat = get("/api/v3/klines", {"symbol": symbol, "interval": tf, "limit": 3})
     close_time = int(k[-2][6]) / 1000.0  # последняя закрытая свеча
     age = (time.time() - close_time) / 60.0
     return round(max(age, 0.0), 1), lat
@@ -42,7 +53,7 @@ def candle_age_min(symbol, tf):
 
 def book_stats(symbol):
     if symbol not in BOOK_CACHE:
-        d, lat = _get(BINANCE + "/api/v3/depth", {"symbol": symbol, "limit": 50})
+        d, lat = get("/api/v3/depth", {"symbol": symbol, "limit": 50})
         bids = [(float(p), float(q)) for p, q in d["bids"]]
         asks = [(float(p), float(q)) for p, q in d["asks"]]
         bb, ba = bids[0][0], asks[0][0]
@@ -70,7 +81,8 @@ def main():
     rows, lats = [], []
     api_ok = True
     try:
-        _get(BINANCE + "/api/v3/time")
+        _, lat0 = get("/api/v3/klines", {"symbol": "BTCUSDT", "interval": "1m", "limit": 1})
+        lats.append(lat0)
     except Exception as e:
         api_ok = False
         rows.append({"key": "api", "strategy": "api", "symbol": "-", "tf": "-", "mode": "system",
