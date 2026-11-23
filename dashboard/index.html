@@ -257,6 +257,16 @@ a { color:var(--blue); text-decoration:none; }
   <div class="view" id="v-sys">
     <div class="panel"><h2>🛰 Прогоны воркеров <span class="tag" id="next-cron"></span></h2><div class="log" id="runs-log"><div class="fallback">загрузка логов…</div></div></div>
     <div class="panel"><h2>🔄 Ротация лидеров <span class="tag">раз в 7 дней</span></h2><div class="log" id="rot-info"><div class="fallback">загрузка…</div></div></div>
+    <div class="panel"><h2>🩺 Живая верификация сделок <span class="tag" id="ver-upd">Binance real-time</span></h2>
+      <div class="kpis" style="margin-bottom:12px">
+        <div class="kpi"><div class="label">API Binance</div><div class="value" id="ver-api">—</div><div class="note" id="ver-lat">задержка REST</div></div>
+        <div class="kpi"><div class="label">Проверено</div><div class="value" id="ver-n">—</div><div class="note">live + shadow + позиции</div></div>
+        <div class="kpi"><div class="label">Проскальзывание</div><div class="value" id="ver-slip">—</div><div class="note">ордер $500 по стакану, бп</div></div>
+        <div class="kpi"><div class="label">Спред</div><div class="value" id="ver-spread">—</div><div class="note">worst bid/ask, бп</div></div>
+      </div>
+      <div class="tbl-wrap" style="display:block"><table id="ver-table"></table></div>
+      <div class="legend" style="margin-top:10px"><span>каждые 30 минут воркер проверяет каждую торговую стратегию на реальных данных Binance: доступность API, задержка, свежесть свечей по TF, спред и проскальзывание по ордер-буку, дрейф открытых позиций — чтобы в реальной торговле не было сюрпризов</span></div>
+    </div>
     <div class="panel"><h2>🤖 Коммиты</h2><div class="log" id="commits-log"></div></div>
     <div class="panel"><h2>⚙️ Как работает система</h2><div class="report" style="white-space:normal">Конвейер полностью автономен: воркеры GitHub Actions каждые ~30 минут обрабатывают очередь задач, ошибки автоматически перезапускаются до 3 раз, при завершении очереди система сама строит новую волну исследований на основе лучших OOS-результатов. Все результаты — walk-forward out-of-sample с учётом комиссий и проскальзывания. Волна 3: стратегии на деривативных данных (funding rate, открытый интерес, long/short ratio из архивов Binance), мета-стратегии с фильтром режима рынка, часовой таймфрейм 1h и еженедельная ротация лидеров — топ-10 перепроверяется на свежих данных раз в 7 дней, протухшие результаты заменяются. Волна 5 (бог-уровень): фронт-исследование — система сама находит все ещё непротестированные комбинации (стратегия × пара × таймфрейм) и ставит их в очередь, приоритет — стратегиям с доказанным эджем на других парах. Портфель бумажной торговли собирается по композитному скору (OOS Sharpe × стабильность параметров) при статпороге t > 1.5: шум в портфель не попадает, а панель «Отбор в портфель» честно показывает, кто прошёл и почему каждая стратегия отсеялась.</div></div>
   </div>
@@ -878,6 +888,31 @@ function renderArch() {
   });
   document.getElementById("arch-table").innerHTML = t;
 }
+function loadVerification() {
+  return fetchText(RAW + "results/verification.json").then(function (txt) {
+    var api = document.getElementById("ver-api"), nv = document.getElementById("ver-n");
+    if (!api || !nv) return;
+    var v = null;
+    try { v = txt ? JSON.parse(txt) : null; } catch (e) { v = null; }
+    if (!v) {
+      document.getElementById("ver-upd").textContent = "данные появятся после ближайшего прогона воркера";
+      return;
+    }
+    document.getElementById("ver-upd").textContent = "обновлено " + String(v.updated).slice(5, 16).replace("T", " ") + " UTC";
+    api.textContent = v.api_ok ? "✓ OK" : "✕ недоступен";
+    api.style.color = v.api_ok ? "var(--green)" : "var(--red)";
+    if (v.api_latency_ms != null) document.getElementById("ver-lat").textContent = "задержка REST " + v.api_latency_ms + " мс";
+    countUp(nv, (v.rows || []).length);
+    document.getElementById("ver-slip").textContent = v.worst_slip_bps != null ? v.worst_slip_bps + " бп" : "—";
+    document.getElementById("ver-spread").textContent = v.worst_spread_bps != null ? v.worst_spread_bps + " бп" : "—";
+    var rows = (v.rows || []).slice(0, 20);
+    var tb = "<tr><th>Стратегия</th><th>Пара</th><th>TF</th><th>API мс</th><th>Свеча</th><th>Спред бп</th><th>Слип бп</th><th>Вердикт</th></tr>";
+    rows.forEach(function (r) {
+      tb += "<tr><td>" + (STRAT_RU[r.strategy] || r.strategy) + (r.mode ? " <span class='chip'>" + r.mode + "</span>" : "") + "</td><td>" + String(r.symbol || "").replace("USDT", "") + "</td><td>" + r.tf + "</td><td>" + (r.latency_ms != null ? Math.round(r.latency_ms) : "—") + "</td><td>" + (r.candle_age_min != null ? r.candle_age_min + " мин" : "—") + "</td><td>" + (r.spread_bps != null ? r.spread_bps : "—") + "</td><td>" + (r.slip_bps != null ? r.slip_bps : "—") + "</td><td class='" + (r.verdict === "pass" ? "arch-verdict-ok" : "arch-verdict-no") + "'>" + (r.verdict === "pass" ? "✓ ок" : r.verdict === "warn" ? "⚠ внимание" : "✕ проблема") + "</td></tr>";
+    });
+    document.getElementById("ver-table").innerHTML = tb;
+  });
+}
 function loadRotation() {
   return fetchText(RAW + "results/rotation.json").then(function (txt) {
     var el = document.getElementById("rot-info");
@@ -898,6 +933,7 @@ function refreshAll() {
   loadReport();
   loadPaper();
   loadRotation();
+  loadVerification();
   loadArchive();
 }
 if (!HAS_CHART) { document.getElementById("donut-box").innerHTML = "<div class='fallback'>графики недоступны (CDN заблокирован) — цифры в силе</div>"; }
