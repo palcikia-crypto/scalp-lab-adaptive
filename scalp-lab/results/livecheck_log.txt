@@ -1,1 +1,1 @@
-live_check: 6 проверено, {'pass': 5, 'warn': 1, 'fail': 0}
+live_check: 8 проверено, {'pass': 7, 'warn': 1, 'fail': 0}
