@@ -1,78 +1,74 @@
 {
- "updated": "2026-11-25T00:03:45Z",
+ "updated": "2026-11-25T07:43:06Z",
  "regimes": {
   "range": [
    "vol_burst_revert-ARBUSDT-15m",
-   "vol_burst_revert-ARBUSDT-5m",
-   "wick_vol-OPUSDT-15m",
-   "spike_bb-BNBUSDT-5m"
-  ],
-  "calm": [
-   "bb_maker-NEARUSDT-5m",
    "spike_revert-SUIUSDT-15m",
+   "wick_vol-OPUSDT-15m",
    "bollinger_reversion-NEARUSDT-5m"
   ],
-  "trend": [
-   "wick_vol-FILUSDT-5m"
+  "calm": [
+   "vol_burst_revert-ARBUSDT-5m",
+   "wick_vol-FILUSDT-5m",
+   "spike_bb-BNBUSDT-5m"
   ]
  },
  "regime_detail": {
   "ARBUSDT-15m": {
    "regime": "range",
-   "vol": 0.59,
-   "trend_score": -0.355,
-   "spike_score": 0.0
-  },
-  "NEARUSDT-5m": {
-   "regime": "calm",
-   "vol": 0.49,
-   "trend_score": 0.025,
+   "vol": 0.77,
+   "trend_score": -0.698,
    "spike_score": 0.0
   },
   "SUIUSDT-15m": {
-   "regime": "calm",
-   "vol": 0.55,
-   "trend_score": 0.076,
-   "spike_score": 0.0
-  },
-  "ARBUSDT-5m": {
    "regime": "range",
-   "vol": 0.71,
-   "trend_score": -0.18,
+   "vol": 0.46,
+   "trend_score": -0.365,
    "spike_score": 0.0
   },
   "OPUSDT-15m": {
    "regime": "range",
-   "vol": 0.63,
-   "trend_score": -0.239,
+   "vol": 0.53,
+   "trend_score": -0.374,
+   "spike_score": 0.0
+  },
+  "ARBUSDT-5m": {
+   "regime": "calm",
+   "vol": 0.94,
+   "trend_score": 0.246,
    "spike_score": 0.0
   },
   "FILUSDT-5m": {
-   "regime": "trend",
-   "vol": 0.5,
-   "trend_score": 0.29,
+   "regime": "calm",
+   "vol": 0.71,
+   "trend_score": 0.011,
+   "spike_score": 0.0
+  },
+  "NEARUSDT-5m": {
+   "regime": "range",
+   "vol": 0.73,
+   "trend_score": -0.204,
    "spike_score": 0.0
   },
   "BNBUSDT-5m": {
-   "regime": "range",
-   "vol": 0.39,
-   "trend_score": -0.282,
+   "regime": "calm",
+   "vol": 0.75,
+   "trend_score": 0.146,
    "spike_score": 0.0
   }
  },
  "fit": {
   "vol_burst_revert-ARBUSDT-15m": 0.875,
-  "bb_maker-NEARUSDT-5m": 1.3,
-  "spike_revert-SUIUSDT-15m": 1.3,
-  "vol_burst_revert-ARBUSDT-5m": 0.875,
+  "spike_revert-SUIUSDT-15m": 0.875,
   "wick_vol-OPUSDT-15m": 0.875,
-  "wick_vol-FILUSDT-5m": 0.42,
-  "bollinger_reversion-NEARUSDT-5m": 1.3,
-  "spike_bb-BNBUSDT-5m": 0.875
+  "vol_burst_revert-ARBUSDT-5m": 0.988,
+  "wick_vol-FILUSDT-5m": 0.988,
+  "bollinger_reversion-NEARUSDT-5m": 0.875,
+  "spike_bb-BNBUSDT-5m": 0.988
  },
  "learned": {
-  "meanrev:range": -0.691,
-  "meanrev:calm": 0.256,
+  "meanrev:range": 0.062,
+  "meanrev:calm": -0.166,
   "meanrev:spike": -0.4,
   "trend:trend": 0.069,
   "trend:range": 0.069,

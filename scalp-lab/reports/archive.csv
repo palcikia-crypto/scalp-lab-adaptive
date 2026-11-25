@@ -1,9 +1,8 @@
 strategy,symbol,tf,oos_sharpe,oos_pf,oos_t,trades,folds,param_stability,days,wave,verdict
 vol_burst_revert,ARBUSDT,15m,2.49,1.059,2.29,209,22,1.0,365,,passed
-bb_maker,NEARUSDT,5m,2.367,1.028,2.25,3787,47,1.0,365,,passed
 crash_revert,SUIUSDT,1m,2.26,1.499,1.47,14,31,0.48,180,,filtered
-vol_burst_revert,ARBUSDT,5m,2.187,1.029,2.08,619,47,1.0,365,,passed
 spike_follow,SOLUSDT,1m,2.041,1.111,1.33,92,31,0.42,180,,filtered
+vol_burst_revert,ARBUSDT,5m,1.96,1.033,1.86,689,47,1.0,365,,passed
 spike_revert,SUIUSDT,15m,1.859,1.077,1.71,290,22,1.0,365,,passed
 wick_vol,FILUSDT,5m,1.857,1.025,1.76,1120,47,1.0,365,,passed
 bollinger_reversion,NEARUSDT,5m,1.791,1.024,1.7,2782,47,0.38,365,,passed
@@ -23,6 +22,7 @@ bb_regime,ATOMUSDT,1m,1.427,1.008,0.94,2851,32,0.25,180,,filtered
 bollinger_reversion,ATOMUSDT,15m,1.413,1.738,1.3,4,22,1.0,365,,filtered
 bb_maker,DOTUSDT,1m,1.339,1.008,0.87,3319,31,0.35,180,,filtered
 crash_revert,APTUSDT,15m,1.327,1.077,1.22,119,22,0.23,365,,filtered
+bb_maker,NEARUSDT,5m,1.294,1.014,1.23,4047,47,1.0,365,,passed
 vol_drift,PEPEUSDT,15m,1.292,1.037,1.19,356,22,1.0,365,,passed
 streak_vol,SUIUSDT,15m,1.286,1.038,1.18,279,22,1.0,365,,passed
 squeeze_pop,ADAUSDT,5m,1.276,1.076,1.21,95,47,0.36,365,,filtered

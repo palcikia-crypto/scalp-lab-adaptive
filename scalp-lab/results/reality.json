@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-25T00:03:32Z",
- "equity": 1284.32,
+ "updated": "2026-11-25T07:42:53Z",
+ "equity": 1286.2,
  "peak": 1311.44,
- "drawdown_pct": 2.07,
+ "drawdown_pct": 1.92,
  "global_mult": 1.0,
  "alerts": [],
  "actions": [],
@@ -25,6 +25,11 @@
   "spike_revert-SUIUSDT-15m": {
    "n_paper": 8,
    "avg_paper_pct": 1.834,
+   "bt_expect_pct": null
+  },
+  "bollinger_reversion-NEARUSDT-5m": {
+   "n_paper": 8,
+   "avg_paper_pct": -0.427,
    "bt_expect_pct": null
   }
  }

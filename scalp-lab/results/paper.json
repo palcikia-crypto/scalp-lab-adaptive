@@ -1,6 +1,6 @@
 {
  "capital_start": 1000,
- "equity": 1286.2020341409755,
+ "equity": 1311.155528526291,
  "positions": {
   "vol_burst_revert-ARBUSDT-15m": {
    "strategy": "vol_burst_revert",
@@ -11,55 +11,40 @@
    "opened": "2026-11-24 13:00:00",
    "fee_mode": "maker",
    "oos_sharpe": 2.49,
-   "last_ts": "2026-11-24 23:45:00",
-   "last_px": 0.1104,
+   "last_ts": "2026-11-25 07:15:00",
+   "last_px": 0.1101,
    "fund": 0.0,
    "weight": 0.4375,
    "shadow": false
   },
-  "bb_maker-NEARUSDT-5m": {
-   "strategy": "bb_maker",
-   "symbol": "NEARUSDT",
+  "wick_vol-FILUSDT-5m": {
+   "strategy": "wick_vol",
+   "symbol": "FILUSDT",
    "tf": "5m",
    "signal": -1.0,
-   "entry": 2.876,
-   "opened": "2026-11-24 22:00:00",
+   "entry": 0.5282,
+   "opened": "2026-11-25 02:05:00",
    "fee_mode": "maker",
-   "oos_sharpe": 2.37,
-   "last_ts": "2026-11-24 23:55:00",
-   "last_px": 2.89,
+   "oos_sharpe": 1.86,
+   "last_ts": "2026-11-25 07:35:00",
+   "last_px": 0.5277,
    "fund": 0.0,
-   "weight": 0.65,
+   "weight": 0.494,
    "shadow": false
-  },
-  "vol_burst_revert-ARBUSDT-5m": {
-   "strategy": "vol_burst_revert",
-   "symbol": "ARBUSDT",
-   "tf": "5m",
-   "signal": 1.0,
-   "entry": 0.1107,
-   "opened": "2026-11-24 21:55:00",
-   "fee_mode": "maker",
-   "oos_sharpe": 2.19,
-   "last_ts": "2026-11-24 23:55:00",
-   "last_px": 0.1104,
-   "fund": 0.0,
-   "weight": 0.0,
-   "shadow": true
   },
   "bollinger_reversion-NEARUSDT-5m": {
    "strategy": "bollinger_reversion",
    "symbol": "NEARUSDT",
    "tf": "5m",
-   "signal": -1.0,
-   "entry": 2.888,
-   "opened": "2026-11-24 22:25:00",
+   "signal": 1.0,
+   "entry": 2.834,
+   "opened": "2026-11-25 07:30:00",
    "fee_mode": "maker",
    "oos_sharpe": 1.79,
-   "last_ts": "2026-11-24 23:55:00",
-   "last_px": 2.89,
+   "last_ts": "2026-11-25 07:35:00",
+   "last_px": 2.825,
    "fund": 0.0,
-   "weight": 0.65,
+   "weight": 0.4375,
    "shadow": false
   }
  },
@@ -1870,20 +1855,109 @@
    "closed_ts": "2026-11-24 19:35:00",
    "fee_mode": "maker",
    "reason": "flat signal"
+  },
+  {
+   "key": "bb_maker-NEARUSDT-5m",
+   "strategy": "bb_maker",
+   "symbol": "NEARUSDT",
+   "tf": "5m",
+   "side": "short",
+   "entry": 2.876,
+   "exit": 2.825,
+   "pnl_pct": 1.1201,
+   "pnl_raw_pct": 1.7233,
+   "weight": 0.65,
+   "shadow": false,
+   "fund_pct": 0.0,
+   "opened": "2026-11-24 22:00:00",
+   "closed_ts": "2026-11-25 07:35:00",
+   "fee_mode": "maker",
+   "reason": "rotated out"
+  },
+  {
+   "key": "vol_burst_revert-ARBUSDT-5m",
+   "strategy": "vol_burst_revert",
+   "symbol": "ARBUSDT",
+   "tf": "5m",
+   "side": "long",
+   "entry": 0.1107,
+   "exit": 0.1105,
+   "pnl_pct": -0.0,
+   "pnl_raw_pct": -0.2307,
+   "weight": 0.0,
+   "shadow": true,
+   "fund_pct": 0.0,
+   "opened": "2026-11-24 21:55:00",
+   "closed_ts": "2026-11-25 00:00:00",
+   "fee_mode": "maker",
+   "reason": "flat signal"
+  },
+  {
+   "key": "bollinger_reversion-NEARUSDT-5m",
+   "strategy": "bollinger_reversion",
+   "symbol": "NEARUSDT",
+   "tf": "5m",
+   "side": "short",
+   "entry": 2.888,
+   "exit": 2.871,
+   "pnl_pct": 0.3501,
+   "pnl_raw_pct": 0.5386,
+   "weight": 0.65,
+   "shadow": false,
+   "fund_pct": 0.0,
+   "opened": "2026-11-24 22:25:00",
+   "closed_ts": "2026-11-25 00:05:00",
+   "fee_mode": "maker",
+   "reason": "flat signal"
+  },
+  {
+   "key": "bollinger_reversion-NEARUSDT-5m",
+   "strategy": "bollinger_reversion",
+   "symbol": "NEARUSDT",
+   "tf": "5m",
+   "side": "long",
+   "entry": 2.845,
+   "exit": 2.856,
+   "pnl_pct": 0.1473,
+   "pnl_raw_pct": 0.3366,
+   "weight": 0.4375,
+   "shadow": false,
+   "fund_pct": 0.0,
+   "opened": "2026-11-25 01:00:00",
+   "closed_ts": "2026-11-25 03:10:00",
+   "fee_mode": "maker",
+   "reason": "flat signal"
+  },
+  {
+   "key": "bollinger_reversion-NEARUSDT-5m",
+   "strategy": "bollinger_reversion",
+   "symbol": "NEARUSDT",
+   "tf": "5m",
+   "side": "short",
+   "entry": 2.888,
+   "exit": 2.866,
+   "pnl_pct": 0.3114,
+   "pnl_raw_pct": 0.7118,
+   "weight": 0.4375,
+   "shadow": false,
+   "fund_pct": 0.0,
+   "opened": "2026-11-25 05:50:00",
+   "closed_ts": "2026-11-25 07:00:00",
+   "fee_mode": "maker",
+   "reason": "flat signal"
   }
  ],
  "seen": {
-  "vol_burst_revert-ARBUSDT-5m": "2026-11-24 23:55:00",
-  "bollinger_reversion-NEARUSDT-5m": "2026-11-24 23:55:00",
-  "spike_bb-BNBUSDT-5m": "2026-11-24 23:55:00",
-  "spike_revert-SUIUSDT-15m": "2026-11-24 23:45:00",
-  "wick_vol-OPUSDT-15m": "2026-11-24 23:45:00",
-  "vol_burst_revert-ARBUSDT-15m": "2026-11-24 23:45:00",
-  "bb_maker-NEARUSDT-5m": "2026-11-24 23:55:00",
-  "wick_vol-FILUSDT-5m": "2026-11-24 23:55:00"
+  "vol_burst_revert-ARBUSDT-5m": "2026-11-25 07:35:00",
+  "bollinger_reversion-NEARUSDT-5m": "2026-11-25 07:35:00",
+  "spike_bb-BNBUSDT-5m": "2026-11-25 07:35:00",
+  "spike_revert-SUIUSDT-15m": "2026-11-25 07:15:00",
+  "wick_vol-OPUSDT-15m": "2026-11-25 07:15:00",
+  "vol_burst_revert-ARBUSDT-15m": "2026-11-25 07:15:00",
+  "wick_vol-FILUSDT-5m": "2026-11-25 07:35:00"
  },
- "updated": "2026-11-25T00:03:59Z",
- "runs": 181,
+ "updated": "2026-11-25T07:43:19Z",
+ "runs": 182,
  "alloc": {
   "vol_burst_revert-ARBUSDT-15m": {
    "weight": 0.5,
@@ -1894,15 +1968,6 @@
    "loss_streak": 0,
    "n_recent": 3
   },
-  "bb_maker-NEARUSDT-5m": {
-   "weight": 0.5,
-   "mode": "live",
-   "reason": "минусовая серия (-0.9%, 0 убытков подряд) — размер снижен",
-   "recent_pnl": -0.89,
-   "recent_wr": 50.0,
-   "loss_streak": 0,
-   "n_recent": 2
-  },
   "spike_revert-SUIUSDT-15m": {
    "weight": 1.5,
    "mode": "live",
@@ -1911,6 +1976,11 @@
    "recent_wr": 75.0,
    "loss_streak": 1,
    "n_recent": 8
+  },
+  "wick_vol-OPUSDT-15m": {
+   "weight": 1.0,
+   "mode": "live",
+   "reason": "новая, сделок ещё нет"
   },
   "vol_burst_revert-ARBUSDT-5m": {
    "weight": 0.0,
@@ -1921,28 +1991,23 @@
    "loss_streak": 3,
    "n_recent": 3
   },
-  "wick_vol-OPUSDT-15m": {
-   "weight": 1.0,
-   "mode": "live",
-   "reason": "новая, сделок ещё нет"
-  },
   "wick_vol-FILUSDT-5m": {
    "weight": 0.5,
    "mode": "live",
-   "reason": "минусовая серия (-1.1%, 1 убытков подряд) — размер снижен",
-   "recent_pnl": -1.1,
-   "recent_wr": 0.0,
-   "loss_streak": 1,
-   "n_recent": 1
+   "reason": "минусовая серия (-1.1%, 0 убытков подряд) — размер снижен",
+   "recent_pnl": -1.05,
+   "recent_wr": 50.0,
+   "loss_streak": 0,
+   "n_recent": 2
   },
   "bollinger_reversion-NEARUSDT-5m": {
    "weight": 0.5,
    "mode": "live",
-   "reason": "минусовая серия (-1.8%, 1 убытков подряд) — размер снижен",
-   "recent_pnl": -1.82,
-   "recent_wr": 57.1,
-   "loss_streak": 1,
-   "n_recent": 7
+   "reason": "минусовая серия (-1.9%, 2 убытков подряд) — размер снижен",
+   "recent_pnl": -1.86,
+   "recent_wr": 50.0,
+   "loss_streak": 2,
+   "n_recent": 8
   },
   "spike_bb-BNBUSDT-5m": {
    "weight": 1.03,
@@ -1956,17 +2021,16 @@
  },
  "brain_fit": {
   "vol_burst_revert-ARBUSDT-15m": 0.875,
-  "bb_maker-NEARUSDT-5m": 1.3,
-  "spike_revert-SUIUSDT-15m": 1.3,
-  "vol_burst_revert-ARBUSDT-5m": 0.875,
+  "spike_revert-SUIUSDT-15m": 0.875,
   "wick_vol-OPUSDT-15m": 0.875,
-  "wick_vol-FILUSDT-5m": 0.42,
-  "bollinger_reversion-NEARUSDT-5m": 1.3,
-  "spike_bb-BNBUSDT-5m": 0.875
+  "vol_burst_revert-ARBUSDT-5m": 0.988,
+  "wick_vol-FILUSDT-5m": 0.988,
+  "bollinger_reversion-NEARUSDT-5m": 0.875,
+  "spike_bb-BNBUSDT-5m": 0.988
  },
  "reality": {
   "mult": 1.0,
-  "dd_pct": 2.07,
+  "dd_pct": 1.92,
   "alerts": []
  },
  "tops": [
@@ -1987,28 +2051,8 @@
    "weight": 0.438,
    "fit": 0.875,
    "mode": "live",
-   "sig_last": "2026-11-24 23:45:00",
-   "sig_pct": 40.75
-  },
-  {
-   "key": "bb_maker-NEARUSDT-5m",
-   "strategy": "bb_maker",
-   "symbol": "NEARUSDT",
-   "tf": "5m",
-   "params": {
-    "k": 2.0,
-    "n": 38
-   },
-   "fee_mode": "maker",
-   "gold": false,
-   "oos_sharpe": 2.37,
-   "score": 2.37,
-   "signal": -1.0,
-   "weight": 0.65,
-   "fit": 1.3,
-   "mode": "live",
-   "sig_last": "2026-11-24 23:55:00",
-   "sig_pct": 54.69
+   "sig_last": "2026-11-25 07:15:00",
+   "sig_pct": 43.35
   },
   {
    "key": "spike_revert-SUIUSDT-15m",
@@ -2025,31 +2069,11 @@
    "oos_sharpe": 1.86,
    "score": 2.32,
    "signal": 0.0,
-   "weight": 1.95,
-   "fit": 1.3,
+   "weight": 1.312,
+   "fit": 0.875,
    "mode": "live",
    "sig_last": "2026-11-23 22:00:00",
    "sig_pct": 5.65
-  },
-  {
-   "key": "vol_burst_revert-ARBUSDT-5m",
-   "strategy": "vol_burst_revert",
-   "symbol": "ARBUSDT",
-   "tf": "5m",
-   "params": {
-    "h": 160,
-    "vz": 6.0
-   },
-   "fee_mode": "maker",
-   "gold": false,
-   "oos_sharpe": 2.19,
-   "score": 2.19,
-   "signal": 1.0,
-   "weight": 0.0,
-   "fit": 0.875,
-   "mode": "shadow",
-   "sig_last": "2026-11-24 23:55:00",
-   "sig_pct": 41.64
   },
   {
    "key": "wick_vol-OPUSDT-15m",
@@ -2073,6 +2097,26 @@
    "sig_pct": 5.65
   },
   {
+   "key": "vol_burst_revert-ARBUSDT-5m",
+   "strategy": "vol_burst_revert",
+   "symbol": "ARBUSDT",
+   "tf": "5m",
+   "params": {
+    "h": 90,
+    "vz": 6.0
+   },
+   "fee_mode": "maker",
+   "gold": false,
+   "oos_sharpe": 1.96,
+   "score": 1.96,
+   "signal": 0.0,
+   "weight": 0.0,
+   "fit": 0.988,
+   "mode": "shadow",
+   "sig_last": "2026-11-24 20:35:00",
+   "sig_pct": 25.76
+  },
+  {
    "key": "wick_vol-FILUSDT-5m",
    "strategy": "wick_vol",
    "symbol": "FILUSDT",
@@ -2086,12 +2130,12 @@
    "gold": false,
    "oos_sharpe": 1.86,
    "score": 1.86,
-   "signal": 0.0,
-   "weight": 0.21,
-   "fit": 0.42,
+   "signal": -1.0,
+   "weight": 0.494,
+   "fit": 0.988,
    "mode": "live",
-   "sig_last": "2026-11-24 17:35:00",
-   "sig_pct": 42.03
+   "sig_last": "2026-11-25 07:35:00",
+   "sig_pct": 42.88
   },
   {
    "key": "bollinger_reversion-NEARUSDT-5m",
@@ -2106,12 +2150,12 @@
    "gold": false,
    "oos_sharpe": 1.79,
    "score": 1.79,
-   "signal": -1.0,
-   "weight": 0.65,
-   "fit": 1.3,
+   "signal": 1.0,
+   "weight": 0.438,
+   "fit": 0.875,
    "mode": "live",
-   "sig_last": "2026-11-24 23:55:00",
-   "sig_pct": 58.26
+   "sig_last": "2026-11-25 07:35:00",
+   "sig_pct": 57.37
   },
   {
    "key": "spike_bb-BNBUSDT-5m",
@@ -2129,31 +2173,31 @@
    "oos_sharpe": 0.84,
    "score": 0.51,
    "signal": 0.0,
-   "weight": 0.901,
-   "fit": 0.875,
+   "weight": 1.018,
+   "fit": 0.988,
    "mode": "live",
    "sig_last": "2026-11-23 18:55:00",
    "sig_pct": 9.08
   }
  ],
  "stats": {
-  "n_trades": 101,
-  "wins": 65,
-  "winrate": 64.4,
-  "equity": 1286.2,
-  "pnl_pct": 28.62,
-  "open": 4,
-  "shadow_trades": 4,
-  "shadow_open": 1
+  "n_trades": 105,
+  "wins": 69,
+  "winrate": 65.7,
+  "equity": 1311.16,
+  "pnl_pct": 31.12,
+  "open": 3,
+  "shadow_trades": 5,
+  "shadow_open": 0
  },
  "filter_stats": {
   "total": 1819,
   "low_trades": 309,
   "low_folds": 0,
   "low_pf": 1390,
-  "low_t": 112,
+  "low_t": 113,
   "no_params": 0,
-  "admitted": 8
+  "admitted": 7
  },
  "candidates": [
   {

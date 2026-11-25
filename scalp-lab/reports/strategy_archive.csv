@@ -29,7 +29,7 @@ bb_fast,NEARUSDT,5m,rotation,2.440496783161943,1.0421182334172374,2.317019859970
 bb_maker,NEARUSDT,1m,research,2.4104499029955555,1.0148212919918327,1.5707878259815726,2263,31,180,0,0,rs-bb_maker-NEARUSDT-1m-5d196b45
 crash_revert,ARBUSDT,1m,frontier,2.3782860380152293,1.393582274507514,1.5498280012265235,16,31,180,0,0,fr-crash_revert-ARBUSDT-1m
 streak_bb,NEARUSDT,5m,research,2.3743419801075705,1.022192590850833,2.2542121588638278,2961,47,365,1,0,rs-streak_bb-NEARUSDT-5m-bccdccc5
-bb_maker,NEARUSDT,5m,research,2.3673767806978536,1.0275114078208882,2.2475993636852736,3787,47,365,1,1,rs-bb_maker-NEARUSDT-5m-173fc0ec
+bb_maker,NEARUSDT,5m,research,2.3673767806978536,1.0275114078208882,2.2475993636852736,3787,47,365,1,0,rs-bb_maker-NEARUSDT-5m-173fc0ec
 spike_revert,SUIUSDT,15m,research,2.3649107806431346,1.0750123968477248,2.1724194731825186,379,22,365,1,1,rs-spike_revert-SUIUSDT-15m-19d124a8
 spike_revert,SUIUSDT,15m,frontier,2.341510313097444,1.0886100951875701,2.1509236807010748,254,22,365,1,1,fr-spike_revert-SUIUSDT-15m
 bb_maker,NEARUSDT,1m,base,2.33784780484933,1.0137882139199106,1.5478532879595401,3630,32,180,0,0,rot-20261116-bb_maker-NEARUSDT-1m
@@ -56,7 +56,7 @@ wick_vol,APTUSDT,15m,research,2.133226343928534,1.1031869550577469,1.95959293187
 vol_burst_revert,ARBUSDT,5m,base,2.122068417360044,1.0319729794565689,2.014702375829285,893,47,365,1,0,bt-vol_burst_revert-ARBUSDT-5m
 spike_bb,FILUSDT,1m,frontier,2.118973079252101,1.1248263563733802,1.3808447594515403,86,31,180,0,0,fr-spike_bb-FILUSDT-1m
 wick_vol,OPUSDT,15m,research,2.1087229070907814,1.0877746529465362,1.9370839460016576,442,22,365,1,1,rs-wick_vol-OPUSDT-15m-504b4a9e
-bb_maker,NEARUSDT,5m,research,2.1044736676695237,1.0248917796318386,1.9979978324160654,2581,47,365,1,1,rs-bb_maker-NEARUSDT-5m-93bdb3d9
+bb_maker,NEARUSDT,5m,research,2.1044736676695237,1.0248917796318386,1.9979978324160654,2581,47,365,1,0,rs-bb_maker-NEARUSDT-5m-93bdb3d9
 qr_revert,ATOMUSDT,1m,base,2.077609760334559,1.010800745936344,1.3755536574965084,5605,32,180,0,0,bt-qr_revert-ATOMUSDT-1m
 vol_burst_revert,ARBUSDT,5m,rotation,2.06717835906263,1.0308320355396816,1.9625894797715866,874,47,365,1,0,rot-20261121-vol_burst_revert-ARBUSDT-5m
 crash_revert,SOLUSDT,5m,frontier,2.041992677599251,1.2523613426917484,1.9386780677426219,39,47,365,0,0,fr-crash_revert-SOLUSDT-5m
@@ -98,7 +98,7 @@ bb_regime,APTUSDT,15m,research,1.7274191219005697,1.036897024172962,1.5868162847
 bollinger_reversion,DOTUSDT,15m,frontier,1.7250362539297228,1.0442537741391593,1.5846273697325803,759,22,365,0,0,fr-bollinger_reversion-DOTUSDT-15m
 bb_vol,LTCUSDT,15m,frontier,1.7233941659168925,1.060953121319566,1.5831189390531015,406,22,365,0,0,fr-bb_vol-LTCUSDT-15m
 spike_revert,SUIUSDT,15m,rotation,1.7171444856876215,1.0658307402698175,1.5773779499458762,209,22,365,1,1,rot-20261123-spike_revert-SUIUSDT-15m
-bb_maker,NEARUSDT,5m,research,1.70463680465917,1.0251748613996958,1.618390713596949,1833,47,365,1,1,rs-bb_maker-NEARUSDT-5m-ca058f30
+bb_maker,NEARUSDT,5m,research,1.70463680465917,1.0251748613996958,1.618390713596949,1833,47,365,1,0,rs-bb_maker-NEARUSDT-5m-ca058f30
 crash_revert,SUIUSDT,5m,frontier,1.6991003288151503,1.1302694489566878,1.613134355722049,71,47,365,0,0,fr-crash_revert-SUIUSDT-5m
 bb_regime,ATOMUSDT,1m,deep,1.6734071351944226,1.0097034162117937,1.542183424974463,5437,31,360,0,0,ev-bb_regime-ATOMUSDT-1m-v2
 bb_regime,NEARUSDT,1m,base,1.6730518213798609,1.0102322743884533,1.107702031448712,2763,32,180,0,0,rot-20261116-bb_regime-NEARUSDT-1m
@@ -179,9 +179,9 @@ spike_revert,SUIUSDT,15m,research,1.3695801241489796,1.0574632185757153,1.258103
 wick_vol,AVAXUSDT,15m,base,1.3674109297461394,1.0454871010372553,1.2561108672417982,459,22,365,0,0,bt-wick_vol-AVAXUSDT-15m
 bb_regime,ARBUSDT,5m,base,1.3656500109146346,1.0192015056690336,1.2965549550772033,1202,47,365,1,0,bt-bb_regime-ARBUSDT-5m
 spike_bb,FILUSDT,15m,frontier,1.3612727005942966,1.0515744378508176,1.2504722576800906,278,22,365,0,0,fr-spike_bb-FILUSDT-15m
-bb_maker,NEARUSDT,5m,rotation,1.3531211472498903,1.0168123187958367,1.2846599892102668,2274,47,365,1,1,rot-20261123-bb_maker-NEARUSDT-5m
+bb_maker,NEARUSDT,5m,rotation,1.3531211472498903,1.0168123187958367,1.2846599892102668,2274,47,365,1,0,rot-20261123-bb_maker-NEARUSDT-5m
 bb_regime,APTUSDT,15m,frontier,1.3505452049428517,1.0287631954252365,1.240617923790445,457,22,365,0,0,fr-bb_regime-APTUSDT-15m
-bb_maker,NEARUSDT,5m,frontier,1.3486401341900067,1.0169888774539264,1.2804056929849357,2150,47,365,1,1,fr-bb_maker-NEARUSDT-5m
+bb_maker,NEARUSDT,5m,frontier,1.3486401341900067,1.0169888774539264,1.2804056929849357,2150,47,365,1,0,fr-bb_maker-NEARUSDT-5m
 spike_revert,SUIUSDT,15m,research,1.3408992573866954,1.0856952016360453,1.2317571056658,127,22,365,1,1,rs-spike_revert-SUIUSDT-15m-3b847b88
 crash_revert,SOLUSDT,15m,base,1.340255181803432,1.121509391692618,1.2311654544497221,58,22,365,0,0,bt-crash_revert-SOLUSDT-15m
 bb_maker,DOTUSDT,1m,frontier,1.3388061276994974,1.007582143253659,0.8724430921075976,3319,31,180,0,0,fr-bb_maker-DOTUSDT-1m
@@ -202,7 +202,7 @@ wick_vol,AVAXUSDT,15m,frontier,1.3117569560680071,1.0442636058787158,1.204986834
 streak_bb,NEARUSDT,5m,research,1.2982549338847937,1.0122220166816769,1.2325697316506483,2467,47,365,1,0,rs-streak_bb-NEARUSDT-5m-8e17b49a
 streak_bb,NEARUSDT,5m,frontier,1.2950232891010134,1.0126219373578775,1.2295015919194052,2453,47,365,1,0,fr-streak_bb-NEARUSDT-5m
 bb_maker,NEARUSDT,1m,deep,1.2941119424798537,1.0078819199929712,1.7136234625711615,11048,32,720,0,0,ev-bb_maker-NEARUSDT-1m-v4
-bb_maker,NEARUSDT,5m,research,1.293775567124238,1.0140078380182846,1.2283169984301379,4047,47,365,1,1,rs-bb_maker-NEARUSDT-5m-dd7a39a5
+bb_maker,NEARUSDT,5m,research,1.293775567124238,1.0140078380182846,1.2283169984301379,4047,47,365,1,0,rs-bb_maker-NEARUSDT-5m-dd7a39a5
 vol_drift,PEPEUSDT,15m,research,1.2918550063719725,1.0369814034550446,1.1867047989047554,356,22,365,1,0,rs-vol_drift-PEPEUSDT-15m-ec6d475a
 streak_vol,SUIUSDT,15m,research,1.2857699843880435,1.038425907746885,1.1811150657271527,279,22,365,1,0,rs-streak_vol-SUIUSDT-15m-4692916d
 spike_bb,DOGEUSDT,5m,base,1.2831699663945542,1.0864437147097303,1.2182479880191672,106,47,365,0,0,bt-spike_bb-DOGEUSDT-5m
@@ -218,7 +218,7 @@ wick_vol,OPUSDT,15m,deep,1.2559850272996784,1.0479250723039248,2.307508895189254
 vol_drift,PEPEUSDT,15m,frontier,1.2450586474706264,1.0315251854802465,1.143717417654087,343,22,365,1,0,fr-vol_drift-PEPEUSDT-15m
 bollinger_reversion,DOTUSDT,15m,base,1.2391054800220307,1.0315962060978925,1.1382488067456753,831,22,365,0,0,bt-bollinger_reversion-DOTUSDT-15m
 wick_vol,AVAXUSDT,15m,research,1.2380641918661266,1.028634178816375,1.1372922739726015,479,22,365,0,0,rs-wick_vol-AVAXUSDT-15m-19f7e673
-bb_maker,NEARUSDT,5m,rotation,1.2376813544484917,1.015678861217375,1.175060872179179,1991,47,365,1,1,rot-20261121-bb_maker-NEARUSDT-5m
+bb_maker,NEARUSDT,5m,rotation,1.2376813544484917,1.015678861217375,1.175060872179179,1991,47,365,1,0,rot-20261121-bb_maker-NEARUSDT-5m
 spike_revert,ATOMUSDT,1m,base,1.2365001389754873,1.0699849409963442,0.8186678370190078,70,32,180,0,0,bt-spike_revert-ATOMUSDT-1m
 flow_fade,ATOMUSDT,1m,base,1.2320490578119867,1.041717774100012,0.8157208442337595,249,32,180,0,0,bt-flow_fade-ATOMUSDT-1m
 bb_maker,SOLUSDT,5m,fee-aware,1.22823450111957,1.016301591212257,1.1660919823497142,1934,47,365,0,0,bt-bb_maker-SOLUSDT-5m
@@ -356,7 +356,7 @@ wick_vol,ATOMUSDT,15m,base,0.891839743292163,1.0247404630050478,0.81924867574036
 spike_bb,LINKUSDT,1m,base,0.8917298785066428,1.0789316518790766,0.5904007187958172,52,32,180,0,0,bt-spike_bb-LINKUSDT-1m
 bb_fast,ATOMUSDT,15m,base,0.8902891128929074,1.0266391075350145,0.8178242585054182,769,22,365,0,0,bt-bb_fast-ATOMUSDT-15m
 wick_vol,FILUSDT,5m,research,0.8891425711412938,1.0117839974999245,0.8441564069634755,1478,47,365,1,1,rs-wick_vol-FILUSDT-5m-1927a2b3
-bb_maker,NEARUSDT,5m,fee-aware,0.8868816533197196,1.0109612150672296,0.842009880268381,2218,47,365,1,1,bt-bb_maker-NEARUSDT-5m
+bb_maker,NEARUSDT,5m,fee-aware,0.8868816533197196,1.0109612150672296,0.842009880268381,2218,47,365,1,0,bt-bb_maker-NEARUSDT-5m
 bb_regime,DOTUSDT,1m,base,0.8859775219291012,1.0052172776992643,0.5865921714542861,2334,32,180,0,0,bt-bb_regime-DOTUSDT-1m
 vol_drift,PEPEUSDT,5m,fee-aware,0.8847275767503338,1.011546057991259,0.839964789192826,977,47,365,0,0,bt-vol_drift-PEPEUSDT-5m
 crash_revert,SOLUSDT,5m,rescue,0.8844105985559914,1.109687538039922,1.679327697017452,169,47,1460,0,0,rsc-crash_revert-SOLUSDT-5m
@@ -528,7 +528,7 @@ streak_bb,NEARUSDT,5m,research,0.5980860781956208,1.005721591167977,0.5678259159
 vwap_reversion,NEARUSDT,1m,frontier,0.5973396609860638,1.0043171310309622,0.38926088705963824,4908,31,180,0,0,fr-vwap_reversion-NEARUSDT-1m
 bb_maker,DOTUSDT,5m,fee-aware,0.5951714798102904,1.0074908629178683,0.5650587816067465,1876,47,365,0,0,bt-bb_maker-DOTUSDT-5m
 qr_revert,DOTUSDT,1m,deep,0.5948289967813176,1.0031607722268412,0.556955745350471,10219,32,360,0,0,ev-qr_revert-DOTUSDT-1m-v2
-bb_maker,NEARUSDT,5m,deep,0.5915653104440152,1.0079252869866056,1.123270132724974,6992,47,1460,1,1,ev-bb_maker-NEARUSDT-5m-v4
+bb_maker,NEARUSDT,5m,deep,0.5915653104440152,1.0079252869866056,1.123270132724974,6992,47,1460,1,0,ev-bb_maker-NEARUSDT-5m-v4
 bb_regime,SUIUSDT,1m,base,0.5863305580015874,1.0038477888380382,0.3882004979757008,2450,32,180,0,0,bt-bb_regime-SUIUSDT-1m
 spike_bb,LINKUSDT,5m,base,0.5849060608955249,1.0328162625216362,0.5553127415133785,103,47,365,0,0,bt-spike_bb-LINKUSDT-5m
 qr_revert,SUIUSDT,5m,base,0.5819002244113775,1.0068006382096835,0.5524589853119174,2232,47,365,0,0,bt-qr_revert-SUIUSDT-5m
@@ -793,7 +793,7 @@ wick_vol,ARBUSDT,1m,frontier,0.18326871726208943,1.001865249146408,0.11942843931
 funding_revert,LINKUSDT,5m,base,0.18253201537430927,1.0023702572757531,0.1732968089205269,1608,47,365,0,0,bt-funding_revert-LINKUSDT-5m
 bollinger_reversion,XRPUSDT,15m,base,0.18177795048187628,1.0053206565355297,0.1669821807462198,842,22,365,0,0,bt-bollinger_reversion-XRPUSDT-15m
 funding_revert,AVAXUSDT,15m,base,0.18014095288317153,1.0038847091899252,0.16547842614791222,404,22,365,0,0,bt-funding_revert-AVAXUSDT-15m
-bb_maker,NEARUSDT,5m,deep,0.1799393804884307,1.0024057778376878,0.24159766661798815,4295,47,730,1,1,ev-bb_maker-NEARUSDT-5m-v2
+bb_maker,NEARUSDT,5m,deep,0.1799393804884307,1.0024057778376878,0.24159766661798815,4295,47,730,1,0,ev-bb_maker-NEARUSDT-5m-v2
 bb_maker,OPUSDT,1m,fee-aware,0.1788622100010623,1.001018486720823,0.11842193459625001,3288,32,180,0,0,bt-bb_maker-OPUSDT-1m
 wick_vol,AVAXUSDT,15m,research,0.1774017735184998,1.0064056919884592,0.16296220158626754,694,22,365,0,0,rs-wick_vol-AVAXUSDT-15m-27b12457
 spike_revert,BNBUSDT,15m,frontier,0.17631219118639013,1.010510584712669,0.16196130552909493,93,22,365,0,0,fr-spike_revert-BNBUSDT-15m
@@ -6247,11 +6247,13 @@ wick_vol,SOLUSDT,1h,frontier,,,,,,730,0,0,fr-wick_vol-SOLUSDT-1h
 wick_vol,SUIUSDT,1h,frontier,,,,,,730,0,0,fr-wick_vol-SUIUSDT-1h
 wick_vol,UNIUSDT,1h,frontier,,,,,,730,0,0,fr-wick_vol-UNIUSDT-1h
 wick_vol,XRPUSDT,1h,frontier,,,,,,730,0,0,fr-wick_vol-XRPUSDT-1h
+bb_fast,ADAUSDT,5m,gold,,,,,,,0,0,gold-bb_fast-ADAUSDT-5m
 bb_fast,ATOMUSDT,15m,gold,,,,,,,0,0,gold-bb_fast-ATOMUSDT-15m
 bb_fast,BNBUSDT,15m,gold,,,,,,,0,0,gold-bb_fast-BNBUSDT-15m
 bb_fast,BTCUSDT,15m,gold,,,,,,,0,0,gold-bb_fast-BTCUSDT-15m
 bb_fast,LTCUSDT,15m,gold,,,,,,,0,0,gold-bb_fast-LTCUSDT-15m
 bb_fast,NEARUSDT,5m,gold,,,,,,,0,0,gold-bb_fast-NEARUSDT-5m
+bb_fast,OPUSDT,1m,gold,,,,,,,0,0,gold-bb_fast-OPUSDT-1m
 bb_fast,SUIUSDT,15m,gold,,,,,,,0,0,gold-bb_fast-SUIUSDT-15m
 bb_fast,UNIUSDT,15m,gold,,,,,,,0,0,gold-bb_fast-UNIUSDT-15m
 bb_maker,APTUSDT,15m,gold,,,,,,,0,0,gold-bb_maker-APTUSDT-15m
@@ -6266,6 +6268,7 @@ bb_maker,NEARUSDT,5m,gold,,,,,,,0,0,gold-bb_maker-NEARUSDT-5m
 bb_maker,OPUSDT,5m,gold,,,,,,,0,0,gold-bb_maker-OPUSDT-5m
 bb_maker,SOLUSDT,5m,gold,,,,,,,0,0,gold-bb_maker-SOLUSDT-5m
 bb_maker,SUIUSDT,1m,gold,,,,,,,0,0,gold-bb_maker-SUIUSDT-1m
+bb_maker,UNIUSDT,15m,gold,,,,,,,0,0,gold-bb_maker-UNIUSDT-15m
 bb_regime,APTUSDT,15m,gold,,,,,,,0,0,gold-bb_regime-APTUSDT-15m
 bb_regime,APTUSDT,1m,gold,,,,,,,0,0,gold-bb_regime-APTUSDT-1m
 bb_regime,APTUSDT,5m,gold,,,,,,,0,0,gold-bb_regime-APTUSDT-5m
@@ -6273,6 +6276,7 @@ bb_regime,ARBUSDT,15m,gold,,,,,,,0,0,gold-bb_regime-ARBUSDT-15m
 bb_regime,ARBUSDT,5m,gold,,,,,,,0,0,gold-bb_regime-ARBUSDT-5m
 bb_regime,ATOMUSDT,1m,gold,,,,,,,0,0,gold-bb_regime-ATOMUSDT-1m
 bb_regime,ATOMUSDT,5m,gold,,,,,,,0,0,gold-bb_regime-ATOMUSDT-5m
+bb_regime,DOGEUSDT,15m,gold,,,,,,,0,0,gold-bb_regime-DOGEUSDT-15m
 bb_regime,DOTUSDT,1m,gold,,,,,,,0,0,gold-bb_regime-DOTUSDT-1m
 bb_regime,LINKUSDT,5m,gold,,,,,,,0,0,gold-bb_regime-LINKUSDT-5m
 bb_regime,LTCUSDT,1m,gold,,,,,,,0,0,gold-bb_regime-LTCUSDT-1m
@@ -6286,6 +6290,7 @@ bb_vol,APTUSDT,15m,gold,,,,,,,0,0,gold-bb_vol-APTUSDT-15m
 bb_vol,ARBUSDT,15m,gold,,,,,,,0,0,gold-bb_vol-ARBUSDT-15m
 bb_vol,ATOMUSDT,1m,gold,,,,,,,0,0,gold-bb_vol-ATOMUSDT-1m
 bb_vol,AVAXUSDT,15m,gold,,,,,,,0,0,gold-bb_vol-AVAXUSDT-15m
+bb_vol,DOTUSDT,15m,gold,,,,,,,0,0,gold-bb_vol-DOTUSDT-15m
 bb_vol,FILUSDT,15m,gold,,,,,,,0,0,gold-bb_vol-FILUSDT-15m
 bb_vol,LINKUSDT,15m,gold,,,,,,,0,0,gold-bb_vol-LINKUSDT-15m
 bb_vol,LTCUSDT,15m,gold,,,,,,,0,0,gold-bb_vol-LTCUSDT-15m
@@ -6301,6 +6306,7 @@ bollinger_reversion,DOTUSDT,15m,gold,,,,,,,0,0,gold-bollinger_reversion-DOTUSDT-
 bollinger_reversion,FILUSDT,1m,gold,,,,,,,0,0,gold-bollinger_reversion-FILUSDT-1m
 bollinger_reversion,FILUSDT,5m,gold,,,,,,,0,0,gold-bollinger_reversion-FILUSDT-5m
 bollinger_reversion,NEARUSDT,5m,gold,,,,,,,0,0,gold-bollinger_reversion-NEARUSDT-5m
+bollinger_reversion,OPUSDT,15m,gold,,,,,,,0,0,gold-bollinger_reversion-OPUSDT-15m
 bollinger_reversion,OPUSDT,1m,gold,,,,,,,0,0,gold-bollinger_reversion-OPUSDT-1m
 bollinger_reversion,SUIUSDT,15m,gold,,,,,,,0,0,gold-bollinger_reversion-SUIUSDT-15m
 bollinger_reversion,XRPUSDT,15m,gold,,,,,,,0,0,gold-bollinger_reversion-XRPUSDT-15m
@@ -6327,16 +6333,22 @@ level_fade,ARBUSDT,15m,gold,,,,,,,0,0,gold-level_fade-ARBUSDT-15m
 qr_revert,APTUSDT,5m,gold,,,,,,,0,0,gold-qr_revert-APTUSDT-5m
 qr_revert,ATOMUSDT,1m,gold,,,,,,,0,0,gold-qr_revert-ATOMUSDT-1m
 qr_revert,AVAXUSDT,15m,gold,,,,,,,0,0,gold-qr_revert-AVAXUSDT-15m
+qr_revert,DOTUSDT,15m,gold,,,,,,,0,0,gold-qr_revert-DOTUSDT-15m
 qr_revert,DOTUSDT,1m,gold,,,,,,,0,0,gold-qr_revert-DOTUSDT-1m
 qr_revert,LTCUSDT,5m,gold,,,,,,,0,0,gold-qr_revert-LTCUSDT-5m
+qr_revert,NEARUSDT,1m,gold,,,,,,,0,0,gold-qr_revert-NEARUSDT-1m
 qr_revert,OPUSDT,15m,gold,,,,,,,0,0,gold-qr_revert-OPUSDT-15m
+qr_revert,SUIUSDT,5m,gold,,,,,,,0,0,gold-qr_revert-SUIUSDT-5m
 spike_bb,APTUSDT,15m,gold,,,,,,,0,0,gold-spike_bb-APTUSDT-15m
+spike_bb,APTUSDT,5m,gold,,,,,,,0,0,gold-spike_bb-APTUSDT-5m
 spike_bb,ARBUSDT,5m,gold,,,,,,,0,0,gold-spike_bb-ARBUSDT-5m
 spike_bb,BNBUSDT,5m,gold,,,,,,,0,0,gold-spike_bb-BNBUSDT-5m
 spike_bb,FILUSDT,15m,gold,,,,,,,0,0,gold-spike_bb-FILUSDT-15m
 spike_bb,NEARUSDT,5m,gold,,,,,,,0,0,gold-spike_bb-NEARUSDT-5m
 spike_bb,SOLUSDT,5m,gold,,,,,,,0,0,gold-spike_bb-SOLUSDT-5m
+spike_follow,APTUSDT,5m,gold,,,,,,,0,0,gold-spike_follow-APTUSDT-5m
 spike_follow,FILUSDT,5m,gold,,,,,,,0,0,gold-spike_follow-FILUSDT-5m
+spike_revert,ADAUSDT,5m,gold,,,,,,,0,0,gold-spike_revert-ADAUSDT-5m
 spike_revert,ARBUSDT,15m,gold,,,,,,,0,0,gold-spike_revert-ARBUSDT-15m
 spike_revert,NEARUSDT,15m,gold,,,,,,,0,0,gold-spike_revert-NEARUSDT-15m
 spike_revert,NEARUSDT,5m,gold,,,,,,,0,0,gold-spike_revert-NEARUSDT-5m
@@ -6352,7 +6364,9 @@ streak_reversion,ATOMUSDT,15m,gold,,,,,,,0,0,gold-streak_reversion-ATOMUSDT-15m
 streak_reversion,NEARUSDT,5m,gold,,,,,,,0,0,gold-streak_reversion-NEARUSDT-5m
 streak_vol,APTUSDT,15m,gold,,,,,,,0,0,gold-streak_vol-APTUSDT-15m
 streak_vol,ARBUSDT,15m,gold,,,,,,,0,0,gold-streak_vol-ARBUSDT-15m
+streak_vol,ATOMUSDT,5m,gold,,,,,,,0,0,gold-streak_vol-ATOMUSDT-5m
 streak_vol,AVAXUSDT,15m,gold,,,,,,,0,0,gold-streak_vol-AVAXUSDT-15m
+streak_vol,BTCUSDT,15m,gold,,,,,,,0,0,gold-streak_vol-BTCUSDT-15m
 streak_vol,DOGEUSDT,15m,gold,,,,,,,0,0,gold-streak_vol-DOGEUSDT-15m
 streak_vol,LINKUSDT,15m,gold,,,,,,,0,0,gold-streak_vol-LINKUSDT-15m
 streak_vol,LTCUSDT,15m,gold,,,,,,,0,0,gold-streak_vol-LTCUSDT-15m
@@ -6367,6 +6381,7 @@ vol_burst_revert,ADAUSDT,1m,gold,,,,,,,0,0,gold-vol_burst_revert-ADAUSDT-1m
 vol_burst_revert,ARBUSDT,15m,gold,,,,,,,0,0,gold-vol_burst_revert-ARBUSDT-15m
 vol_burst_revert,ARBUSDT,1m,gold,,,,,,,0,0,gold-vol_burst_revert-ARBUSDT-1m
 vol_burst_revert,ARBUSDT,5m,gold,,,,,,,0,0,gold-vol_burst_revert-ARBUSDT-5m
+vol_burst_revert,AVAXUSDT,5m,gold,,,,,,,0,0,gold-vol_burst_revert-AVAXUSDT-5m
 vol_burst_revert,BTCUSDT,5m,gold,,,,,,,0,0,gold-vol_burst_revert-BTCUSDT-5m
 vol_burst_revert,NEARUSDT,1m,gold,,,,,,,0,0,gold-vol_burst_revert-NEARUSDT-1m
 vol_burst_revert,OPUSDT,15m,gold,,,,,,,0,0,gold-vol_burst_revert-OPUSDT-15m
@@ -6381,12 +6396,15 @@ vol_drift,PEPEUSDT,15m,gold,,,,,,,0,0,gold-vol_drift-PEPEUSDT-15m
 vol_drift,PEPEUSDT,5m,gold,,,,,,,0,0,gold-vol_drift-PEPEUSDT-5m
 vol_pop,AVAXUSDT,15m,gold,,,,,,,0,0,gold-vol_pop-AVAXUSDT-15m
 vol_pop,UNIUSDT,15m,gold,,,,,,,0,0,gold-vol_pop-UNIUSDT-15m
+volume_surge,FILUSDT,15m,gold,,,,,,,0,0,gold-volume_surge-FILUSDT-15m
 vwap_reversion,ATOMUSDT,5m,gold,,,,,,,0,0,gold-vwap_reversion-ATOMUSDT-5m
+vwap_reversion,DOTUSDT,5m,gold,,,,,,,0,0,gold-vwap_reversion-DOTUSDT-5m
 vwap_reversion,ETHUSDT,15m,gold,,,,,,,0,0,gold-vwap_reversion-ETHUSDT-15m
 vwap_reversion,FILUSDT,15m,gold,,,,,,,0,0,gold-vwap_reversion-FILUSDT-15m
 vwap_reversion,LTCUSDT,15m,gold,,,,,,,0,0,gold-vwap_reversion-LTCUSDT-15m
 vwap_reversion,NEARUSDT,1m,gold,,,,,,,0,0,gold-vwap_reversion-NEARUSDT-1m
 vwap_reversion,NEARUSDT,5m,gold,,,,,,,0,0,gold-vwap_reversion-NEARUSDT-5m
+vwap_reversion,SUIUSDT,5m,gold,,,,,,,0,0,gold-vwap_reversion-SUIUSDT-5m
 wick_vol,ADAUSDT,5m,gold,,,,,,,0,0,gold-wick_vol-ADAUSDT-5m
 wick_vol,APTUSDT,15m,gold,,,,,,,0,0,gold-wick_vol-APTUSDT-15m
 wick_vol,ARBUSDT,15m,gold,,,,,,,0,0,gold-wick_vol-ARBUSDT-15m
