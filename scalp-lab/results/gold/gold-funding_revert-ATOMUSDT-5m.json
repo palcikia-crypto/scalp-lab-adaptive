@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.76, "base_pf": 0.991, "neighbor_median_sharpe": -1.14, "n_neighbors": 4, "sharpe_half1": -2.19, "sharpe_half2": 0.58, "mc_p5_total": -1.071, "folds": 47, "params": {"h": 30, "z": 1.5}, "kind": "gold", "symbol": "ATOMUSDT", "tf": "5m", "strategy": "funding_revert", "fee_mode": "maker"}

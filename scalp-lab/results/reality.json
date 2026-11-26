@@ -1,12 +1,10 @@
 {
- "updated": "2026-11-25T18:22:57Z",
- "equity": 1311.16,
+ "updated": "2026-11-26T01:57:51Z",
+ "equity": 1267.18,
  "peak": 1311.44,
- "drawdown_pct": 0.02,
+ "drawdown_pct": 3.37,
  "global_mult": 1.0,
- "alerts": [
-  "ЗАВИСШИЕ: 1 позиций открыты >24ч (проверить сигнал/ротацию)"
- ],
+ "alerts": [],
  "actions": [],
  "per_strategy": {
   "bb_regime-NEARUSDT-1m": {
@@ -25,8 +23,8 @@
    "bt_expect_pct": null
   },
   "vol_burst_revert-ARBUSDT-5m": {
-   "n_paper": 8,
-   "avg_paper_pct": -0.766,
+   "n_paper": 10,
+   "avg_paper_pct": -0.92,
    "bt_expect_pct": null
   },
   "spike_revert-SUIUSDT-15m": {
@@ -35,8 +33,8 @@
    "bt_expect_pct": null
   },
   "bollinger_reversion-NEARUSDT-5m": {
-   "n_paper": 11,
-   "avg_paper_pct": -0.06,
+   "n_paper": 13,
+   "avg_paper_pct": -0.329,
    "bt_expect_pct": null
   }
  }
