@@ -1,75 +1,83 @@
 {
- "updated": "2026-11-26T01:57:51Z",
+ "updated": "2026-11-26T10:19:03Z",
  "stage": "исследование + золото",
  "queue": {
-  "total": 4716,
-  "done": 4716,
+  "total": 4734,
+  "done": 4734,
   "pending": 0,
   "errors": 0,
   "progress_pct": 100.0
  },
  "gold": {
-  "checked": 443,
+  "checked": 446,
   "passed": 22,
   "passed_list": [
    {
-    "key": "wick_vol-AVAXUSDT-15m",
-    "sharpe": 2.42
+    "key": "streak_vol-LTCUSDT-15m",
+    "sharpe": 1.6
    },
    {
-    "key": "bb_vol-OPUSDT-15m",
-    "sharpe": 1.11
-   },
-   {
-    "key": "flow_fade-LINKUSDT-15m",
-    "sharpe": 1.64
-   },
-   {
-    "key": "wick_vol-PEPEUSDT-15m",
-    "sharpe": 2.46
-   },
-   {
-    "key": "spike_revert-FILUSDT-15m",
-    "sharpe": 2.1
+    "key": "ema_snap-DOGEUSDT-15m",
+    "sharpe": 1.41
    },
    {
     "key": "spike_bb-APTUSDT-5m",
     "sharpe": 2.43
    },
    {
-    "key": "streak_vol-LTCUSDT-15m",
-    "sharpe": 1.6
+    "key": "streak_vol-ARBUSDT-15m",
+    "sharpe": 2.4
+   },
+   {
+    "key": "streak_vol-SOLUSDT-15m",
+    "sharpe": 1.69
    },
    {
     "key": "ema_snap-APTUSDT-15m",
     "sharpe": 1.74
    },
    {
-    "key": "spike_revert-XRPUSDT-15m",
-    "sharpe": 3.84
+    "key": "bb_vol-APTUSDT-15m",
+    "sharpe": 2.52
    },
    {
-    "key": "ema_snap-LTCUSDT-15m",
-    "sharpe": 1.58
-   },
-   {
-    "key": "wick_vol-OPUSDT-15m",
-    "sharpe": 2.73
-   },
-   {
-    "key": "bollinger_reversion-SUIUSDT-15m",
+    "key": "streak_vol-ETHUSDT-15m",
     "sharpe": 1.45
-   },
-   {
-    "key": "vwap_reversion-LTCUSDT-15m",
-    "sharpe": 2.16
    },
    {
     "key": "spike_bb-FILUSDT-15m",
     "sharpe": 1.89
    },
    {
-    "key": "streak_vol-ETHUSDT-15m",
+    "key": "crash_revert-DOGEUSDT-5m",
+    "sharpe": 1.5
+   },
+   {
+    "key": "vwap_reversion-LTCUSDT-15m",
+    "sharpe": 2.16
+   },
+   {
+    "key": "wick_vol-PEPEUSDT-15m",
+    "sharpe": 2.46
+   },
+   {
+    "key": "wick_vol-AVAXUSDT-15m",
+    "sharpe": 2.42
+   },
+   {
+    "key": "spike_revert-FILUSDT-15m",
+    "sharpe": 2.1
+   },
+   {
+    "key": "ema_snap-LTCUSDT-15m",
+    "sharpe": 1.58
+   },
+   {
+    "key": "bb_vol-OPUSDT-15m",
+    "sharpe": 1.11
+   },
+   {
+    "key": "bollinger_reversion-SUIUSDT-15m",
     "sharpe": 1.45
    },
    {
@@ -77,44 +85,35 @@
     "sharpe": 2.02
    },
    {
-    "key": "ema_snap-DOGEUSDT-15m",
-    "sharpe": 1.41
-   },
-   {
-    "key": "crash_revert-DOGEUSDT-5m",
-    "sharpe": 1.5
-   },
-   {
-    "key": "bb_vol-APTUSDT-15m",
-    "sharpe": 2.52
-   },
-   {
-    "key": "streak_vol-SOLUSDT-15m",
-    "sharpe": 1.69
-   },
-   {
-    "key": "streak_vol-ARBUSDT-15m",
-    "sharpe": 2.4
+    "key": "flow_fade-LINKUSDT-15m",
+    "sharpe": 1.64
    },
    {
     "key": "spike_revert-SUIUSDT-15m",
     "sharpe": 2.63
+   },
+   {
+    "key": "spike_revert-XRPUSDT-15m",
+    "sharpe": 3.84
+   },
+   {
+    "key": "wick_vol-OPUSDT-15m",
+    "sharpe": 2.73
    }
   ]
  },
  "brain": {
   "regimes": {
-   "range": 3,
-   "calm": 2,
-   "trend": 2
+   "range": 5,
+   "calm": 1
   },
   "learned": {
-   "meanrev:range": 0.514,
-   "meanrev:calm": -0.069,
+   "meanrev:range": -0.167,
+   "meanrev:calm": -0.026,
    "meanrev:spike": -0.4,
    "trend:trend": 0.069,
    "trend:range": 0.069,
-   "meanrev:trend": -0.282,
+   "meanrev:trend": -0.258,
    "meanrev:chop": -0.273
   },
   "confidence_pct": {
@@ -128,17 +127,33 @@
   }
  },
  "reality": {
-  "mult": 1.0,
-  "drawdown_pct": 3.37,
-  "alerts": []
+  "mult": 0.6,
+  "drawdown_pct": 6.94,
+  "alerts": [
+   "Просадка 6.9% от пика: глобальный размер x0.6"
+  ]
  },
  "paper": {
-  "equity": 1267.18,
-  "pnl_pct": 26.72,
-  "winrate": 64.2,
-  "n_trades": 109,
-  "open": 4,
+  "equity": 1220.47,
+  "pnl_pct": 22.05,
+  "winrate": 62.8,
+  "n_trades": 113,
+  "open": 3,
   "portfolio": [
+   {
+    "key": "spike_revert-SUIUSDT-15m",
+    "weight": 1.95,
+    "fit": 1.3,
+    "gold": true,
+    "signal": 0.0
+   },
+   {
+    "key": "vol_burst_revert-ARBUSDT-5m",
+    "weight": 0.0,
+    "fit": 0.42,
+    "gold": false,
+    "signal": -1.0
+   },
    {
     "key": "vol_burst_revert-ARBUSDT-15m",
     "weight": 0.65,
@@ -154,27 +169,6 @@
     "signal": -1.0
    },
    {
-    "key": "spike_revert-SUIUSDT-15m",
-    "weight": 1.95,
-    "fit": 1.3,
-    "gold": true,
-    "signal": 0.0
-   },
-   {
-    "key": "vol_burst_revert-ARBUSDT-5m",
-    "weight": 0.0,
-    "fit": 0.77,
-    "gold": false,
-    "signal": -1.0
-   },
-   {
-    "key": "wick_vol-FILUSDT-5m",
-    "weight": 0.385,
-    "fit": 0.77,
-    "gold": false,
-    "signal": 1.0
-   },
-   {
     "key": "bollinger_reversion-NEARUSDT-5m",
     "weight": 0.385,
     "fit": 0.77,
@@ -183,8 +177,8 @@
    },
    {
     "key": "spike_bb-BNBUSDT-5m",
-    "weight": 1.339,
-    "fit": 1.3,
+    "weight": 0.433,
+    "fit": 0.42,
     "gold": false,
     "signal": 0.0
    }

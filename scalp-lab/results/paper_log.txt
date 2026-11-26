@@ -1,5 +1,2 @@
 paper: shadow mode for vol_burst_revert-ARBUSDT-5m - 3 убытков подряд / сумма -7.6% — пауза, сигналы пишутся без риска
-paper: STOP LOSS vol_burst_revert-ARBUSDT-5m -2.59%
-paper: STOP LOSS bb_maker-NEARUSDT-5m -4.88%
-paper: STOP LOSS bollinger_reversion-NEARUSDT-5m -2.55%
-paper: equity 1220.47, trades 113, open 3, shadow 8
+paper: equity 1268.55, trades 118, open 1, shadow 9
