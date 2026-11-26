@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.55, "base_pf": 1.011, "neighbor_median_sharpe": 0.52, "n_neighbors": 6, "sharpe_half1": 1.97, "sharpe_half2": -0.61, "mc_p5_total": -0.7896, "folds": 47, "params": {"h": 60, "pct": 0.008, "vz": 3.0}, "kind": "gold", "symbol": "UNIUSDT", "tf": "5m", "strategy": "spike_follow", "fee_mode": "taker"}
