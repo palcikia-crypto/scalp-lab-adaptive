@@ -1,14 +1,16 @@
 strategy,symbol,tf,oos_sharpe,oos_pf,oos_t,trades,folds,param_stability,days,wave,verdict
 vol_burst_revert,ARBUSDT,15m,2.49,1.059,2.29,209,22,1.0,365,,passed
+bb_maker,NEARUSDT,5m,2.367,1.028,2.25,3787,47,1.0,365,,passed
 crash_revert,SUIUSDT,1m,2.26,1.499,1.47,14,31,0.48,180,,filtered
 vol_burst_revert,ARBUSDT,5m,2.187,1.029,2.08,619,47,1.0,365,,passed
-bb_maker,NEARUSDT,5m,2.104,1.025,2.0,2581,47,1.0,365,,passed
 spike_follow,SOLUSDT,1m,2.041,1.111,1.33,92,31,0.42,180,,filtered
 spike_revert,SUIUSDT,15m,1.859,1.077,1.71,290,22,1.0,365,,passed
 wick_vol,FILUSDT,5m,1.857,1.025,1.76,1120,47,1.0,365,,passed
-bollinger_reversion,NEARUSDT,5m,1.791,1.024,1.7,2782,47,0.38,365,,passed
 spike_bb,SOLUSDT,1m,1.732,1.139,1.13,44,31,0.58,180,,filtered
+bb_regime,NEARUSDT,1m,1.673,1.01,1.11,2763,32,0.25,180,,passed
+bollinger_reversion,NEARUSDT,5m,1.665,1.023,1.58,2860,47,0.38,365,,passed
 wick_vol,OPUSDT,15m,1.652,1.073,1.52,275,22,1.0,365,,passed
+wick_vol,APTUSDT,15m,1.582,1.054,1.45,783,22,1.0,365,,passed
 crash_revert,ATOMUSDT,15m,1.558,1.11,1.43,61,22,0.23,365,,filtered
 spike_bb,OPUSDT,1m,1.548,1.061,1.01,140,31,0.35,180,,filtered
 crash_revert,LTCUSDT,15m,1.538,1.199,1.41,32,22,0.18,365,,filtered
@@ -16,7 +18,6 @@ vol_burst_revert,ARBUSDT,1m,1.492,1.01,0.97,1922,31,0.42,180,,filtered
 crash_revert,BTCUSDT,1m,1.488,1.95,0.97,2,31,1.0,180,,filtered
 crash_revert,APTUSDT,5m,1.481,1.109,1.41,87,47,0.21,365,,filtered
 ema_snap,NEARUSDT,5m,1.479,1.034,1.4,1293,47,1.0,365,,passed
-wick_vol,APTUSDT,15m,1.456,1.075,1.34,377,22,1.0,365,,passed
 bb_maker,ATOMUSDT,1m,1.447,1.008,0.94,2739,31,0.32,180,,filtered
 streak_bb,NEARUSDT,5m,1.444,1.013,1.37,2193,47,1.0,365,,passed
 bb_regime,ATOMUSDT,1m,1.427,1.008,0.94,2851,32,0.25,180,,filtered
@@ -84,7 +85,6 @@ streak_vol,AVAXUSDT,15m,0.944,1.03,0.87,424,22,0.23,365,,filtered
 bb_vol,SUIUSDT,5m,0.941,1.016,0.89,1110,47,0.19,365,,filtered
 bb_vol,AVAXUSDT,15m,0.938,1.03,0.86,441,22,0.18,365,,filtered
 spike_bb,DOGEUSDT,15m,0.932,1.05,0.86,175,22,0.18,365,,filtered
-bb_regime,NEARUSDT,1m,0.923,1.006,0.61,2687,32,0.22,180,,filtered
 streak_vol,LINKUSDT,15m,0.923,1.032,0.85,374,22,0.23,365,,filtered
 bb_vol,SUIUSDT,15m,0.922,1.028,0.85,378,22,0.23,365,,filtered
 spike_revert,LINKUSDT,15m,0.916,1.056,0.84,110,22,0.23,365,,filtered

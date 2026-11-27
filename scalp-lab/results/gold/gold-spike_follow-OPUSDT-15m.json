@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.03, "base_pf": 1.001, "neighbor_median_sharpe": -0.35, "n_neighbors": 6, "sharpe_half1": 1.68, "sharpe_half2": -1.66, "mc_p5_total": -1.4054, "folds": 22, "params": {"h": 60, "pct": 0.008, "vz": 2.0}, "kind": "gold", "symbol": "OPUSDT", "tf": "15m", "strategy": "spike_follow", "fee_mode": "taker"}

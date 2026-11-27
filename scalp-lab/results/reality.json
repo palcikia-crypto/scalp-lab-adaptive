@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-26T19:47:20Z",
- "equity": 1268.55,
+ "updated": "2026-11-27T02:41:02Z",
+ "equity": 1307.01,
  "peak": 1311.44,
- "drawdown_pct": 3.27,
+ "drawdown_pct": 0.34,
  "global_mult": 1.0,
  "alerts": [],
  "actions": [],
@@ -33,13 +33,13 @@
    "bt_expect_pct": null
   },
   "bollinger_reversion-NEARUSDT-5m": {
-   "n_paper": 17,
-   "avg_paper_pct": -0.457,
+   "n_paper": 21,
+   "avg_paper_pct": 0.317,
    "bt_expect_pct": null
   },
   "bb_maker-NEARUSDT-5m": {
-   "n_paper": 8,
-   "avg_paper_pct": -0.525,
+   "n_paper": 12,
+   "avg_paper_pct": 0.153,
    "bt_expect_pct": null
   }
  }
