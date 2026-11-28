@@ -1,22 +1,24 @@
-done gold-funding_revert-LTCUSDT-15m
-done gold-flow_fade-LTCUSDT-15m
-done gold-ema_snap-ARBUSDT-15m
-done gold-vol_burst_revert-FILUSDT-15m
-done gold-ema_snap-SUIUSDT-5m
-done gold-bb_fast-FILUSDT-15m
+done gold-spike_revert-LTCUSDT-15m
+done gold-streak_vol-ETHUSDT-15m
+done gold-bb_vol-DOGEUSDT-5m
+done gold-level_fade-AVAXUSDT-15m
+done gold-spike_follow-BTCUSDT-15m
+deriv enrich skip: funding deriv request cap 1000LTCUSDT
+deriv enrich skip: metrics deriv request cap 1000LTCUSDT
+done gold-funding_revert-LTCUSDT-5m
 gold: 6 leaders -> robustness check
-done gold-bb_maker-SOLUSDT-15m
-done gold-wick_vol-XRPUSDT-5m
-done gold-vol_drift-SOLUSDT-15m
-done gold-bb_fast-APTUSDT-15m
-done gold-bollinger_reversion-PEPEUSDT-5m
-done gold-spike_revert-FILUSDT-15m
+done gold-bb_fast-LTCUSDT-5m
+done gold-vol_burst_revert-ATOMUSDT-15m
+done gold-bb_fast-OPUSDT-15m
+done gold-wick_vol-BTCUSDT-5m
+done gold-vwap_reversion-DOTUSDT-15m
+done gold-bb_vol-ARBUSDT-5m
 gold: 6 leaders -> robustness check
-done gold-wick_vol-PEPEUSDT-15m
-done gold-funding_revert-ATOMUSDT-15m
-done gold-wick_vol-NEARUSDT-15m
-done gold-vwap_reversion-SUIUSDT-15m
-done gold-ema_snap-ETHUSDT-15m
-done gold-vol_burst_revert-DOTUSDT-15m
+done gold-vol_drift-UNIUSDT-1m
+done gold-streak_vol-ATOMUSDT-15m
+done gold-qr_revert-APTUSDT-1m
+done gold-ema_snap-DOGEUSDT-15m
+done gold-bb_maker-BNBUSDT-15m
+done gold-vol_burst_revert-XRPUSDT-1m
 gold: 6 leaders -> robustness check
 processed 18
