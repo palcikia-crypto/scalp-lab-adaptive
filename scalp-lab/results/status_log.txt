@@ -1,1 +1,1 @@
-status: stage=исследование + золото pct=100.0 gold=21/461
+status: stage=исследование + золото pct=100.0 gold=20/464

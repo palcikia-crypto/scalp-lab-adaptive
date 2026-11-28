@@ -1,12 +1,13 @@
 strategy,symbol,tf,oos_sharpe,oos_pf,oos_t,trades,folds,param_stability,days,wave,verdict
+bb_maker,NEARUSDT,1m,3.005,1.018,1.96,3632,31,0.29,180,,passed
 vol_burst_revert,ARBUSDT,15m,2.49,1.059,2.29,209,22,1.0,365,,passed
-bb_maker,NEARUSDT,5m,2.367,1.028,2.25,3787,47,1.0,365,,passed
 crash_revert,SUIUSDT,1m,2.26,1.499,1.47,14,31,0.48,180,,filtered
 vol_burst_revert,ARBUSDT,5m,2.187,1.029,2.08,619,47,1.0,365,,passed
 spike_follow,SOLUSDT,1m,2.041,1.111,1.33,92,31,0.42,180,,filtered
 spike_revert,SUIUSDT,15m,1.859,1.077,1.71,290,22,1.0,365,,passed
 wick_vol,FILUSDT,5m,1.857,1.025,1.76,1120,47,1.0,365,,passed
 spike_bb,SOLUSDT,1m,1.732,1.139,1.13,44,31,0.58,180,,filtered
+bb_maker,NEARUSDT,5m,1.705,1.025,1.62,1833,47,1.0,365,,passed
 bb_regime,NEARUSDT,1m,1.673,1.01,1.11,2763,32,0.25,180,,passed
 bollinger_reversion,NEARUSDT,5m,1.665,1.023,1.58,2860,47,0.38,365,,passed
 wick_vol,OPUSDT,15m,1.652,1.073,1.52,275,22,1.0,365,,passed
@@ -143,7 +144,6 @@ funding_revert,BNBUSDT,5m,0.723,1.012,0.69,1090,47,0.32,365,,filtered
 crash_revert,XRPUSDT,15m,0.718,1.062,1.32,270,22,0.14,1460,,passed
 funding_revert,NEARUSDT,15m,0.713,1.017,0.65,401,22,0.23,365,,filtered
 spike_revert,NEARUSDT,15m,0.71,1.022,0.65,382,22,0.27,365,,filtered
-bb_maker,NEARUSDT,1m,0.708,1.004,0.46,3822,31,1.0,180,,filtered
 spike_bb,ATOMUSDT,1m,0.707,1.095,0.92,157,31,0.29,720,,filtered
 spike_follow,ETHUSDT,1m,0.701,1.045,0.46,55,31,0.32,180,,filtered
 level_fade,ARBUSDT,15m,0.694,1.014,0.64,1004,22,0.36,365,,filtered

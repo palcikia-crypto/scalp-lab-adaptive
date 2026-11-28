@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-28T02:59:09Z",
+ "updated": "2026-11-28T11:16:47Z",
  "stage": "исследование + золото",
  "queue": {
-  "total": 4824,
-  "done": 4824,
+  "total": 4842,
+  "done": 4842,
   "pending": 0,
   "errors": 0,
   "progress_pct": 100.0
  },
  "gold": {
-  "checked": 461,
-  "passed": 21,
+  "checked": 464,
+  "passed": 20,
   "passed_list": [
    {
     "key": "streak_vol-LTCUSDT-15m",
@@ -77,10 +77,6 @@
     "sharpe": 1.45
    },
    {
-    "key": "ema_snap-ATOMUSDT-15m",
-    "sharpe": 2.02
-   },
-   {
     "key": "flow_fade-LINKUSDT-15m",
     "sharpe": 1.64
    },
@@ -100,16 +96,17 @@
  },
  "brain": {
   "regimes": {
-   "range": 6,
-   "calm": 2
+   "calm": 2,
+   "range": 5,
+   "trend": 1
   },
   "learned": {
-   "meanrev:range": 0.153,
-   "meanrev:calm": -0.012,
+   "meanrev:range": 0.109,
+   "meanrev:calm": 0.046,
    "meanrev:spike": -0.4,
    "trend:trend": 0.069,
    "trend:range": 0.069,
-   "meanrev:trend": 0.184,
+   "meanrev:trend": 0.257,
    "meanrev:chop": -0.273
   },
   "confidence_pct": {
@@ -130,65 +127,65 @@
   ]
  },
  "paper": {
-  "equity": 1343.94,
-  "pnl_pct": 34.39,
+  "equity": 1363.44,
+  "pnl_pct": 36.34,
   "winrate": 66.4,
-  "n_trades": 146,
-  "open": 6,
+  "n_trades": 152,
+  "open": 4,
   "portfolio": [
    {
     "key": "vol_burst_revert-ARBUSDT-15m",
-    "weight": 0.36,
-    "fit": 0.72,
+    "weight": 0.65,
+    "fit": 1.3,
     "gold": false,
     "signal": 1.0
    },
    {
     "key": "bb_maker-NEARUSDT-5m",
-    "weight": 0.835,
-    "fit": 0.72,
+    "weight": 1.469,
+    "fit": 1.3,
     "gold": false,
     "signal": -1.0
    },
    {
     "key": "spike_revert-SUIUSDT-15m",
-    "weight": 1.08,
-    "fit": 0.72,
+    "weight": 1.95,
+    "fit": 1.3,
     "gold": true,
-    "signal": 1.0
+    "signal": 0.0
    },
    {
     "key": "vol_burst_revert-ARBUSDT-5m",
     "weight": 0.0,
-    "fit": 0.72,
+    "fit": 1.3,
     "gold": false,
     "signal": 1.0
    },
    {
     "key": "wick_vol-OPUSDT-15m",
-    "weight": 0.72,
-    "fit": 0.72,
+    "weight": 1.404,
+    "fit": 1.3,
     "gold": true,
     "signal": 0.0
    },
    {
     "key": "wick_vol-FILUSDT-5m",
-    "weight": 0.36,
-    "fit": 0.72,
+    "weight": 0.499,
+    "fit": 0.999,
     "gold": false,
-    "signal": 1.0
+    "signal": 0.0
    },
    {
     "key": "bollinger_reversion-NEARUSDT-5m",
-    "weight": 0.821,
-    "fit": 0.72,
+    "weight": 1.417,
+    "fit": 1.3,
     "gold": false,
     "signal": -1.0
    },
    {
     "key": "spike_bb-BNBUSDT-5m",
-    "weight": 1.339,
-    "fit": 1.3,
+    "weight": 1.029,
+    "fit": 0.999,
     "gold": false,
     "signal": 0.0
    }

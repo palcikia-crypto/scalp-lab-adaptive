@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.93, "base_pf": 0.992, "neighbor_median_sharpe": -0.75, "n_neighbors": 4, "sharpe_half1": -1.29, "sharpe_half2": -0.69, "mc_p5_total": -0.8842, "folds": 32, "params": {"k": 2.0, "n": 50}, "kind": "gold", "symbol": "NEARUSDT", "tf": "1m", "strategy": "ema_snap", "fee_mode": "maker"}

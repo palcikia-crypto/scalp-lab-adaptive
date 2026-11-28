@@ -1,7 +1,7 @@
 {
- "total": 6656,
+ "total": 6674,
  "backtest_results": 4232,
- "admitted": 217,
+ "admitted": 232,
  "waves": {
   "frontier": 2480,
   "base": 2306,
@@ -17,7 +17,7 @@
   "combo": 180,
   "pump-dump": 120,
   "pump-dump-2": 180,
-  "gold": 318
+  "gold": 336
  },
- "updated": "2026-11-28T02:59:43Z"
+ "updated": "2026-11-28T11:17:19Z"
 }
